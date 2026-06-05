@@ -1,0 +1,6 @@
+kingdon
+numpy
+sympy
+matplotlib
+jupyter
+ipykernel

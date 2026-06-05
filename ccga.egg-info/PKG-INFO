@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: ccga
+Version: 0.1.0
+Summary: Conic Conformal Geometric Algebra (R^{5,3}) in kingdon
+Requires-Python: >=3.10
+Requires-Dist: kingdon==1.4.0
+Requires-Dist: sympy
+Requires-Dist: numpy

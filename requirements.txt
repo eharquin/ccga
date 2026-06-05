@@ -1,0 +1,8 @@
+# Editable install of the ccga package (pulls kingdon/sympy/numpy via pyproject.toml)
+-e .
+# Notebook tooling
+jupyterlab
+ipykernel
+matplotlib
+# Testing
+pytest

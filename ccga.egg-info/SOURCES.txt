@@ -1,0 +1,16 @@
+pyproject.toml
+ccga/__init__.py
+ccga/algebra.py
+ccga/classify.py
+ccga/objects.py
+ccga/operations.py
+ccga/point.py
+ccga.egg-info/PKG-INFO
+ccga.egg-info/SOURCES.txt
+ccga.egg-info/dependency_links.txt
+ccga.egg-info/requires.txt
+ccga.egg-info/top_level.txt
+tests/test_algebra.py
+tests/test_meet_join.py
+tests/test_objects.py
+tests/test_point.py
