@@ -16,10 +16,10 @@ notebook/quadpole_extraction.ipynb.
 """
 import numpy as np
 
-from .algebra import e1, e2, eo, einf, Iod, Iinfd, I_inv
+from .algebra import e1, e2, eo, einf, einf3, einfbar, Iod, Iinfd, I_inv
 from .point import point
-from .operations import grades
-from .classify import ipns_to_coeffs
+from .operations import grades, meet
+from .classify import ipns_to_coeffs, _conic_vector
 
 _TOL = 1e-9
 
@@ -49,13 +49,32 @@ def _coords(mv):
 
 # ── tripole ───────────────────────────────────────────────────────────────────
 
-def circumcircle(T):
-    """Centre and radius of the circle through the 3 points of tripole T,
-    from the closed-form GA blade  T ∧ Iod ∧ Iinfd  (grade-7 OPNS conic)."""
-    A, B, C, D, E, F = ipns_to_coeffs((T ^ Iod ^ Iinfd) * I_inv)
+def tripole_circumconic(T):
+    """The circum-conic of a tripole as the grade-7 OPNS blade  T ∧ Iod ∧ Iinfd.
+
+    For three finite/round points this is their **circle** (the round points,
+    radius included, are IPNS-incident to it); if one point is **ideal** (at
+    infinity) it degenerates to the **line** through the two finite points (a
+    circle through ∞ is a line); two ideal points make it vanish.  Use
+    classify()/conic_type() on the result, or circumcircle() for (cx,cy,R)."""
+    return T ^ Iod ^ Iinfd
+
+
+def circumcircle(T, tol=_TOL):
+    """Centre and radius of the circle through the 3 points of tripole T, from
+    the closed-form GA blade  T ∧ Iod ∧ Iinfd  (grade-7 OPNS conic).
+
+    For **round** points the radius enters: r²_circum = (centre circle)² − r²
+    (real radius shrinks it, imaginary grows it; the round points are incident
+    to the returned circle).  Raises if the circum-conic is a line (one point at
+    infinity) or degenerate (two) — use tripole_circumconic for those."""
+    A, B, C, D, E, F = ipns_to_coeffs(tripole_circumconic(T) * I_inv)
+    if abs(A) < tol or abs(B) < tol:
+        raise ValueError("circum-conic is a line/degenerate (ideal point in the "
+                         "tripole); use tripole_circumconic")
     cx, cy = -D/(2*A), -E/(2*B)
-    R = (cx*cx + cy*cy - F/A) ** 0.5
-    return cx, cy, R
+    R2 = cx*cx + cy*cy - F/A
+    return cx, cy, (R2 ** 0.5 if R2 >= 0 else (abs(R2) ** 0.5) * 1j)
 
 
 def _tripole_cubic(T, q, n=60):
@@ -205,3 +224,148 @@ def extract_quadpole(Q):
             La, Lb = _lines_of(g1 + t*g2)
             return dipole_on_line(La) + dipole_on_line(Lb)
     raise ValueError("no real line-pair found in the pencil (complex points?)")
+
+
+# ── conic ∨ conic intersection (grade-6 object) ───────────────────────────────
+#
+# Two conics meet in 4 points (Bézout).  The regressive product C1 ∨ C2 is the
+# grade-6 blade
+#
+#     I4 = C1 ∨ C2  ∝  p1 ∧ p2 ∧ p3 ∧ p4 ∧ Iod  =  Q ∧ Iod,
+#
+# i.e. the quadpole Q of the 4 intersection points, gauge-fixed by Iod (the same
+# Iod that turns 5 points into a grade-7 conic).  A point q is an intersection
+# point iff  q ∧ I4 = 0.  The 4 points may be real, an imaginary conjugate pair,
+# or ideal (at infinity) — e.g. two circles always share the two imaginary
+# circular points at infinity, so they meet in 2 finite + 2 ideal points.
+
+def conic_intersection(C1, C2):
+    """Grade-6 intersection object  I4 = C1 ∨ C2  of two conics.
+
+    Accepts grade-7 OPNS conics (the regressive product is taken directly).
+    Equal (up to scale) to  p1 ∧ p2 ∧ p3 ∧ p4 ∧ Iod  for the 4 Bézout points;
+    q ∧ I4 = 0 tests incidence.  Recover the quadpole with
+    intersection_quadpole, the points with intersection_points.
+    """
+    return meet(C1, C2)
+
+
+def intersection_quadpole(I4):
+    """Recover the grade-4 quadpole Q of the 4 intersection points from the
+    grade-6 intersection object:  Q = (einf3 ∧ einfbar) | (C1 ∨ C2).
+
+    Inverts I4 = Q ∧ Iod (Iod = eobar ∧ eo3); einf3 ∧ einfbar is the reciprocal
+    2-blade of Iod in the W2 = span{eobar, eo3} gauge plane."""
+    return (einf3 ^ einfbar) | I4
+
+
+def _coeffs_of(C):
+    """(A,B,C,D,E,F) of a conic given as grade-1 IPNS, grade-5, or grade-7."""
+    return ipns_to_coeffs(_conic_vector(C))
+
+
+def _poly_det(M):
+    """Determinant of a matrix whose entries are 1-D coefficient arrays (a
+    polynomial each, ascending powers).  Returns the coefficient array of the
+    determinant.  Exact polynomial arithmetic via numpy — no float-domain
+    fragility (unlike sympy.resultant over RR)."""
+    n = len(M)
+    if n == 1:
+        return np.asarray(M[0][0], dtype=float)
+    total = np.zeros(1)
+    for j in range(n):
+        minor = [[M[i][k] for k in range(n) if k != j] for i in range(1, n)]
+        term = np.convolve(M[0][j], _poly_det(minor))    # poly multiply
+        if j % 2:
+            term = -term
+        if len(term) > len(total):
+            total = np.pad(total, (0, len(term) - len(total)))
+        total[:len(term)] += term
+    return total
+
+
+def _intersection_roots(C1, C2):
+    """The (up to 4) complex affine intersection points of two conics, as
+    complex (x, y) pairs.  The resultant in y of the two conics (a quartic in x)
+    is the Sylvester determinant, built with numpy polynomial arithmetic; its
+    roots are the x-coordinates (missing roots ⇒ points at infinity)."""
+    a1, b1, c1, d1, e1_, f1 = _coeffs_of(C1)
+    a2, b2, c2, d2, e2_, f2 = _coeffs_of(C2)
+    # Sylvester matrix of Q1, Q2 as quadratics in y, entries = polys in x
+    # (ascending coeffs):  b_i constant, B_i = e_i + c_i·x, C_i = f_i + d_i·x + a_i·x²
+    B1, C1c = np.array([e1_, c1]), np.array([f1, d1, a1])
+    B2, C2c = np.array([e2_, c2]), np.array([f2, d2, a2])
+    z, b1a, b2a = np.array([0.0]), np.array([b1]), np.array([b2])
+    syl = [[b1a, B1,  C1c, z],
+           [z,   b1a, B1,  C1c],
+           [b2a, B2,  C2c, z],
+           [z,   b2a, B2,  C2c]]
+    res = _poly_det(syl)
+    scale = np.max(np.abs(res)) if res.size else 0.0
+    if scale < _TOL:
+        raise ValueError("conics share a component (infinite intersection)")
+    # drop near-zero top coefficients (roots that have gone to infinity)
+    keep = np.where(np.abs(res) > 1e-9 * scale)[0]
+    res = res[:keep[-1] + 1]
+    xr = np.roots(res[::-1]) if res.size > 1 else []      # np.roots wants descending
+    pts = []
+    for xv in xr:
+        if abs(b1) > _TOL:
+            yroots = np.roots([b1, c1*xv + e1_, a1*xv*xv + d1*xv + f1])
+        elif abs(c1*xv + e1_) > _TOL:
+            yroots = [-(a1*xv*xv + d1*xv + f1) / (c1*xv + e1_)]
+        else:
+            yroots = []
+        for yv in yroots:
+            if abs(b2*yv*yv + (c2*xv + e2_)*yv + (a2*xv*xv + d2*xv + f2)) < 1e-5:
+                if all(abs(xv - p[0]) + abs(yv - p[1]) > 1e-5 for p in pts):
+                    pts.append((complex(xv), complex(yv)))
+    return pts[:4]
+
+
+def intersection_points(C1, C2, tol=1e-6):
+    """Real finite intersection points (x, y) of two conics (0–4 of them).
+
+    Ideal (at-infinity) and imaginary intersections are omitted; use
+    intersection_reality for the full Bézout decomposition."""
+    return sorted((p[0].real, p[1].real) for p in _intersection_roots(C1, C2)
+                  if abs(p[0].imag) < tol and abs(p[1].imag) < tol)
+
+
+def intersection_reality(C1, C2, tol=1e-6):
+    """Bézout decomposition of the 4 intersection points of two conics.
+
+    Returns {'real': r, 'imaginary': m, 'ideal': k} with r+m+k = 4:
+      real      — finite real points,
+      imaginary — finite complex-conjugate points,
+      ideal     — points at infinity (e.g. the two circular points two circles
+                  always share; or a shared real asymptotic direction).
+    """
+    pts = _intersection_roots(C1, C2)
+    real = sum(1 for p in pts if abs(p[0].imag) < tol and abs(p[1].imag) < tol)
+    return {'real': real, 'imaginary': len(pts) - real, 'ideal': 4 - len(pts)}
+
+
+# ── normals & orthogonal projection of a point onto a conic ───────────────────
+
+def normal_feet(conic, q):
+    """Feet (x, y) of all real normals dropped from a point q onto a conic.
+
+    The feet satisfy (q − p) ∥ ∇F(p), which is the Apollonius conic; so they are
+    the real points of  conic ∩ apollonius_conic(conic, q)  (up to 4 — an
+    interior point near the center has 4 normals, the evolute region)."""
+    from .objects import apollonius_conic
+    return intersection_points(conic, apollonius_conic(conic, q))
+
+
+def project_point_to_conic(conic, q):
+    """Orthogonal projection of q onto a conic: the nearest foot of a normal.
+
+    Returns (x, y), the closest point of the conic to q.  Raises if no real foot
+    is found (should not happen for a non-empty real conic)."""
+    qx = float((q | e1).e) / -float((q | einf).e)
+    qy = float((q | e2).e) / -float((q | einf).e)
+    feet = normal_feet(conic, q)
+    if not feet:
+        raise ValueError("no real foot found (empty/complex conic?)")
+    return min(feet, key=lambda p: (p[0] - qx)**2 + (p[1] - qy)**2)

@@ -128,6 +128,244 @@ def ipns_to_coeffs(s):
     return A, B, C, D, E, F
 
 
+def _conic_vector(mv, tol=_TOL):
+    """Route any conic representation to its clean grade-1 IPNS vector s.
+
+      grade 1 → s = mv                (already the IPNS conic)
+      grade 5 → s = dual(mv ∧ Iod)    (pentapole promoted to grade-7, dualized)
+      grade 7 → s = dual(mv)          (OPNS conic dualized)
+    """
+    from .algebra import Iod
+    gs = grades(mv, tol)
+    g = gs[0] if len(gs) == 1 else None
+    if g == 1:
+        return mv
+    if g == 5:
+        return dual(mv ^ Iod)
+    if g == 7:
+        return dual(mv)
+    raise ValueError(f"not a conic representation (grades {gs}); "
+                     "expected grade 1 (IPNS), 5 (pentapole), or 7 (OPNS)")
+
+
+def conic_type(mv, tol=_TOL):
+    """Conic subtype of a grade-1/5/7 conic representation.
+
+    Accepts the IPNS grade-1 vector, the bare grade-5 pentapole, or the grade-7
+    OPNS conic, and returns one of 'circle','ellipse','hyperbola','parabola',
+    'line','point','empty','degenerate' (see conic_subtype)."""
+    A, B, C, D, E, F = ipns_to_coeffs(_conic_vector(mv, tol))
+    return conic_subtype(A, B, C, D, E, F, tol)
+
+
+def asymptotic_directions(mv, tol=_TOL):
+    """Real asymptotic directions of a conic = its intersection with the line at
+    infinity, the null directions of the quadratic form A vx² + C vx vy + B vy².
+
+    Accepts a grade-1/5/7 conic.  Returns a list of unit directions (vx, vy):
+      2 directions → hyperbola, 1 → parabola (axis direction), 0 → ellipse.
+    Each returned direction v equals the Veronese ideal point point_at_infinity(v)
+    that lies on the conic.
+    """
+    import numpy as np
+    A, B, C, D, E, F = ipns_to_coeffs(_conic_vector(mv, tol))
+
+    def _unit(vx, vy):
+        n = (vx*vx + vy*vy) ** 0.5
+        vx, vy = vx/n, vy/n
+        if vx < -tol or (abs(vx) < tol and vy < 0):   # canonical sign
+            vx, vy = -vx, -vy
+        return (vx, vy)
+
+    raw = []
+    if abs(A) > tol:
+        disc = C*C - 4*A*B
+        if disc < -tol:
+            return []                                  # ellipse: no real dirs
+        sq = (max(disc, 0.0)) ** 0.5
+        raw = [(-C + sq) / (2*A), (-C - sq) / (2*A)]
+        dirs = [_unit(vx, 1.0) for vx in raw]
+    else:
+        # A = 0: Q = vy (C vx + B vy); vy=0 → (1,0); C vx + B vy=0 → other root
+        dirs = [_unit(1.0, 0.0)]
+        if abs(C) > tol:
+            dirs.append(_unit(-B, C))
+        elif abs(B) > tol:
+            pass                                       # double root (1,0): parabola
+    # dedupe near-equal directions
+    uniq = []
+    for d in dirs:
+        if all(abs(d[0]-u[0]) + abs(d[1]-u[1]) > 1e-7 for u in uniq):
+            uniq.append(d)
+    return uniq
+
+
+def conic_center(mv, tol=_TOL):
+    """Center (cx, cy) of a central conic, read straight off the dual conic
+    vector by GA inner products (ADVANCEMENT "Conics properties").
+
+    With s the grade-1 IPNS conic (= the dual conic C*),
+      s_i  = s · einf_i  (i=1,2,3),   s_{e1}=s·e1,  s_{e2}=s·e2,
+      4·Δ₂ = s_1 s_2 − s_3²,
+      cx = (s_3 s_{e2} − s_2 s_{e1}) / (4Δ₂),
+      cy = (s_3 s_{e1} − s_1 s_{e2}) / (4Δ₂).
+    (Verified against the algebraic center; the numerator sign is the inverse of
+    the originally-conjectured formula.)  Raises if the conic is non-central
+    (Δ₂ ≈ 0: parabola / degenerate).
+    """
+    from .algebra import einf1, einf2, einf3, e1, e2
+
+    def ip(a, b):
+        return float((a | b).e)
+
+    s = _conic_vector(mv, tol)
+    s1, s2, s3 = ip(s, einf1), ip(s, einf2), ip(s, einf3)
+    se1, se2 = ip(s, e1), ip(s, e2)
+    det2_4 = s1*s2 - s3*s3                       # = 4·Δ₂
+    if abs(det2_4) < tol:
+        raise ValueError("non-central conic (Δ₂ ≈ 0: parabola or degenerate)")
+    cx = (s3*se2 - s2*se1) / det2_4
+    cy = (s3*se1 - s1*se2) / det2_4
+    return cx, cy
+
+
+def conic_is_degenerate(mv, tol=1e-7):
+    """True if the conic is degenerate (det M₃ ≈ 0) — a line pair (Δ>0 crossing,
+    Δ=0 parallel/double) or a single point.  Distinguishes a genuine
+    ellipse/hyperbola/parabola (det≠0) from its degenerate limits."""
+    import numpy as np
+    A, B, C, D, E, F = ipns_to_coeffs(_conic_vector(mv, tol))
+    M3 = np.array([[A, C/2, D/2], [C/2, B, E/2], [D/2, E/2, F]])
+    scale = max(abs(v) for v in (A, B, C, D, E, F)) or 1.0
+    return abs(np.linalg.det(M3)) < tol * scale**3
+
+
+def conic_center_point(mv, tol=_TOL):
+    """The center of a conic as a CCGA grade-1 point — the **pole of the line at
+    infinity**, the projectively-unified notion of center.
+
+      M3 = [[A, C/2, D/2], [C/2, B, E/2], [D/2, E/2, F]];   center = M3⁻¹·[0,0,1]ᵀ.
+
+    For an ellipse/hyperbola the pole is finite (w ≠ 0) → a finite CCGA point.
+    For a **parabola** the pole has w = 0 → it is an **ideal point** (at
+    infinity): the parabola is tangent to the line at infinity, so the pole is
+    that point of tangency, lying in the axis direction.  Returned as
+    point_at_infinity(axis); it equals the parabola's single (double) asymptotic
+    direction and lies on the parabola itself.
+
+    Raises for a degenerate conic (M3 singular)."""
+    import numpy as np
+    from .point import point as _pt, point_at_infinity as _pinf
+    A, B, C, D, E, F = ipns_to_coeffs(_conic_vector(mv, tol))
+    M3 = np.array([[A, C/2, D/2], [C/2, B, E/2], [D/2, E/2, F]])
+    if abs(np.linalg.det(M3)) < tol:
+        raise ValueError("degenerate conic: center (pole of L∞) undefined")
+    x, y, w = np.linalg.solve(M3, [0.0, 0.0, 1.0])
+    if abs(w) > tol:
+        return _pt(x / w, y / w)                 # finite center
+    n = (x*x + y*y) ** 0.5                        # parabola: ideal point (axis dir)
+    return _pinf(x / n, y / n)
+
+
+def _central_conic_geometry(mv, tol=_TOL):
+    """Shared geometry of a central conic (ellipse / hyperbola).
+
+    Returns a dict:
+      type, center (cx,cy), a (major/transverse semi-axis), b (minor/conjugate),
+      a_dir, b_dir (unit eigenvectors), c (focal distance), eccentricity.
+
+    Raises ValueError for non-central conics (parabola / degenerate, Δ₂ ≈ 0).
+    """
+    import numpy as np
+    A, B, C, D, E, F = ipns_to_coeffs(_conic_vector(mv, tol))
+    sub = conic_subtype(A, B, C, D, E, F, tol)
+    if sub not in ('ellipse', 'circle', 'hyperbola'):
+        raise ValueError(f"not a central conic (type '{sub}')")
+    cx, cy = conic_center(mv, tol)
+    # constant term after translating the conic to its center
+    Fp = A*cx*cx + B*cy*cy + C*cx*cy + D*cx + E*cy + F
+    w, V = np.linalg.eigh(np.array([[A, C/2], [C/2, B]]))
+    s = [-Fp/w[0], -Fp/w[1]]                       # signed semi-axis² per eigvec
+    i, j = (0, 1) if s[0] >= s[1] else (1, 0)      # i = major/transverse (larger s)
+    a = float(np.sqrt(abs(s[i])))
+    b = float(np.sqrt(abs(s[j])))
+    a_dir = tuple(float(x) for x in V[:, i])
+    b_dir = tuple(float(x) for x in V[:, j])
+    c = float(np.sqrt(a*a - s[j])) if s[j] < 0 else float(np.sqrt(max(a*a - b*b, 0.0)))
+    return {'type': sub, 'center': (cx, cy), 'a': a, 'b': b,
+            'a_dir': a_dir, 'b_dir': b_dir, 'c': c,
+            'eccentricity': c / a if a > tol else float('inf')}
+
+
+def conic_axes(mv, tol=_TOL):
+    """Semi-axes of a central conic as ((a, a_dir), (b, b_dir)).
+
+    a = major (ellipse) / transverse (hyperbola) semi-axis with unit direction
+    a_dir; b = minor / conjugate semi-axis with direction b_dir ⟂ a_dir."""
+    g = _central_conic_geometry(mv, tol)
+    return (g['a'], g['a_dir']), (g['b'], g['b_dir'])
+
+
+def parabola_geometry(mv, tol=_TOL):
+    """Geometry of a parabola (the non-central conic, Δ₂ ≈ 0).
+
+    Returns a dict:
+      axis        — unit axis direction (toward the opening / the focus),
+      vertex      — (vx, vy),
+      focal_length— p (vertex-to-focus distance; |4p| = latus rectum factor),
+      focus       — (fx, fy) = vertex + p·axis,
+      directrix   — (point, normal): the line {X : normal·(X − point) = 0},
+                    normal = axis, point = vertex − p·axis.
+
+    Raises ValueError if mv is not a parabola.
+    """
+    import numpy as np
+    A, B, C, D, E, F = ipns_to_coeffs(_conic_vector(mv, tol))
+    if conic_subtype(A, B, C, D, E, F, tol) != 'parabola':
+        raise ValueError("not a parabola")
+    w, V = np.linalg.eigh(np.array([[A, C/2], [C/2, B]]))
+    i0 = int(np.argmin(np.abs(w)))             # ~0 eigenvalue → axis direction
+    lam = w[1 - i0]
+    u = V[:, i0]                               # axis direction
+    n = V[:, 1 - i0]                           # perpendicular
+    Dp = D*n[0] + E*n[1]
+    Ep = D*u[0] + E*u[1]                       # ≠ 0 for a genuine parabola
+    xi_v = -Dp / (2*lam)
+    eta_v = -(lam*xi_v*xi_v + Dp*xi_v + F) / Ep
+    vertex = xi_v*n + eta_v*u
+    p = -Ep / (4*lam)                          # signed focal length along +u
+    if p < 0:                                  # orient axis toward the focus
+        u, p = -u, -p
+    focus = vertex + p*u
+    return {'axis': tuple(float(x) for x in u),
+            'vertex': (float(vertex[0]), float(vertex[1])),
+            'focal_length': float(p),
+            'focus': (float(focus[0]), float(focus[1])),
+            'directrix': ((float((vertex - p*u)[0]), float((vertex - p*u)[1])),
+                          (float(u[0]), float(u[1])))}
+
+
+def conic_eccentricity(mv, tol=_TOL):
+    """Eccentricity: 0 circle, 0<e<1 ellipse, 1 parabola, e>1 hyperbola."""
+    A, B, C, D, E, F = ipns_to_coeffs(_conic_vector(mv, tol))
+    if conic_subtype(A, B, C, D, E, F, tol) == 'parabola':
+        return 1.0
+    return _central_conic_geometry(mv, tol)['eccentricity']
+
+
+def conic_foci(mv, tol=_TOL):
+    """Foci (x, y) of a conic: the two foci of a central conic
+    (center ± c·a_dir), or the single focus [(fx, fy)] of a parabola."""
+    A, B, C, D, E, F = ipns_to_coeffs(_conic_vector(mv, tol))
+    if conic_subtype(A, B, C, D, E, F, tol) == 'parabola':
+        return [parabola_geometry(mv, tol)['focus']]
+    g = _central_conic_geometry(mv, tol)
+    cx, cy = g['center']
+    dx, dy = g['a_dir']
+    c = g['c']
+    return [(cx + c*dx, cy + c*dy), (cx - c*dx, cy - c*dy)]
+
+
 def ipns_infinity_components(s):
     """
     Null-basis einf coefficients (s_inf1, s_inf2, s_inf3) of a grade-1 vector.
@@ -243,6 +481,22 @@ def classify(mv, tol=_TOL):
     # CGA round objects (cga.py, built ∧ Iinfd) carry Euclidean e1/e2 content;
     # the pure at-infinity blades (line/conic at infinity) do not.
     if g in (3, 4, 5):
+        # A grade-5 blade living in V6 is always SOME conic — the bare 5-point
+        # pentapole (the construction ladder's grade-5 rung).  Read its subtype
+        # via the grade-7 promotion s = dual(mv ∧ Iod).  Genuine circles/lines
+        # keep their cga_* provenance labels below (a cocircular pentapole is
+        # literally the same blade as cga.circle); only general ellipse/
+        # hyperbola/parabola pentapoles are reported by their conic subtype.
+        # (conic_at_infinity = Iod ∧ Iinf gives mv ∧ Iod = 0, so it is skipped.)
+        if g == 5:
+            s = dual(mv ^ Iod)
+            if grades(s, tol) == [1]:
+                A, B, C, D, E, F = ipns_to_coeffs(s)
+                sub = conic_subtype(A, B, C, D, E, F, tol)
+                if sub in ('ellipse', 'hyperbola', 'parabola'):
+                    r = _conic_reality(sub, A, B, C, D, E, F, tol)
+                    return {'grade': [5], 'type': sub, 'reality': r,
+                            'coeffs': (A, B, C, D, E, F)}
         if _is_cga_round_object(mv, tol):
             from . import cga
             c = cga.classify_cga(mv, tol)

@@ -36,6 +36,66 @@ def point(x, y, r=0.0, imaginary=False):
     return base
 
 
+def point_at_infinity(vx, vy):
+    """
+    The TRUE point at infinity (Veronese limit) in direction v = (vx, vy):
+
+        vinf(v) = lim_{t→∞} point(t·vx, t·vy) / t²
+                = (vx²/2)·einf1 + (vy²/2)·einf2 + (vx·vy)·einf3   ∈  I_inf.
+
+    This is the genuine intersection of a curve with the line at infinity — the
+    pure second-order (quadratic) part, with NO eo and NO linear e1/e2 part.
+    It is the object that controls conic type when used in a 5-point
+    construction: a conic built through vinf(v) has v as an asymptotic
+    direction.
+
+    NOTE — this is NOT objects.make_ideal_point(vx, vy).  The latter is a CGA
+    round point with its eo dropped; it keeps the linear vx·e1 + vy·e2 part, so
+    it lies on a *different* conic and does NOT control the asymptotic
+    directions / conic type.  Use point_at_infinity for the conic-type theory.
+    """
+    return (vx*vx/2)*einf1 + (vy*vy/2)*einf2 + (vx*vy)*einf3
+
+
+def tangent_at_infinity(vx, vy):
+    """
+    The double-contact (tangent) bivector partner of point_at_infinity(v) on the
+    line at infinity, in direction v = (vx, vy):
+
+        vinf'(v) = d/dθ point_at_infinity(cosθ, sinθ)
+                 = -cs·einf1 + cs·einf2 + (c²−s²)·einf3,   (c,s) = v/|v|.
+
+    Geometrically it is the tangent to the conic-at-infinity (the Veronese curve
+    in I_inf) at vinf(v).  Wedging vinf(v) ∧ vinf'(v) encodes a *second-order
+    contact* with the line at infinity in direction v — i.e. a parabola tangent
+    to infinity there.  Used by objects.make_parabola_3points to build a general
+    (tilted) parabola with axis direction v.
+    """
+    n = (vx*vx + vy*vy) ** 0.5
+    c, s = vx/n, vy/n
+    return (-c*s)*einf1 + (c*s)*einf2 + (c*c - s*s)*einf3
+
+
+def tangent_vector(p, vx, vy):
+    """
+    Tangent vector to the point (Veronese) variety at p in direction (vx, vy):
+
+        T_v = vx·∂ₓp + vy·∂ᵧp
+            = vx·(e1 + x·einf1 + y·einf3) + vy·(e2 + y·einf2 + x·einf3),
+
+    where (x, y) are p's coordinates.  It is the velocity of the point map
+    f(t)=point((x,y)+t·v) at t=0.  Satisfies p·T_v = 0, so p ∧ T_v is **null**
+    (a tangent point — the coincident limit of a dipole; see
+    objects.make_tangent_point).
+    """
+    w = -float((p | einf).e)
+    if abs(w) < 1e-14:
+        raise ValueError("tangent_vector needs a finite point (p·einf ≠ 0)")
+    x = float((p | e1).e) / w
+    y = float((p | e2).e) / w
+    return vx*(e1 + x*einf1 + y*einf3) + vy*(e2 + y*einf2 + x*einf3)
+
+
 def normalize(mv):
     """Normalize a round object so that mv · einf = -1."""
     scale = float(-(mv | einf).e)

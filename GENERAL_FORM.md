@@ -154,6 +154,16 @@ $p_1\wedge p_2\wedge p_3$ is only the circle through them):
 - **Quadpole** $\;Q=p_1\wedge p_2\wedge p_3\wedge p_4$ (grade 4), a wedge of two
   dipoles $Q=pp_{ij}\wedge pp_{kl}$ for each of the 3 pairings. Full expansion:
   `Objects/Conic Quadpole.md`.
+- **Pentapole** $\;P_5=p_1\wedge\dots\wedge p_5$ (grade 5) — the last "wedge of
+  points" rung, and **already the conic** as a point locus
+  ($q\wedge P_5=0\Leftrightarrow q$ on the conic; all conic points share a 5-D
+  subspace of $V_6$). Its dual is grade 3, $-\tfrac12\,(s\wedge I_\infty^{\triangleright})$:
+  the clean conic vector $s$ smeared by the infinity gauge. Wedging
+  $I_o^{\triangleright}$ promotes it to the grade-7 conic whose dual is the clean
+  grade-1 $s$ — a pure gauge/dual fix, not a geometric one. Conic **type** is set
+  by the number of true ideal points `point_at_infinity` in the build (0 → ellipse,
+  1 double → parabola, 2 → hyperbola, the latter being its asymptotic directions).
+  See `OBJECTS.md` §1 and `notebook/conic_construction.ipynb`.
 
 Point recovery (`ccga/extract.py`): no single $\pm\sqrt{}$ for 3+ points, but a
 GA-native reduction to dipoles + a radical solve — circumcircle + Cardano cubic
