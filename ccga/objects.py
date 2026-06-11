@@ -83,15 +83,40 @@ def make_point_ccga(x, y, r=0.0, imaginary=False):
 
 def make_point_pair(p1, p2):
     """
-    Grade-2 OPNS blade (point pair / dipole).
+    Grade-2 OPNS blade — the *twopole* p1 ^ p2 (bare, un-gauged).
 
     OPNS:  P = p1 ^ p2   (grade 2)
     IPNS:  P* = dual(P)  (grade 6)
     Reality: P^2 > 0 → real pair; P^2 < 0 → imaginary pair.
+
+    Naming: in the grade-sorted taxonomy this bare wedge is the *twopole*
+    (the 2-rung of the bare multipole ladder p → p1^p2 → … → p1^…^p5).
+    The name "point pair" is reserved for the CGA-embedded p1^p2^Iinfd
+    (grade 4, see cga.point_pair); the gauged conic-ladder 2-object is
+    make_gauged_dipole (E^F^Iod, grade 4).
     """
     opns = p1 ^ p2
     ipns = dual(opns)
     return opns, ipns
+
+
+# `twopole` is the taxonomy name for the bare grade-2 wedge p1^p2.
+twopole = make_point_pair
+
+
+def make_gauged_dipole(p1, p2):
+    """
+    Gauged dipole — the n=2 rung of the Iod *pencil* ladder p1^…^pn^Iod (n≤4):
+
+        D = p1 ^ p2 ^ Iod   (grade 4, dual grade 4: self-dual).
+
+    A blade p1^…^pn^Iod with n≤4 (grade n+2) is a *pencil*: the gauge-fixed
+    family of conics through the n points.  This n=2 instance is the conic-gauge
+    point pair — incident with *exactly* p1 and p2 (q ^ D = 0 iff q ∈ {p1, p2}),
+    the natural conic ∨ line (2-point) result; the n=4 rung p1^p2^p3^p4^Iod
+    (grade 6) is the conic ∨ conic intersection blade.
+    """
+    return p1 ^ p2 ^ Iod
 
 
 def make_conic_tripole(p1, p2, p3):

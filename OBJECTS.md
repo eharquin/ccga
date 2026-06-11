@@ -51,13 +51,26 @@ appears both as grade-1 IPNS and grade-7 OPNS; a *dipole* as grade-2 OPNS / grad
 |---|---|---|
 | 0 | scalar | — |
 | 1 | point; round point ($\pm r^2$); ideal point `point_at_infinity`; CGA ideal point `make_ideal_point`; `tangent_at_infinity`; **IPNS conics**: general / circle / ellipse / hyperbola / parabola / line / line-pair; lines & polars (`polar/tangent/normal_line`, `apollonius_conic`); blades $e_o,e_\infty,\bar e_o,\bar e_\infty$ | 2, 4, 8 |
-| 2 | dipole (point pair); tangent point; gauge blades $I_o^{\triangleright},I_\infty^{\triangleright},I_\epsilon$ | 1, 3 |
-| 3 | tripole; CGA round point ($p\wedge I_\infty^{\triangleright}$); line at infinity $I_\infty$; $I_o$ | 3, 6, 7 |
-| 4 | quadpole; flat point ($p\wedge I_\infty$); CGA point pair; CGA flat point | 3, 6, 7 |
-| 5 | pentapole; flat line ($p_1\wedge p_2\wedge I_\infty$ = CGA line); CGA circle; conic at infinity ($I_o^{\triangleright}\wedge I_\infty$) | 3, 6, 7 |
-| 6 | conic ∨ conic intersection ($Q\wedge I_o^{\triangleright}$); plane / 2-flat | 6, 10 |
-| 7 | **OPNS conics**: general conic ($p_1{\wedge}\dots{\wedge}p_5{\wedge}I_o^{\triangleright}$) & all named/3-point conics; line ($p{\wedge}q{\wedge}I_\infty{\wedge}I_o^{\triangleright}$); line pair / parallel / secant pair | 3, 4, 5 |
+| 2 | **twopole** ($p_1\wedge p_2$, bare; = `make_point_pair`/`twopole`); tangent point; gauge blades $I_o^{\triangleright},I_\infty^{\triangleright},I_\epsilon$ | 1, 3 |
+| 3 | tripole; **pencil** $p_1\wedge I_o^{\triangleright}$ ($n{=}1$ rung); CGA round point ($p\wedge I_\infty^{\triangleright}$); line at infinity $I_\infty$; $I_o$ | 3, 6, 7 |
+| 4 | quadpole; **gauged dipole** / pencil $n{=}2$ ($p_1\wedge p_2\wedge I_o^{\triangleright}$, `make_gauged_dipole`; self-dual, = conic∨line 2-pt object); flat point ($p\wedge I_\infty$); CGA point pair ($p_1\wedge p_2\wedge I_\infty^{\triangleright}$); CGA flat point | 3, 6, 7 |
+| 5 | pentapole; **pencil** $n{=}3$; flat line ($p_1\wedge p_2\wedge I_\infty$ = CGA line); CGA circle; conic at infinity ($I_o^{\triangleright}\wedge I_\infty$) | 3, 6, 7 |
+| 6 | **pencil** $n{=}4$ = conic ∨ conic intersection ($Q\wedge I_o^{\triangleright}$); plane / 2-flat | 6, 10 |
+| 7 | **OPNS conics**: general conic ($p_1{\wedge}\dots{\wedge}p_5{\wedge}I_o^{\triangleright}$) & the named 3-point conics (ellipse / hyperbola / parabola = 3 pts $+$ ideal-point pair $+\,I_o^{\triangleright}$); line pair / parallel / secant pair | 3, 4, 5 |
 | 8 | pseudoscalar $I$ | 1 |
+
+**Construction ladders.** Every object above is a wedge of points with at most the two
+gauge blades. Three ladders sort the zoo: (1) the **bare multipole ladder** $p \to
+p_1{\wedge}p_2 \to \dots \to p_1{\wedge}\dots{\wedge}p_5$ (point, twopole, tripole,
+quadpole, pentapole); (2) the **$I_o^{\triangleright}$-gauged conic ladder** — for $n\le4$
+points $p_1{\wedge}\dots{\wedge}p_n{\wedge}I_o^{\triangleright}$ (grade $n{+}2$) is a
+*pencil* (gauged dipole at $n{=}2$, conic∨conic blade at $n{=}4$); a full CCGA conic is the
+grade-7 blade ending in ${\wedge}I_o^{\triangleright}$ (general $=$ 5 pts; the smooth named
+conics $=$ 3 pts $+$ an ideal-point pair $+\,I_o^{\triangleright}$ — real ⇒ hyperbola,
+double ⇒ parabola, imaginary ⇒ ellipse, circular points $\Rightarrow$ circle, hence on the
+CGA side); (3) **CGA embedded in CCGA**, the $I_\infty^{\triangleright}$ sub-array (round
+point, point pair, circle, line, plus flat versions) sitting at grade $=$ CGA grade $+\,2$.
+See `tests/test_taxonomy.py`.
 
 ---
 

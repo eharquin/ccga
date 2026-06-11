@@ -1,0 +1,1016 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200">
+<defs>
+
+</defs>
+<line x1="190.00" y1="46.00" x2="70.00" y2="61.00" stroke="#999999" stroke-width="1.5" />
+<line x1="70.00" y1="61.00" x2="175.00" y2="151.00" stroke="#999999" stroke-width="1.5" />
+<line x1="175.00" y1="151.00" x2="325.00" y2="106.00" stroke="#999999" stroke-width="1.5" />
+<line x1="190.0000" y1="46.0000" x2="195.7193" y2="45.2603" stroke="#bf0c3d" stroke-width="3.0" stroke-linecap="round" />
+<line x1="195.7193" y1="45.2603" x2="202.0948" y2="44.3828" stroke="#b71143" stroke-width="3.0" stroke-linecap="round" />
+<line x1="202.0948" y1="44.3828" x2="209.2558" y2="43.3405" stroke="#b01648" stroke-width="3.0" stroke-linecap="round" />
+<line x1="209.2558" y1="43.3405" x2="217.3677" y2="42.0987" stroke="#aa1a4d" stroke-width="3.0" stroke-linecap="round" />
+<line x1="217.3677" y1="42.0987" x2="226.6458" y2="40.6120" stroke="#a41f52" stroke-width="3.0" stroke-linecap="round" />
+<line x1="226.6458" y1="40.6120" x2="237.3757" y2="38.8206" stroke="#9e2357" stroke-width="3.0" stroke-linecap="round" />
+<line x1="237.3757" y1="38.8206" x2="249.9445" y2="36.6433" stroke="#99265b" stroke-width="3.0" stroke-linecap="round" />
+<line x1="249.9445" y1="36.6433" x2="264.8901" y2="33.9670" stroke="#932a5f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="264.8901" y1="33.9670" x2="282.9831" y2="30.6301" stroke="#8f2d62" stroke-width="3.0" stroke-linecap="round" />
+<line x1="282.9831" y1="30.6301" x2="305.3671" y2="26.3925" stroke="#8a3166" stroke-width="3.0" stroke-linecap="round" />
+<line x1="305.3671" y1="26.3925" x2="333.8159" y2="20.8819" stroke="#863469" stroke-width="3.0" stroke-linecap="round" />
+<line x1="333.8159" y1="20.8819" x2="371.2371" y2="13.4879" stroke="#81376c" stroke-width="3.0" stroke-linecap="round" />
+<line x1="371.2371" y1="13.4879" x2="422.7500" y2="3.1360" stroke="#7e396f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="422.7500" y1="3.1360" x2="498.2821" y2="-12.2577" stroke="#7a3c72" stroke-width="3.0" stroke-linecap="round" />
+<line x1="498.2821" y1="-12.2577" x2="619.9478" y2="-37.3351" stroke="#763f74" stroke-width="3.0" stroke-linecap="round" />
+<line x1="619.9478" y1="-37.3351" x2="849.0257" y2="-84.9592" stroke="#734176" stroke-width="3.0" stroke-linecap="round" />
+<line x1="849.0257" y1="-84.9592" x2="1441.5481" y2="-208.8731" stroke="#704379" stroke-width="3.0" stroke-linecap="round" />
+<line x1="1441.5481" y1="-208.8731" x2="6613.9823" y2="-1294.1452" stroke="#6c467b" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-2165.5801" y1="549.2129" x2="-861.4490" y2="275.9271" stroke="#674a7f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-861.4490" y1="275.9271" x2="-508.4882" y2="202.2992" stroke="#644c80" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-508.4882" y1="202.2992" x2="-344.0155" y2="168.2363" stroke="#614e82" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-344.0155" y1="168.2363" x2="-248.7707" y2="148.7050" stroke="#5f5084" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-248.7707" y1="148.7050" x2="-186.5816" y2="136.1124" stroke="#5c5185" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-186.5816" y1="136.1124" x2="-142.7386" y2="127.3707" stroke="#5a5387" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-142.7386" y1="127.3707" x2="-110.1327" y2="120.9878" stroke="#585588" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-110.1327" y1="120.9878" x2="-84.9078" y2="116.1543" stroke="#555689" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-84.9078" y1="116.1543" x2="-64.7912" y2="112.3931" stroke="#53588a" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-64.7912" y1="112.3931" x2="-48.3566" y2="109.4048" stroke="#515a8c" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-48.3566" y1="109.4048" x2="-34.6637" y2="106.9920" stroke="#4f5b8d" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-34.6637" y1="106.9920" x2="-23.0673" y2="105.0193" stroke="#4e5c8e" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-23.0673" y1="105.0193" x2="-13.1099" y2="103.3907" stroke="#4c5e8e" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-13.1099" y1="103.3907" x2="-4.4584" y2="102.0363" stroke="#4a5f8f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-4.4584" y1="102.0363" x2="3.1358" y2="100.9038" stroke="#486090" stroke-width="3.0" stroke-linecap="round" />
+<line x1="3.1358" y1="100.9038" x2="9.8619" y2="99.9536" stroke="#476291" stroke-width="3.0" stroke-linecap="round" />
+<line x1="9.8619" y1="99.9536" x2="15.8663" y2="99.1548" stroke="#456392" stroke-width="3.0" stroke-linecap="round" />
+<line x1="15.8663" y1="99.1548" x2="21.2644" y2="98.4834" stroke="#446492" stroke-width="3.0" stroke-linecap="round" />
+<line x1="21.2644" y1="98.4834" x2="26.1479" y2="97.9201" stroke="#426593" stroke-width="3.0" stroke-linecap="round" />
+<line x1="26.1479" y1="97.9201" x2="30.5911" y2="97.4492" stroke="#416694" stroke-width="3.0" stroke-linecap="round" />
+<line x1="30.5911" y1="97.4492" x2="34.6544" y2="97.0581" stroke="#3f6894" stroke-width="3.0" stroke-linecap="round" />
+<line x1="34.6544" y1="97.0581" x2="38.3876" y2="96.7363" stroke="#3e6995" stroke-width="3.0" stroke-linecap="round" />
+<line x1="38.3876" y1="96.7363" x2="41.8323" y2="96.4751" stroke="#3d6a95" stroke-width="3.0" stroke-linecap="round" />
+<line x1="41.8323" y1="96.4751" x2="45.0231" y2="96.2672" stroke="#3c6b96" stroke-width="3.0" stroke-linecap="round" />
+<line x1="45.0231" y1="96.2672" x2="47.9894" y2="96.1065" stroke="#3a6c96" stroke-width="3.0" stroke-linecap="round" />
+<line x1="47.9894" y1="96.1065" x2="50.7562" y2="95.9877" stroke="#396d96" stroke-width="3.0" stroke-linecap="round" />
+<line x1="50.7562" y1="95.9877" x2="53.3447" y2="95.9064" stroke="#386e97" stroke-width="3.0" stroke-linecap="round" />
+<line x1="53.3447" y1="95.9064" x2="55.7733" y2="95.8587" stroke="#376f97" stroke-width="3.0" stroke-linecap="round" />
+<line x1="55.7733" y1="95.8587" x2="58.0579" y2="95.8412" stroke="#366f97" stroke-width="3.0" stroke-linecap="round" />
+<line x1="58.0579" y1="95.8412" x2="60.2123" y2="95.8511" stroke="#357098" stroke-width="3.0" stroke-linecap="round" />
+<line x1="60.2123" y1="95.8511" x2="62.2486" y2="95.8859" stroke="#347198" stroke-width="3.0" stroke-linecap="round" />
+<line x1="62.2486" y1="95.8859" x2="64.1773" y2="95.9433" stroke="#337298" stroke-width="3.0" stroke-linecap="round" />
+<line x1="64.1773" y1="95.9433" x2="66.0079" y2="96.0213" stroke="#327398" stroke-width="3.0" stroke-linecap="round" />
+<line x1="66.0079" y1="96.0213" x2="67.7484" y2="96.1183" stroke="#317498" stroke-width="3.0" stroke-linecap="round" />
+<line x1="67.7484" y1="96.1183" x2="69.4062" y2="96.2327" stroke="#307599" stroke-width="3.0" stroke-linecap="round" />
+<line x1="69.4062" y1="96.2327" x2="70.9878" y2="96.3631" stroke="#2f7599" stroke-width="3.0" stroke-linecap="round" />
+<line x1="70.9878" y1="96.3631" x2="72.4991" y2="96.5084" stroke="#2f7699" stroke-width="3.0" stroke-linecap="round" />
+<line x1="72.4991" y1="96.5084" x2="73.9452" y2="96.6674" stroke="#2e7799" stroke-width="3.0" stroke-linecap="round" />
+<line x1="73.9452" y1="96.6674" x2="75.3308" y2="96.8391" stroke="#2d7899" stroke-width="3.0" stroke-linecap="round" />
+<line x1="75.3308" y1="96.8391" x2="76.6601" y2="97.0227" stroke="#2c7899" stroke-width="3.0" stroke-linecap="round" />
+<line x1="76.6601" y1="97.0227" x2="77.9369" y2="97.2174" stroke="#2b7999" stroke-width="3.0" stroke-linecap="round" />
+<line x1="77.9369" y1="97.2174" x2="79.1647" y2="97.4225" stroke="#2b7a99" stroke-width="3.0" stroke-linecap="round" />
+<line x1="79.1647" y1="97.4225" x2="80.3464" y2="97.6372" stroke="#2a7a99" stroke-width="3.0" stroke-linecap="round" />
+<line x1="80.3464" y1="97.6372" x2="81.4850" y2="97.8611" stroke="#297b99" stroke-width="3.0" stroke-linecap="round" />
+<line x1="81.4850" y1="97.8611" x2="82.5830" y2="98.0936" stroke="#297c99" stroke-width="3.0" stroke-linecap="round" />
+<line x1="82.5830" y1="98.0936" x2="83.6428" y2="98.3341" stroke="#287c99" stroke-width="3.0" stroke-linecap="round" />
+<line x1="83.6428" y1="98.3341" x2="84.6665" y2="98.5823" stroke="#287d99" stroke-width="3.0" stroke-linecap="round" />
+<line x1="84.6665" y1="98.5823" x2="85.6560" y2="98.8377" stroke="#277e99" stroke-width="3.0" stroke-linecap="round" />
+<line x1="85.6560" y1="98.8377" x2="86.6130" y2="99.1000" stroke="#267e98" stroke-width="3.0" stroke-linecap="round" />
+<line x1="86.6130" y1="99.1000" x2="87.5394" y2="99.3689" stroke="#267f98" stroke-width="3.0" stroke-linecap="round" />
+<line x1="87.5394" y1="99.3689" x2="88.4365" y2="99.6439" stroke="#258098" stroke-width="3.0" stroke-linecap="round" />
+<line x1="88.4365" y1="99.6439" x2="89.3056" y2="99.9249" stroke="#258098" stroke-width="3.0" stroke-linecap="round" />
+<line x1="89.3056" y1="99.9249" x2="90.1482" y2="100.2115" stroke="#248198" stroke-width="3.0" stroke-linecap="round" />
+<line x1="90.1482" y1="100.2115" x2="90.9653" y2="100.5036" stroke="#248198" stroke-width="3.0" stroke-linecap="round" />
+<line x1="90.9653" y1="100.5036" x2="91.7579" y2="100.8009" stroke="#238297" stroke-width="3.0" stroke-linecap="round" />
+<line x1="91.7579" y1="100.8009" x2="92.5271" y2="101.1032" stroke="#238297" stroke-width="3.0" stroke-linecap="round" />
+<line x1="92.5271" y1="101.1032" x2="93.2738" y2="101.4102" stroke="#228397" stroke-width="3.0" stroke-linecap="round" />
+<line x1="93.2738" y1="101.4102" x2="93.9988" y2="101.7220" stroke="#228397" stroke-width="3.0" stroke-linecap="round" />
+<line x1="93.9988" y1="101.7220" x2="94.7028" y2="102.0382" stroke="#228496" stroke-width="3.0" stroke-linecap="round" />
+<line x1="94.7028" y1="102.0382" x2="95.3865" y2="102.3588" stroke="#218596" stroke-width="3.0" stroke-linecap="round" />
+<line x1="95.3865" y1="102.3588" x2="96.0505" y2="102.6836" stroke="#218596" stroke-width="3.0" stroke-linecap="round" />
+<line x1="96.0505" y1="102.6836" x2="96.6956" y2="103.0125" stroke="#218696" stroke-width="3.0" stroke-linecap="round" />
+<line x1="96.6956" y1="103.0125" x2="97.3220" y2="103.3454" stroke="#208695" stroke-width="3.0" stroke-linecap="round" />
+<line x1="97.3220" y1="103.3454" x2="97.9305" y2="103.6822" stroke="#208795" stroke-width="3.0" stroke-linecap="round" />
+<line x1="97.9305" y1="103.6822" x2="98.5213" y2="104.0228" stroke="#208795" stroke-width="3.0" stroke-linecap="round" />
+<line x1="98.5213" y1="104.0228" x2="99.0949" y2="104.3671" stroke="#1f8894" stroke-width="3.0" stroke-linecap="round" />
+<line x1="99.0949" y1="104.3671" x2="99.6516" y2="104.7151" stroke="#1f8894" stroke-width="3.0" stroke-linecap="round" />
+<line x1="99.6516" y1="104.7151" x2="100.1918" y2="105.0667" stroke="#1f8894" stroke-width="3.0" stroke-linecap="round" />
+<line x1="100.1918" y1="105.0667" x2="100.7157" y2="105.4218" stroke="#1f8993" stroke-width="3.0" stroke-linecap="round" />
+<line x1="100.7157" y1="105.4218" x2="101.2236" y2="105.7804" stroke="#1e8993" stroke-width="3.0" stroke-linecap="round" />
+<line x1="101.2236" y1="105.7804" x2="101.7157" y2="106.1424" stroke="#1e8a92" stroke-width="3.0" stroke-linecap="round" />
+<line x1="101.7157" y1="106.1424" x2="102.1922" y2="106.5079" stroke="#1e8a92" stroke-width="3.0" stroke-linecap="round" />
+<line x1="102.1922" y1="106.5079" x2="102.6532" y2="106.8767" stroke="#1e8b92" stroke-width="3.0" stroke-linecap="round" />
+<line x1="102.6532" y1="106.8767" x2="103.0988" y2="107.2489" stroke="#1e8b91" stroke-width="3.0" stroke-linecap="round" />
+<line x1="103.0988" y1="107.2489" x2="103.5292" y2="107.6245" stroke="#1d8c91" stroke-width="3.0" stroke-linecap="round" />
+<line x1="103.5292" y1="107.6245" x2="103.9444" y2="108.0034" stroke="#1d8c90" stroke-width="3.0" stroke-linecap="round" />
+<line x1="103.9444" y1="108.0034" x2="104.3444" y2="108.3857" stroke="#1d8c90" stroke-width="3.0" stroke-linecap="round" />
+<line x1="104.3444" y1="108.3857" x2="104.7293" y2="108.7713" stroke="#1d8d8f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="104.7293" y1="108.7713" x2="105.0990" y2="109.1602" stroke="#1d8d8f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="105.0990" y1="109.1602" x2="105.4535" y2="109.5526" stroke="#1d8e8e" stroke-width="3.0" stroke-linecap="round" />
+<line x1="105.4535" y1="109.5526" x2="105.7927" y2="109.9483" stroke="#1d8e8e" stroke-width="3.0" stroke-linecap="round" />
+<line x1="105.7927" y1="109.9483" x2="106.1165" y2="110.3474" stroke="#1d8e8d" stroke-width="3.0" stroke-linecap="round" />
+<line x1="106.1165" y1="110.3474" x2="106.4247" y2="110.7501" stroke="#1d8f8d" stroke-width="3.0" stroke-linecap="round" />
+<line x1="106.4247" y1="110.7501" x2="106.7173" y2="111.1562" stroke="#1d8f8c" stroke-width="3.0" stroke-linecap="round" />
+<line x1="106.7173" y1="111.1562" x2="106.9940" y2="111.5658" stroke="#1d908c" stroke-width="3.0" stroke-linecap="round" />
+<line x1="106.9940" y1="111.5658" x2="107.2546" y2="111.9791" stroke="#1d908b" stroke-width="3.0" stroke-linecap="round" />
+<line x1="107.2546" y1="111.9791" x2="107.4989" y2="112.3960" stroke="#1d908b" stroke-width="3.0" stroke-linecap="round" />
+<line x1="107.4989" y1="112.3960" x2="107.7265" y2="112.8167" stroke="#1d918a" stroke-width="3.0" stroke-linecap="round" />
+<line x1="107.7265" y1="112.8167" x2="107.9372" y2="113.2412" stroke="#1d918a" stroke-width="3.0" stroke-linecap="round" />
+<line x1="107.9372" y1="113.2412" x2="108.1306" y2="113.6695" stroke="#1d9289" stroke-width="3.0" stroke-linecap="round" />
+<line x1="108.1306" y1="113.6695" x2="108.3064" y2="114.1019" stroke="#1d9289" stroke-width="3.0" stroke-linecap="round" />
+<line x1="108.3064" y1="114.1019" x2="108.4640" y2="114.5383" stroke="#1d9288" stroke-width="3.0" stroke-linecap="round" />
+<line x1="108.4640" y1="114.5383" x2="108.6031" y2="114.9789" stroke="#1d9387" stroke-width="3.0" stroke-linecap="round" />
+<line x1="108.6031" y1="114.9789" x2="108.7232" y2="115.4238" stroke="#1d9387" stroke-width="3.0" stroke-linecap="round" />
+<line x1="108.7232" y1="115.4238" x2="108.8237" y2="115.8732" stroke="#1d9386" stroke-width="3.0" stroke-linecap="round" />
+<line x1="108.8237" y1="115.8732" x2="108.9039" y2="116.3272" stroke="#1d9485" stroke-width="3.0" stroke-linecap="round" />
+<line x1="108.9039" y1="116.3272" x2="108.9634" y2="116.7858" stroke="#1e9485" stroke-width="3.0" stroke-linecap="round" />
+<line x1="108.9634" y1="116.7858" x2="109.0013" y2="117.2494" stroke="#1e9484" stroke-width="3.0" stroke-linecap="round" />
+<line x1="109.0013" y1="117.2494" x2="109.0170" y2="117.7180" stroke="#1e9584" stroke-width="3.0" stroke-linecap="round" />
+<line x1="109.0170" y1="117.7180" x2="109.0096" y2="118.1919" stroke="#1e9583" stroke-width="3.0" stroke-linecap="round" />
+<line x1="109.0096" y1="118.1919" x2="108.9783" y2="118.6712" stroke="#1e9582" stroke-width="3.0" stroke-linecap="round" />
+<line x1="108.9783" y1="118.6712" x2="108.9220" y2="119.1563" stroke="#1f9682" stroke-width="3.0" stroke-linecap="round" />
+<line x1="108.9220" y1="119.1563" x2="108.8399" y2="119.6472" stroke="#1f9681" stroke-width="3.0" stroke-linecap="round" />
+<line x1="108.8399" y1="119.6472" x2="108.7308" y2="120.1443" stroke="#1f9680" stroke-width="3.0" stroke-linecap="round" />
+<line x1="108.7308" y1="120.1443" x2="108.5935" y2="120.6478" stroke="#1f967f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="108.5935" y1="120.6478" x2="108.4267" y2="121.1581" stroke="#20977f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="108.4267" y1="121.1581" x2="108.2291" y2="121.6754" stroke="#20977e" stroke-width="3.0" stroke-linecap="round" />
+<line x1="108.2291" y1="121.6754" x2="107.9992" y2="122.2001" stroke="#20977d" stroke-width="3.0" stroke-linecap="round" />
+<line x1="107.9992" y1="122.2001" x2="107.7354" y2="122.7327" stroke="#21987c" stroke-width="3.0" stroke-linecap="round" />
+<line x1="107.7354" y1="122.7327" x2="107.4359" y2="123.2733" stroke="#21987c" stroke-width="3.0" stroke-linecap="round" />
+<line x1="107.4359" y1="123.2733" x2="107.0988" y2="123.8226" stroke="#22987b" stroke-width="3.0" stroke-linecap="round" />
+<line x1="107.0988" y1="123.8226" x2="106.7220" y2="124.3810" stroke="#22997a" stroke-width="3.0" stroke-linecap="round" />
+<line x1="106.7220" y1="124.3810" x2="106.3035" y2="124.9491" stroke="#229979" stroke-width="3.0" stroke-linecap="round" />
+<line x1="106.3035" y1="124.9491" x2="105.8406" y2="125.5272" stroke="#239979" stroke-width="3.0" stroke-linecap="round" />
+<line x1="105.8406" y1="125.5272" x2="105.3309" y2="126.1162" stroke="#239978" stroke-width="3.0" stroke-linecap="round" />
+<line x1="105.3309" y1="126.1162" x2="104.7714" y2="126.7166" stroke="#249a77" stroke-width="3.0" stroke-linecap="round" />
+<line x1="104.7714" y1="126.7166" x2="104.1590" y2="127.3291" stroke="#249a76" stroke-width="3.0" stroke-linecap="round" />
+<line x1="104.1590" y1="127.3291" x2="103.4902" y2="127.9546" stroke="#259a75" stroke-width="3.0" stroke-linecap="round" />
+<line x1="103.4902" y1="127.9546" x2="102.7613" y2="128.5940" stroke="#269a74" stroke-width="3.0" stroke-linecap="round" />
+<line x1="102.7613" y1="128.5940" x2="101.9682" y2="129.2481" stroke="#269b73" stroke-width="3.0" stroke-linecap="round" />
+<line x1="101.9682" y1="129.2481" x2="101.1064" y2="129.9180" stroke="#279b73" stroke-width="3.0" stroke-linecap="round" />
+<line x1="101.1064" y1="129.9180" x2="100.1707" y2="130.6050" stroke="#289b72" stroke-width="3.0" stroke-linecap="round" />
+<line x1="100.1707" y1="130.6050" x2="99.1558" y2="131.3102" stroke="#289b71" stroke-width="3.0" stroke-linecap="round" />
+<line x1="99.1558" y1="131.3102" x2="98.0555" y2="132.0350" stroke="#299c70" stroke-width="3.0" stroke-linecap="round" />
+<line x1="98.0555" y1="132.0350" x2="96.8630" y2="132.7811" stroke="#2a9c6f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="96.8630" y1="132.7811" x2="95.5708" y2="133.5502" stroke="#2a9c6e" stroke-width="3.0" stroke-linecap="round" />
+<line x1="95.5708" y1="133.5502" x2="94.1704" y2="134.3442" stroke="#2b9c6d" stroke-width="3.0" stroke-linecap="round" />
+<line x1="94.1704" y1="134.3442" x2="92.6524" y2="135.1653" stroke="#2c9d6c" stroke-width="3.0" stroke-linecap="round" />
+<line x1="92.6524" y1="135.1653" x2="91.0063" y2="136.0159" stroke="#2d9d6b" stroke-width="3.0" stroke-linecap="round" />
+<line x1="91.0063" y1="136.0159" x2="89.2200" y2="136.8989" stroke="#2e9d6a" stroke-width="3.0" stroke-linecap="round" />
+<line x1="89.2200" y1="136.8989" x2="87.2801" y2="137.8172" stroke="#2f9d69" stroke-width="3.0" stroke-linecap="round" />
+<line x1="87.2801" y1="137.8172" x2="85.1714" y2="138.7745" stroke="#309d68" stroke-width="3.0" stroke-linecap="round" />
+<line x1="85.1714" y1="138.7745" x2="82.8762" y2="139.7748" stroke="#319e67" stroke-width="3.0" stroke-linecap="round" />
+<line x1="82.8762" y1="139.7748" x2="80.3748" y2="140.8226" stroke="#329e66" stroke-width="3.0" stroke-linecap="round" />
+<line x1="80.3748" y1="140.8226" x2="77.6441" y2="141.9234" stroke="#339e65" stroke-width="3.0" stroke-linecap="round" />
+<line x1="77.6441" y1="141.9234" x2="74.6575" y2="143.0831" stroke="#349e63" stroke-width="3.0" stroke-linecap="round" />
+<line x1="74.6575" y1="143.0831" x2="71.3844" y2="144.3089" stroke="#359e62" stroke-width="3.0" stroke-linecap="round" />
+<line x1="71.3844" y1="144.3089" x2="67.7886" y2="145.6092" stroke="#379f61" stroke-width="3.0" stroke-linecap="round" />
+<line x1="67.7886" y1="145.6092" x2="63.8278" y2="146.9937" stroke="#389f60" stroke-width="3.0" stroke-linecap="round" />
+<line x1="63.8278" y1="146.9937" x2="59.4518" y2="148.4739" stroke="#399f5f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="59.4518" y1="148.4739" x2="54.6008" y2="150.0637" stroke="#3b9f5d" stroke-width="3.0" stroke-linecap="round" />
+<line x1="54.6008" y1="150.0637" x2="49.2028" y2="151.7798" stroke="#3c9f5c" stroke-width="3.0" stroke-linecap="round" />
+<line x1="49.2028" y1="151.7798" x2="43.1704" y2="153.6422" stroke="#3da05b" stroke-width="3.0" stroke-linecap="round" />
+<line x1="43.1704" y1="153.6422" x2="36.3967" y2="155.6756" stroke="#3fa05a" stroke-width="3.0" stroke-linecap="round" />
+<line x1="36.3967" y1="155.6756" x2="28.7489" y2="157.9107" stroke="#41a058" stroke-width="3.0" stroke-linecap="round" />
+<line x1="28.7489" y1="157.9107" x2="20.0607" y2="160.3859" stroke="#42a057" stroke-width="3.0" stroke-linecap="round" />
+<line x1="20.0607" y1="160.3859" x2="10.1207" y2="163.1499" stroke="#44a055" stroke-width="3.0" stroke-linecap="round" />
+<line x1="10.1207" y1="163.1499" x2="-1.3442" y2="166.2657" stroke="#46a054" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-1.3442" y1="166.2657" x2="-14.6927" y2="169.8162" stroke="#48a052" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-14.6927" y1="169.8162" x2="-30.4060" y2="173.9123" stroke="#4aa151" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-30.4060" y1="173.9123" x2="-49.1440" y2="178.7064" stroke="#4ca14f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-49.1440" y1="178.7064" x2="-71.8381" y2="184.4134" stroke="#4ea14e" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-71.8381" y1="184.4134" x2="-99.8455" y2="191.3464" stroke="#50a14c" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-99.8455" y1="191.3464" x2="-135.2249" y2="199.9805" stroke="#52a14a" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-135.2249" y1="199.9805" x2="-181.2565" y2="211.0726" stroke="#55a149" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-181.2565" y1="211.0726" x2="-243.5059" y2="225.9071" stroke="#57a147" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-243.5059" y1="225.9071" x2="-332.2338" y2="246.8515" stroke="#5aa145" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-332.2338" y1="246.8515" x2="-468.6708" y2="278.8050" stroke="#5ca143" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-468.6708" y1="278.8050" x2="-705.0256" y2="333.8150" stroke="#5fa241" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-705.0256" y1="333.8150" x2="-1213.4290" y2="451.6013" stroke="#62a23f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="-1213.4290" y1="451.6013" x2="-3094.6805" y2="886.1783" stroke="#65a23d" stroke-width="3.0" stroke-linecap="round" />
+<line x1="9578.1266" y1="-2037.6568" x2="2113.6541" y2="-314.7274" stroke="#6ca239" stroke-width="3.0" stroke-linecap="round" />
+<line x1="2113.6541" y1="-314.7274" x2="1259.4883" y2="-117.1550" stroke="#70a237" stroke-width="3.0" stroke-linecap="round" />
+<line x1="1259.4883" y1="-117.1550" x2="929.8925" y2="-40.6294" stroke="#73a234" stroke-width="3.0" stroke-linecap="round" />
+<line x1="929.8925" y1="-40.6294" x2="755.3284" y2="0.1220" stroke="#77a232" stroke-width="3.0" stroke-linecap="round" />
+<line x1="755.3284" y1="0.1220" x2="647.3506" y2="25.5083" stroke="#7ba22f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="647.3506" y1="25.5083" x2="574.0414" y2="42.8946" stroke="#80a22d" stroke-width="3.0" stroke-linecap="round" />
+<line x1="574.0414" y1="42.8946" x2="521.0718" y2="55.5875" stroke="#84a22a" stroke-width="3.0" stroke-linecap="round" />
+<line x1="521.0718" y1="55.5875" x2="481.0530" y2="65.2919" stroke="#89a227" stroke-width="3.0" stroke-linecap="round" />
+<line x1="481.0530" y1="65.2919" x2="449.7885" y2="72.9762" stroke="#8ea124" stroke-width="3.0" stroke-linecap="round" />
+<line x1="449.7885" y1="72.9762" x2="424.7179" y2="79.2312" stroke="#94a121" stroke-width="3.0" stroke-linecap="round" />
+<line x1="424.7179" y1="79.2312" x2="404.1907" y2="84.4378" stroke="#99a11e" stroke-width="3.0" stroke-linecap="round" />
+<line x1="404.1907" y1="84.4378" x2="387.0948" y2="88.8526" stroke="#a0a11a" stroke-width="3.0" stroke-linecap="round" />
+<line x1="387.0948" y1="88.8526" x2="372.6538" y2="92.6548" stroke="#a6a117" stroke-width="3.0" stroke-linecap="round" />
+<line x1="372.6538" y1="92.6548" x2="360.3088" y2="95.9732" stroke="#ada113" stroke-width="3.0" stroke-linecap="round" />
+<line x1="360.3088" y1="95.9732" x2="349.6477" y2="98.9031" stroke="#b4a10f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="349.6477" y1="98.9031" x2="340.3596" y2="101.5162" stroke="#bca00b" stroke-width="3.0" stroke-linecap="round" />
+<line x1="340.3596" y1="101.5162" x2="332.2059" y2="103.8674" stroke="#c4a007" stroke-width="3.0" stroke-linecap="round" />
+<line x1="332.2059" y1="103.8674" x2="325.0000" y2="106.0000" stroke="#cda002" stroke-width="3.0" stroke-linecap="round" />
+<line x1="190.0000" y1="46.0000" x2="184.7805" y2="46.6751" stroke="#bf0c3d" stroke-width="3.0" stroke-linecap="round" />
+<line x1="184.7805" y1="46.6751" x2="182.0693" y2="47.0505" stroke="#b71143" stroke-width="3.0" stroke-linecap="round" />
+<line x1="177.1204" y1="47.7629" x2="175.4705" y2="48.0072" stroke="#b01648" stroke-width="3.0" stroke-linecap="round" />
+<line x1="175.4705" y1="48.0072" x2="171.3116" y2="48.6652" stroke="#aa1a4d" stroke-width="3.0" stroke-linecap="round" />
+<line x1="171.3116" y1="48.6652" x2="169.2198" y2="49.0186" stroke="#a41f52" stroke-width="3.0" stroke-linecap="round" />
+<line x1="164.2957" y1="49.8861" x2="163.8448" y2="49.9673" stroke="#9e2357" stroke-width="3.0" stroke-linecap="round" />
+<line x1="163.8448" y1="49.9673" x2="160.4896" y2="50.6121" stroke="#99265b" stroke-width="3.0" stroke-linecap="round" />
+<line x1="160.4896" y1="50.6121" x2="157.3595" y2="51.2531" stroke="#932a5f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="157.3595" y1="51.2531" x2="156.4507" y2="51.4514" stroke="#8f2d62" stroke-width="3.0" stroke-linecap="round" />
+<line x1="151.5746" y1="52.5571" x2="149.1511" y2="53.1559" stroke="#863469" stroke-width="3.0" stroke-linecap="round" />
+<line x1="149.1511" y1="53.1559" x2="146.7611" y2="53.7842" stroke="#81376c" stroke-width="3.0" stroke-linecap="round" />
+<line x1="146.7611" y1="53.7842" x2="144.5237" y2="54.4097" stroke="#7e396f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="144.5237" y1="54.4097" x2="143.8439" y2="54.6118" stroke="#7a3c72" stroke-width="3.0" stroke-linecap="round" />
+<line x1="139.0772" y1="56.1198" x2="138.6261" y2="56.2714" stroke="#734176" stroke-width="3.0" stroke-linecap="round" />
+<line x1="138.6261" y1="56.2714" x2="136.9026" y2="56.8874" stroke="#704379" stroke-width="3.0" stroke-linecap="round" />
+<line x1="136.9026" y1="56.8874" x2="135.2874" y2="57.5013" stroke="#6c467b" stroke-width="3.0" stroke-linecap="round" />
+<line x1="135.2874" y1="57.5013" x2="133.7738" y2="58.1132" stroke="#69487d" stroke-width="3.0" stroke-linecap="round" />
+<line x1="133.7738" y1="58.1132" x2="132.3558" y2="58.7233" stroke="#674a7f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="132.3558" y1="58.7233" x2="131.6379" y2="59.0521" stroke="#644c80" stroke-width="3.0" stroke-linecap="round" />
+<line x1="127.1969" y1="61.3444" x2="126.5158" y2="61.7473" stroke="#5a5387" stroke-width="3.0" stroke-linecap="round" />
+<line x1="126.5158" y1="61.7473" x2="125.5665" y2="62.3473" stroke="#585588" stroke-width="3.0" stroke-linecap="round" />
+<line x1="125.5665" y1="62.3473" x2="124.6812" y2="62.9458" stroke="#555689" stroke-width="3.0" stroke-linecap="round" />
+<line x1="124.6812" y1="62.9458" x2="123.8566" y2="63.5429" stroke="#53588a" stroke-width="3.0" stroke-linecap="round" />
+<line x1="123.8566" y1="63.5429" x2="123.0896" y2="64.1385" stroke="#515a8c" stroke-width="3.0" stroke-linecap="round" />
+<line x1="123.0896" y1="64.1385" x2="122.3774" y2="64.7328" stroke="#4f5b8d" stroke-width="3.0" stroke-linecap="round" />
+<line x1="122.3774" y1="64.7328" x2="121.7174" y2="65.3258" stroke="#4e5c8e" stroke-width="3.0" stroke-linecap="round" />
+<line x1="121.7174" y1="65.3258" x2="121.1070" y2="65.9174" stroke="#4c5e8e" stroke-width="3.0" stroke-linecap="round" />
+<line x1="121.1070" y1="65.9174" x2="120.8565" y2="66.1800" stroke="#4a5f8f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="117.9494" y1="70.2239" x2="117.7620" y2="70.6061" stroke="#3f6894" stroke-width="3.0" stroke-linecap="round" />
+<line x1="117.7620" y1="70.6061" x2="117.5099" y2="71.1869" stroke="#3e6995" stroke-width="3.0" stroke-linecap="round" />
+<line x1="117.5099" y1="71.1869" x2="117.2898" y2="71.7665" stroke="#3d6a95" stroke-width="3.0" stroke-linecap="round" />
+<line x1="117.2898" y1="71.7665" x2="117.1004" y2="72.3450" stroke="#3c6b96" stroke-width="3.0" stroke-linecap="round" />
+<line x1="117.1004" y1="72.3450" x2="116.9407" y2="72.9224" stroke="#3a6c96" stroke-width="3.0" stroke-linecap="round" />
+<line x1="116.9407" y1="72.9224" x2="116.8094" y2="73.4986" stroke="#396d96" stroke-width="3.0" stroke-linecap="round" />
+<line x1="116.8094" y1="73.4986" x2="116.7055" y2="74.0737" stroke="#386e97" stroke-width="3.0" stroke-linecap="round" />
+<line x1="116.7055" y1="74.0737" x2="116.6281" y2="74.6478" stroke="#376f97" stroke-width="3.0" stroke-linecap="round" />
+<line x1="116.6281" y1="74.6478" x2="116.5762" y2="75.2207" stroke="#366f97" stroke-width="3.0" stroke-linecap="round" />
+<line x1="116.5762" y1="75.2207" x2="116.5489" y2="75.7925" stroke="#357098" stroke-width="3.0" stroke-linecap="round" />
+<line x1="116.5489" y1="75.7925" x2="116.5454" y2="76.3632" stroke="#347198" stroke-width="3.0" stroke-linecap="round" />
+<line x1="116.5454" y1="76.3632" x2="116.5649" y2="76.9327" stroke="#337298" stroke-width="3.0" stroke-linecap="round" />
+<line x1="116.5649" y1="76.9327" x2="116.6066" y2="77.5012" stroke="#327398" stroke-width="3.0" stroke-linecap="round" />
+<line x1="116.6066" y1="77.5012" x2="116.6621" y2="77.9986" stroke="#317498" stroke-width="3.0" stroke-linecap="round" />
+<line x1="117.9759" y1="82.8075" x2="118.1067" y2="83.1237" stroke="#2a7a99" stroke-width="3.0" stroke-linecap="round" />
+<line x1="118.1067" y1="83.1237" x2="118.3531" y2="83.6796" stroke="#297b99" stroke-width="3.0" stroke-linecap="round" />
+<line x1="118.3531" y1="83.6796" x2="118.6152" y2="84.2343" stroke="#297c99" stroke-width="3.0" stroke-linecap="round" />
+<line x1="118.6152" y1="84.2343" x2="118.8926" y2="84.7877" stroke="#287c99" stroke-width="3.0" stroke-linecap="round" />
+<line x1="118.8926" y1="84.7877" x2="119.1850" y2="85.3400" stroke="#287d99" stroke-width="3.0" stroke-linecap="round" />
+<line x1="119.1850" y1="85.3400" x2="119.4920" y2="85.8910" stroke="#277e99" stroke-width="3.0" stroke-linecap="round" />
+<line x1="119.4920" y1="85.8910" x2="119.8132" y2="86.4408" stroke="#267e98" stroke-width="3.0" stroke-linecap="round" />
+<line x1="119.8132" y1="86.4408" x2="120.1484" y2="86.9893" stroke="#267f98" stroke-width="3.0" stroke-linecap="round" />
+<line x1="120.1484" y1="86.9893" x2="120.4973" y2="87.5365" stroke="#258098" stroke-width="3.0" stroke-linecap="round" />
+<line x1="120.4973" y1="87.5365" x2="120.8596" y2="88.0825" stroke="#258098" stroke-width="3.0" stroke-linecap="round" />
+<line x1="120.8596" y1="88.0825" x2="121.2349" y2="88.6271" stroke="#248198" stroke-width="3.0" stroke-linecap="round" />
+<line x1="121.2349" y1="88.6271" x2="121.6232" y2="89.1704" stroke="#248198" stroke-width="3.0" stroke-linecap="round" />
+<line x1="121.6232" y1="89.1704" x2="122.0088" y2="89.6918" stroke="#238297" stroke-width="3.0" stroke-linecap="round" />
+<line x1="125.2182" y1="93.5231" x2="125.6599" y2="93.9968" stroke="#208695" stroke-width="3.0" stroke-linecap="round" />
+<line x1="125.6599" y1="93.9968" x2="126.1654" y2="94.5256" stroke="#208795" stroke-width="3.0" stroke-linecap="round" />
+<line x1="126.1654" y1="94.5256" x2="126.6817" y2="95.0529" stroke="#208795" stroke-width="3.0" stroke-linecap="round" />
+<line x1="126.6817" y1="95.0529" x2="127.2087" y2="95.5786" stroke="#1f8894" stroke-width="3.0" stroke-linecap="round" />
+<line x1="127.2087" y1="95.5786" x2="127.7464" y2="96.1026" stroke="#1f8894" stroke-width="3.0" stroke-linecap="round" />
+<line x1="127.7464" y1="96.1026" x2="128.2945" y2="96.6249" stroke="#1f8894" stroke-width="3.0" stroke-linecap="round" />
+<line x1="128.2945" y1="96.6249" x2="128.8529" y2="97.1456" stroke="#1f8993" stroke-width="3.0" stroke-linecap="round" />
+<line x1="128.8529" y1="97.1456" x2="129.4217" y2="97.6645" stroke="#1e8993" stroke-width="3.0" stroke-linecap="round" />
+<line x1="129.4217" y1="97.6645" x2="130.0007" y2="98.1817" stroke="#1e8a92" stroke-width="3.0" stroke-linecap="round" />
+<line x1="130.0007" y1="98.1817" x2="130.5899" y2="98.6971" stroke="#1e8a92" stroke-width="3.0" stroke-linecap="round" />
+<line x1="130.5899" y1="98.6971" x2="130.9984" y2="99.0471" stroke="#1e8b92" stroke-width="3.0" stroke-linecap="round" />
+<line x1="134.8963" y1="102.1774" x2="134.9935" y2="102.2513" stroke="#1d8d8f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="134.9935" y1="102.2513" x2="135.6620" y2="102.7510" stroke="#1d8e8e" stroke-width="3.0" stroke-linecap="round" />
+<line x1="135.6620" y1="102.7510" x2="136.3404" y2="103.2485" stroke="#1d8e8e" stroke-width="3.0" stroke-linecap="round" />
+<line x1="136.3404" y1="103.2485" x2="137.0286" y2="103.7437" stroke="#1d8e8d" stroke-width="3.0" stroke-linecap="round" />
+<line x1="137.0286" y1="103.7437" x2="137.7267" y2="104.2368" stroke="#1d8f8d" stroke-width="3.0" stroke-linecap="round" />
+<line x1="137.7267" y1="104.2368" x2="138.4346" y2="104.7275" stroke="#1d8f8c" stroke-width="3.0" stroke-linecap="round" />
+<line x1="138.4346" y1="104.7275" x2="139.1523" y2="105.2159" stroke="#1d908c" stroke-width="3.0" stroke-linecap="round" />
+<line x1="139.1523" y1="105.2159" x2="139.8799" y2="105.7018" stroke="#1d908b" stroke-width="3.0" stroke-linecap="round" />
+<line x1="139.8799" y1="105.7018" x2="140.6175" y2="106.1853" stroke="#1d908b" stroke-width="3.0" stroke-linecap="round" />
+<line x1="140.6175" y1="106.1853" x2="141.3650" y2="106.6662" stroke="#1d918a" stroke-width="3.0" stroke-linecap="round" />
+<line x1="141.3650" y1="106.6662" x2="141.4701" y2="106.7326" stroke="#1d918a" stroke-width="3.0" stroke-linecap="round" />
+<line x1="145.7505" y1="109.3159" x2="146.0629" y2="109.4953" stroke="#1d9387" stroke-width="3.0" stroke-linecap="round" />
+<line x1="146.0629" y1="109.4953" x2="146.8821" y2="109.9568" stroke="#1d9386" stroke-width="3.0" stroke-linecap="round" />
+<line x1="146.8821" y1="109.9568" x2="147.7119" y2="110.4152" stroke="#1d9485" stroke-width="3.0" stroke-linecap="round" />
+<line x1="147.7119" y1="110.4152" x2="148.5524" y2="110.8704" stroke="#1e9485" stroke-width="3.0" stroke-linecap="round" />
+<line x1="148.5524" y1="110.8704" x2="149.4037" y2="111.3224" stroke="#1e9484" stroke-width="3.0" stroke-linecap="round" />
+<line x1="149.4037" y1="111.3224" x2="150.2659" y2="111.7711" stroke="#1e9584" stroke-width="3.0" stroke-linecap="round" />
+<line x1="150.2659" y1="111.7711" x2="151.1393" y2="112.2163" stroke="#1e9583" stroke-width="3.0" stroke-linecap="round" />
+<line x1="151.1393" y1="112.2163" x2="152.0239" y2="112.6581" stroke="#1e9582" stroke-width="3.0" stroke-linecap="round" />
+<line x1="152.0239" y1="112.6581" x2="152.8241" y2="113.0493" stroke="#1f9682" stroke-width="3.0" stroke-linecap="round" />
+<line x1="157.3670" y1="115.1370" x2="157.5779" y2="115.2294" stroke="#20977e" stroke-width="3.0" stroke-linecap="round" />
+<line x1="157.5779" y1="115.2294" x2="158.5465" y2="115.6437" stroke="#20977d" stroke-width="3.0" stroke-linecap="round" />
+<line x1="158.5465" y1="115.6437" x2="159.5279" y2="116.0537" stroke="#21987c" stroke-width="3.0" stroke-linecap="round" />
+<line x1="159.5279" y1="116.0537" x2="160.5224" y2="116.4591" stroke="#21987c" stroke-width="3.0" stroke-linecap="round" />
+<line x1="160.5224" y1="116.4591" x2="161.5304" y2="116.8599" stroke="#22987b" stroke-width="3.0" stroke-linecap="round" />
+<line x1="161.5304" y1="116.8599" x2="162.5519" y2="117.2558" stroke="#22997a" stroke-width="3.0" stroke-linecap="round" />
+<line x1="162.5519" y1="117.2558" x2="163.5875" y2="117.6469" stroke="#229979" stroke-width="3.0" stroke-linecap="round" />
+<line x1="163.5875" y1="117.6469" x2="164.6373" y2="118.0328" stroke="#239979" stroke-width="3.0" stroke-linecap="round" />
+<line x1="164.6373" y1="118.0328" x2="164.8001" y2="118.0911" stroke="#239978" stroke-width="3.0" stroke-linecap="round" />
+<line x1="169.5350" y1="119.6967" x2="170.1126" y2="119.8803" stroke="#269a74" stroke-width="3.0" stroke-linecap="round" />
+<line x1="170.1126" y1="119.8803" x2="171.2556" y2="120.2320" stroke="#269b73" stroke-width="3.0" stroke-linecap="round" />
+<line x1="171.2556" y1="120.2320" x2="172.4156" y2="120.5774" stroke="#279b73" stroke-width="3.0" stroke-linecap="round" />
+<line x1="172.4156" y1="120.5774" x2="173.5930" y2="120.9161" stroke="#289b72" stroke-width="3.0" stroke-linecap="round" />
+<line x1="173.5930" y1="120.9161" x2="174.7884" y2="121.2480" stroke="#289b71" stroke-width="3.0" stroke-linecap="round" />
+<line x1="174.7884" y1="121.2480" x2="176.0023" y2="121.5729" stroke="#299c70" stroke-width="3.0" stroke-linecap="round" />
+<line x1="176.0023" y1="121.5729" x2="177.2276" y2="121.8885" stroke="#2a9c6f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="182.0969" y1="123.0229" x2="182.3689" y2="123.0820" stroke="#2d9d6b" stroke-width="3.0" stroke-linecap="round" />
+<line x1="182.3689" y1="123.0820" x2="183.7062" y2="123.3587" stroke="#2e9d6a" stroke-width="3.0" stroke-linecap="round" />
+<line x1="183.7062" y1="123.3587" x2="185.0665" y2="123.6263" stroke="#2f9d69" stroke-width="3.0" stroke-linecap="round" />
+<line x1="185.0665" y1="123.6263" x2="186.4506" y2="123.8845" stroke="#309d68" stroke-width="3.0" stroke-linecap="round" />
+<line x1="186.4506" y1="123.8845" x2="187.8593" y2="124.1328" stroke="#319e67" stroke-width="3.0" stroke-linecap="round" />
+<line x1="187.8593" y1="124.1328" x2="189.2935" y2="124.3709" stroke="#329e66" stroke-width="3.0" stroke-linecap="round" />
+<line x1="189.2935" y1="124.3709" x2="189.9629" y2="124.4752" stroke="#339e65" stroke-width="3.0" stroke-linecap="round" />
+<line x1="194.9150" y1="125.1639" x2="195.3049" y2="125.2125" stroke="#379f61" stroke-width="3.0" stroke-linecap="round" />
+<line x1="195.3049" y1="125.2125" x2="196.8817" y2="125.3928" stroke="#389f60" stroke-width="3.0" stroke-linecap="round" />
+<line x1="196.8817" y1="125.3928" x2="198.4906" y2="125.5600" stroke="#399f5f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="198.4906" y1="125.5600" x2="200.1328" y2="125.7136" stroke="#3b9f5d" stroke-width="3.0" stroke-linecap="round" />
+<line x1="200.1328" y1="125.7136" x2="201.8097" y2="125.8529" stroke="#3c9f5c" stroke-width="3.0" stroke-linecap="round" />
+<line x1="201.8097" y1="125.8529" x2="202.8773" y2="125.9304" stroke="#3da05b" stroke-width="3.0" stroke-linecap="round" />
+<line x1="207.8691" y1="126.2117" x2="208.8954" y2="126.2539" stroke="#42a057" stroke-width="3.0" stroke-linecap="round" />
+<line x1="208.8954" y1="126.2539" x2="210.7701" y2="126.3113" stroke="#44a055" stroke-width="3.0" stroke-linecap="round" />
+<line x1="210.7701" y1="126.3113" x2="212.6899" y2="126.3499" stroke="#46a054" stroke-width="3.0" stroke-linecap="round" />
+<line x1="212.6899" y1="126.3499" x2="214.6571" y2="126.3688" stroke="#48a052" stroke-width="3.0" stroke-linecap="round" />
+<line x1="214.6571" y1="126.3688" x2="215.8669" y2="126.3676" stroke="#4aa151" stroke-width="3.0" stroke-linecap="round" />
+<line x1="220.8662" y1="126.2964" x2="220.8667" y2="126.2964" stroke="#4ea14e" stroke-width="3.0" stroke-linecap="round" />
+<line x1="220.8667" y1="126.2964" x2="223.0481" y2="126.2255" stroke="#50a14c" stroke-width="3.0" stroke-linecap="round" />
+<line x1="223.0481" y1="126.2255" x2="225.2901" y2="126.1290" stroke="#52a14a" stroke-width="3.0" stroke-linecap="round" />
+<line x1="225.2901" y1="126.1290" x2="227.5962" y2="126.0056" stroke="#55a149" stroke-width="3.0" stroke-linecap="round" />
+<line x1="227.5962" y1="126.0056" x2="228.8571" y2="125.9249" stroke="#57a147" stroke-width="3.0" stroke-linecap="round" />
+<line x1="233.8430" y1="125.5505" x2="234.9351" y2="125.4578" stroke="#5ca143" stroke-width="3.0" stroke-linecap="round" />
+<line x1="234.9351" y1="125.4578" x2="237.5353" y2="125.2101" stroke="#5fa241" stroke-width="3.0" stroke-linecap="round" />
+<line x1="237.5353" y1="125.2101" x2="240.2202" y2="124.9265" stroke="#62a23f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="240.2202" y1="124.9265" x2="241.8017" y2="124.7432" stroke="#65a23d" stroke-width="3.0" stroke-linecap="round" />
+<line x1="246.7627" y1="124.1201" x2="248.8372" y2="123.8371" stroke="#6ca239" stroke-width="3.0" stroke-linecap="round" />
+<line x1="248.8372" y1="123.8371" x2="251.9176" y2="123.3856" stroke="#70a237" stroke-width="3.0" stroke-linecap="round" />
+<line x1="251.9176" y1="123.3856" x2="254.6769" y2="122.9533" stroke="#73a234" stroke-width="3.0" stroke-linecap="round" />
+<line x1="259.6075" y1="122.1240" x2="261.8855" y2="121.7216" stroke="#7ba22f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="261.8855" y1="121.7216" x2="265.4797" y2="121.0512" stroke="#80a22d" stroke-width="3.0" stroke-linecap="round" />
+<line x1="265.4797" y1="121.0512" x2="267.4723" y2="120.6601" stroke="#84a22a" stroke-width="3.0" stroke-linecap="round" />
+<line x1="272.3727" y1="119.6676" x2="273.1375" y2="119.5101" stroke="#89a227" stroke-width="3.0" stroke-linecap="round" />
+<line x1="273.1375" y1="119.5101" x2="277.2256" y2="118.6289" stroke="#8ea124" stroke-width="3.0" stroke-linecap="round" />
+<line x1="277.2256" y1="118.6289" x2="280.1887" y2="117.9621" stroke="#94a121" stroke-width="3.0" stroke-linecap="round" />
+<line x1="285.0594" y1="116.8328" x2="285.9922" y2="116.6141" stroke="#99a11e" stroke-width="3.0" stroke-linecap="round" />
+<line x1="285.9922" y1="116.6141" x2="290.7041" y2="115.4662" stroke="#a0a11a" stroke-width="3.0" stroke-linecap="round" />
+<line x1="290.7041" y1="115.4662" x2="292.8295" y2="114.9291" stroke="#a6a117" stroke-width="3.0" stroke-linecap="round" />
+<line x1="297.6728" y1="113.6872" x2="300.8845" y2="112.8468" stroke="#ada113" stroke-width="3.0" stroke-linecap="round" />
+<line x1="300.8845" y1="112.8468" x2="305.4023" y2="111.6248" stroke="#b4a10f" stroke-width="3.0" stroke-linecap="round" />
+<line x1="310.2204" y1="110.2885" x2="312.2359" y2="109.7260" stroke="#bca00b" stroke-width="3.0" stroke-linecap="round" />
+<line x1="312.2359" y1="109.7260" x2="317.9132" y2="108.0930" stroke="#c4a007" stroke-width="3.0" stroke-linecap="round" />
+<line x1="322.7088" y1="106.6781" x2="325.0000" y2="106.0000" stroke="#cda002" stroke-width="3.0" stroke-linecap="round" />
+<circle cx="190.00" cy="46.00" r="6.0" fill="#c30a3a" />
+<circle cx="190.00" cy="46.00" r="2.4000000000000004" fill="white" />
+<g transform="translate(160.08,6.06) scale(0.8)" fill="#c30a3a"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="34.678235pt" height="33.70032pt" viewBox="0 0 34.678235 33.70032" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-03-28T15:31:32.467253</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 33.70032 
+L 34.678235 33.70032 
+L 34.678235 0 
+L 0 0 
+L 0 33.70032 
+z
+" style="fill: none"/>
+  </g>
+  <g id="text_1">
+   <!-- ${\color[rgb]{0.765,0.039,0.227}\hat{\mathbf{P}}_{0}}$ -->
+   <g transform="translate(7.2 23.012377) scale(0.18 -0.18)">
+    <defs>
+     <path id="LMRoman17-Regular-5e" d="M 2438 3376 
+L 1466 4408 
+L 493 3376 
+L 576 3287 
+L 1466 3975 
+L 2355 3287 
+L 2438 3376 
+z
+" transform="scale(0.015625)"/>
+     <path id="LMRoman12-Bold-50" d="M 4518 3128 
+C 4518 3812 3910 4352 2854 4352 
+L 243 4352 
+L 243 4078 
+L 922 4078 
+L 922 267 
+L 243 267 
+L 243 0 
+C 429 0 1114 0 1344 0 
+C 1574 0 2259 0 2445 0 
+L 2445 267 
+L 1766 267 
+L 1766 1934 
+L 2854 1934 
+C 3923 1934 4518 2474 4518 3128 
+z
+M 3616 3127 
+C 3616 2709 3616 2176 2624 2176 
+L 1734 2176 
+L 1734 4078 
+L 2624 4078 
+C 3616 4078 3616 3558 3616 3127 
+z
+" transform="scale(0.015625)"/>
+     <path id="LMRoman17-Regular-30" d="M 2688 2025 
+C 2688 2416 2682 3080 2413 3591 
+C 2176 4039 1798 4198 1466 4198 
+C 1158 4198 768 4058 525 3597 
+C 269 3118 243 2524 243 2025 
+C 243 1661 250 1106 448 619 
+C 723 -39 1216 -128 1466 -128 
+C 1760 -128 2208 -7 2470 600 
+C 2662 1042 2688 1559 2688 2025 
+z
+M 2278 2096 
+C 2278 1680 2278 1169 2202 792 
+C 2067 95 1690 -26 1466 -26 
+C 1056 -26 813 325 723 812 
+C 653 1188 653 1738 653 2096 
+C 653 2588 653 2997 736 3387 
+C 858 3929 1216 4096 1466 4096 
+C 1728 4096 2067 3923 2189 3400 
+C 2272 3036 2278 2607 2278 2096 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#LMRoman17-Regular-5e" transform="translate(15.435981 24.213688) scale(0.996264)"/>
+    <use xlink:href="#LMRoman12-Bold-50" transform="scale(0.996264)"/>
+    <use xlink:href="#LMRoman17-Regular-30" transform="translate(76.56291 -14.943915) scale(0.737241)"/>
+   </g>
+  </g>
+ </g>
+</svg>
+</g>
+<rect x="193.06" y="13.44" width="26.86" height="21.56" rx="5.0" ry="5.0" fill="none" stroke="#c30a3a" stroke-width="1.2" />
+<g transform="translate(190.06,10.44) scale(0.8)" fill="#c30a3a"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="30.81417pt" height="25.840208pt" viewBox="0 0 30.81417 25.840208" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-03-28T15:31:32.471842</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 25.840208 
+L 30.81417 25.840208 
+L 30.81417 0 
+L 0 0 
+L 0 25.840208 
+z
+" style="fill: none"/>
+  </g>
+  <g id="text_1">
+   <!-- $\color[rgb]{0.765,0.039,0.227}-1$ -->
+   <g transform="translate(7.2 16.121896) scale(0.13 -0.13)">
+    <defs>
+     <path id="LMMathSymbols10-Regular-0" d="M 4442 1600 
+C 4442 1728 4320 1728 4230 1728 
+L 742 1728 
+C 653 1728 531 1728 531 1600 
+C 531 1472 653 1472 742 1472 
+L 4230 1472 
+C 4320 1472 4442 1472 4442 1600 
+z
+" transform="scale(0.015625)"/>
+     <path id="LMRoman17-Regular-31" d="M 2458 0 
+L 2458 160 
+L 2266 160 
+C 1715 160 1702 230 1702 458 
+L 1702 4058 
+C 1702 4192 1696 4192 1606 4192 
+C 1357 3916 979 3827 621 3827 
+C 602 3827 570 3827 563 3808 
+C 557 3795 557 3782 557 3648 
+C 755 3648 1088 3686 1344 3839 
+L 1344 461 
+C 1344 236 1331 160 781 160 
+L 589 160 
+L 589 0 
+L 1523 0 
+L 2458 0 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#LMMathSymbols10-Regular-0" transform="scale(0.996264)"/>
+    <use xlink:href="#LMRoman17-Regular-31" transform="translate(77.487468 0) scale(0.996264)"/>
+   </g>
+  </g>
+ </g>
+</svg>
+</g>
+<circle cx="70.00" cy="61.00" r="6.0" fill="#1482c8" />
+<circle cx="70.00" cy="61.00" r="2.4000000000000004" fill="white" />
+<g transform="translate(45.45,21.06) scale(0.8)" fill="#1482c8"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="34.678235pt" height="33.70032pt" viewBox="0 0 34.678235 33.70032" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-03-28T15:31:32.475125</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 33.70032 
+L 34.678235 33.70032 
+L 34.678235 0 
+L 0 0 
+L 0 33.70032 
+z
+" style="fill: none"/>
+  </g>
+  <g id="text_1">
+   <!-- ${\color[rgb]{0.078,0.510,0.784}\hat{\mathbf{P}}_{1}}$ -->
+   <g transform="translate(7.2 23.012377) scale(0.18 -0.18)">
+    <defs>
+     <path id="LMRoman17-Regular-5e" d="M 2438 3376 
+L 1466 4408 
+L 493 3376 
+L 576 3287 
+L 1466 3975 
+L 2355 3287 
+L 2438 3376 
+z
+" transform="scale(0.015625)"/>
+     <path id="LMRoman12-Bold-50" d="M 4518 3128 
+C 4518 3812 3910 4352 2854 4352 
+L 243 4352 
+L 243 4078 
+L 922 4078 
+L 922 267 
+L 243 267 
+L 243 0 
+C 429 0 1114 0 1344 0 
+C 1574 0 2259 0 2445 0 
+L 2445 267 
+L 1766 267 
+L 1766 1934 
+L 2854 1934 
+C 3923 1934 4518 2474 4518 3128 
+z
+M 3616 3127 
+C 3616 2709 3616 2176 2624 2176 
+L 1734 2176 
+L 1734 4078 
+L 2624 4078 
+C 3616 4078 3616 3558 3616 3127 
+z
+" transform="scale(0.015625)"/>
+     <path id="LMRoman17-Regular-31" d="M 2458 0 
+L 2458 160 
+L 2266 160 
+C 1715 160 1702 230 1702 458 
+L 1702 4058 
+C 1702 4192 1696 4192 1606 4192 
+C 1357 3916 979 3827 621 3827 
+C 602 3827 570 3827 563 3808 
+C 557 3795 557 3782 557 3648 
+C 755 3648 1088 3686 1344 3839 
+L 1344 461 
+C 1344 236 1331 160 781 160 
+L 589 160 
+L 589 0 
+L 1523 0 
+L 2458 0 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#LMRoman17-Regular-5e" transform="translate(15.435981 24.213688) scale(0.996264)"/>
+    <use xlink:href="#LMRoman12-Bold-50" transform="scale(0.996264)"/>
+    <use xlink:href="#LMRoman17-Regular-31" transform="translate(76.56291 -14.943915) scale(0.737241)"/>
+   </g>
+  </g>
+ </g>
+</svg>
+</g>
+<rect x="78.43" y="28.44" width="16.12" height="21.56" rx="5.0" ry="5.0" fill="none" stroke="#1482c8" stroke-width="1.2" />
+<g transform="translate(75.43,25.44) scale(0.8)" fill="#1482c8"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="20.7408pt" height="25.840208pt" viewBox="0 0 20.7408 25.840208" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-03-28T15:31:32.478810</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 25.840208 
+L 20.7408 25.840208 
+L 20.7408 0 
+L 0 0 
+L 0 25.840208 
+z
+" style="fill: none"/>
+  </g>
+  <g id="text_1">
+   <!-- $\color[rgb]{0.078,0.510,0.784}3$ -->
+   <g transform="translate(7.2 16.121896) scale(0.13 -0.13)">
+    <defs>
+     <path id="LMRoman17-Regular-33" d="M 2720 1085 
+C 2720 1707 2208 2157 1600 2227 
+C 2086 2328 2554 2756 2554 3329 
+C 2554 3820 2048 4179 1472 4179 
+C 890 4179 378 3829 378 3329 
+C 378 3110 544 3072 627 3072 
+C 762 3072 877 3155 877 3321 
+C 877 3486 762 3569 627 3569 
+C 602 3569 570 3569 544 3557 
+C 730 3959 1235 4032 1459 4032 
+C 1683 4032 2106 3925 2106 3320 
+C 2106 3143 2080 2828 1862 2550 
+C 1670 2304 1453 2304 1242 2284 
+C 1210 2284 1062 2269 1037 2269 
+C 992 2263 966 2257 966 2208 
+C 966 2163 973 2157 1101 2157 
+L 1414 2157 
+C 1984 2157 2234 1662 2234 1090 
+C 2234 320 1824 25 1453 25 
+C 1114 25 563 194 390 693 
+C 422 680 454 680 486 680 
+C 640 680 755 782 755 948 
+C 755 1133 614 1216 486 1216 
+C 378 1216 211 1165 211 926 
+C 211 335 787 -128 1466 -128 
+C 2176 -128 2720 430 2720 1085 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#LMRoman17-Regular-33" transform="scale(0.996264)"/>
+   </g>
+  </g>
+ </g>
+</svg>
+</g>
+<circle cx="175.00" cy="151.00" r="6.0" fill="#00a86e" />
+<circle cx="175.00" cy="151.00" r="2.4000000000000004" fill="white" />
+<g transform="translate(150.45,159.00) scale(0.8)" fill="#00a86e"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="34.678235pt" height="33.70032pt" viewBox="0 0 34.678235 33.70032" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-03-28T15:31:32.481977</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 33.70032 
+L 34.678235 33.70032 
+L 34.678235 0 
+L 0 0 
+L 0 33.70032 
+z
+" style="fill: none"/>
+  </g>
+  <g id="text_1">
+   <!-- ${\color[rgb]{0.000,0.659,0.431}\hat{\mathbf{P}}_{2}}$ -->
+   <g transform="translate(7.2 23.012377) scale(0.18 -0.18)">
+    <defs>
+     <path id="LMRoman17-Regular-5e" d="M 2438 3376 
+L 1466 4408 
+L 493 3376 
+L 576 3287 
+L 1466 3975 
+L 2355 3287 
+L 2438 3376 
+z
+" transform="scale(0.015625)"/>
+     <path id="LMRoman12-Bold-50" d="M 4518 3128 
+C 4518 3812 3910 4352 2854 4352 
+L 243 4352 
+L 243 4078 
+L 922 4078 
+L 922 267 
+L 243 267 
+L 243 0 
+C 429 0 1114 0 1344 0 
+C 1574 0 2259 0 2445 0 
+L 2445 267 
+L 1766 267 
+L 1766 1934 
+L 2854 1934 
+C 3923 1934 4518 2474 4518 3128 
+z
+M 3616 3127 
+C 3616 2709 3616 2176 2624 2176 
+L 1734 2176 
+L 1734 4078 
+L 2624 4078 
+C 3616 4078 3616 3558 3616 3127 
+z
+" transform="scale(0.015625)"/>
+     <path id="LMRoman17-Regular-32" d="M 2669 989 
+L 2554 989 
+C 2490 536 2438 459 2413 420 
+C 2381 369 1920 369 1830 369 
+L 602 369 
+L 1824 1597 
+C 2214 1967 2669 2402 2669 3035 
+C 2669 3790 2067 4224 1395 4224 
+C 691 4224 262 3604 262 3030 
+C 262 2780 448 2748 525 2748 
+C 589 2748 781 2787 781 3010 
+C 781 3207 614 3264 525 3264 
+C 486 3264 448 3258 422 3245 
+C 544 3790 915 4058 1306 4058 
+C 1862 4058 2227 3617 2227 3035 
+C 2227 2479 1901 2000 1536 1584 
+L 262 146 
+L 262 0 
+L 2515 0 
+L 2669 989 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#LMRoman17-Regular-5e" transform="translate(15.435981 24.213688) scale(0.996264)"/>
+    <use xlink:href="#LMRoman12-Bold-50" transform="scale(0.996264)"/>
+    <use xlink:href="#LMRoman17-Regular-32" transform="translate(76.56291 -14.943915) scale(0.737241)"/>
+   </g>
+  </g>
+ </g>
+</svg>
+</g>
+<rect x="183.43" y="166.38" width="16.12" height="21.56" rx="5.0" ry="5.0" fill="none" stroke="#00a86e" stroke-width="1.2" />
+<g transform="translate(180.43,163.38) scale(0.8)" fill="#00a86e"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="20.7408pt" height="25.840208pt" viewBox="0 0 20.7408 25.840208" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-03-28T15:31:32.485350</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 25.840208 
+L 20.7408 25.840208 
+L 20.7408 0 
+L 0 0 
+L 0 25.840208 
+z
+" style="fill: none"/>
+  </g>
+  <g id="text_1">
+   <!-- $\color[rgb]{0.000,0.659,0.431}3$ -->
+   <g transform="translate(7.2 16.121896) scale(0.13 -0.13)">
+    <defs>
+     <path id="LMRoman17-Regular-33" d="M 2720 1085 
+C 2720 1707 2208 2157 1600 2227 
+C 2086 2328 2554 2756 2554 3329 
+C 2554 3820 2048 4179 1472 4179 
+C 890 4179 378 3829 378 3329 
+C 378 3110 544 3072 627 3072 
+C 762 3072 877 3155 877 3321 
+C 877 3486 762 3569 627 3569 
+C 602 3569 570 3569 544 3557 
+C 730 3959 1235 4032 1459 4032 
+C 1683 4032 2106 3925 2106 3320 
+C 2106 3143 2080 2828 1862 2550 
+C 1670 2304 1453 2304 1242 2284 
+C 1210 2284 1062 2269 1037 2269 
+C 992 2263 966 2257 966 2208 
+C 966 2163 973 2157 1101 2157 
+L 1414 2157 
+C 1984 2157 2234 1662 2234 1090 
+C 2234 320 1824 25 1453 25 
+C 1114 25 563 194 390 693 
+C 422 680 454 680 486 680 
+C 640 680 755 782 755 948 
+C 755 1133 614 1216 486 1216 
+C 378 1216 211 1165 211 926 
+C 211 335 787 -128 1466 -128 
+C 2176 -128 2720 430 2720 1085 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#LMRoman17-Regular-33" transform="scale(0.996264)"/>
+   </g>
+  </g>
+ </g>
+</svg>
+</g>
+<circle cx="325.00" cy="106.00" r="6.0" fill="#d2a000" />
+<circle cx="325.00" cy="106.00" r="2.4000000000000004" fill="white" />
+<g transform="translate(295.08,114.00) scale(0.8)" fill="#d2a000"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="34.678235pt" height="33.70032pt" viewBox="0 0 34.678235 33.70032" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-03-28T15:31:32.512999</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 33.70032 
+L 34.678235 33.70032 
+L 34.678235 0 
+L 0 0 
+L 0 33.70032 
+z
+" style="fill: none"/>
+  </g>
+  <g id="text_1">
+   <!-- ${\color[rgb]{0.824,0.627,0.000}\hat{\mathbf{P}}_{3}}$ -->
+   <g transform="translate(7.2 23.012377) scale(0.18 -0.18)">
+    <defs>
+     <path id="LMRoman17-Regular-5e" d="M 2438 3376 
+L 1466 4408 
+L 493 3376 
+L 576 3287 
+L 1466 3975 
+L 2355 3287 
+L 2438 3376 
+z
+" transform="scale(0.015625)"/>
+     <path id="LMRoman12-Bold-50" d="M 4518 3128 
+C 4518 3812 3910 4352 2854 4352 
+L 243 4352 
+L 243 4078 
+L 922 4078 
+L 922 267 
+L 243 267 
+L 243 0 
+C 429 0 1114 0 1344 0 
+C 1574 0 2259 0 2445 0 
+L 2445 267 
+L 1766 267 
+L 1766 1934 
+L 2854 1934 
+C 3923 1934 4518 2474 4518 3128 
+z
+M 3616 3127 
+C 3616 2709 3616 2176 2624 2176 
+L 1734 2176 
+L 1734 4078 
+L 2624 4078 
+C 3616 4078 3616 3558 3616 3127 
+z
+" transform="scale(0.015625)"/>
+     <path id="LMRoman17-Regular-33" d="M 2720 1085 
+C 2720 1707 2208 2157 1600 2227 
+C 2086 2328 2554 2756 2554 3329 
+C 2554 3820 2048 4179 1472 4179 
+C 890 4179 378 3829 378 3329 
+C 378 3110 544 3072 627 3072 
+C 762 3072 877 3155 877 3321 
+C 877 3486 762 3569 627 3569 
+C 602 3569 570 3569 544 3557 
+C 730 3959 1235 4032 1459 4032 
+C 1683 4032 2106 3925 2106 3320 
+C 2106 3143 2080 2828 1862 2550 
+C 1670 2304 1453 2304 1242 2284 
+C 1210 2284 1062 2269 1037 2269 
+C 992 2263 966 2257 966 2208 
+C 966 2163 973 2157 1101 2157 
+L 1414 2157 
+C 1984 2157 2234 1662 2234 1090 
+C 2234 320 1824 25 1453 25 
+C 1114 25 563 194 390 693 
+C 422 680 454 680 486 680 
+C 640 680 755 782 755 948 
+C 755 1133 614 1216 486 1216 
+C 378 1216 211 1165 211 926 
+C 211 335 787 -128 1466 -128 
+C 2176 -128 2720 430 2720 1085 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#LMRoman17-Regular-5e" transform="translate(15.435981 24.213688) scale(0.996264)"/>
+    <use xlink:href="#LMRoman12-Bold-50" transform="scale(0.996264)"/>
+    <use xlink:href="#LMRoman17-Regular-33" transform="translate(76.56291 -14.943915) scale(0.737241)"/>
+   </g>
+  </g>
+ </g>
+</svg>
+</g>
+<rect x="328.06" y="121.38" width="26.86" height="21.56" rx="5.0" ry="5.0" fill="none" stroke="#d2a000" stroke-width="1.2" />
+<g transform="translate(325.06,118.38) scale(0.8)" fill="#d2a000"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="30.81417pt" height="25.840208pt" viewBox="0 0 30.81417 25.840208" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-03-28T15:31:32.517072</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 25.840208 
+L 30.81417 25.840208 
+L 30.81417 0 
+L 0 0 
+L 0 25.840208 
+z
+" style="fill: none"/>
+  </g>
+  <g id="text_1">
+   <!-- $\color[rgb]{0.824,0.627,0.000}-1$ -->
+   <g transform="translate(7.2 16.121896) scale(0.13 -0.13)">
+    <defs>
+     <path id="LMMathSymbols10-Regular-0" d="M 4442 1600 
+C 4442 1728 4320 1728 4230 1728 
+L 742 1728 
+C 653 1728 531 1728 531 1600 
+C 531 1472 653 1472 742 1472 
+L 4230 1472 
+C 4320 1472 4442 1472 4442 1600 
+z
+" transform="scale(0.015625)"/>
+     <path id="LMRoman17-Regular-31" d="M 2458 0 
+L 2458 160 
+L 2266 160 
+C 1715 160 1702 230 1702 458 
+L 1702 4058 
+C 1702 4192 1696 4192 1606 4192 
+C 1357 3916 979 3827 621 3827 
+C 602 3827 570 3827 563 3808 
+C 557 3795 557 3782 557 3648 
+C 755 3648 1088 3686 1344 3839 
+L 1344 461 
+C 1344 236 1331 160 781 160 
+L 589 160 
+L 589 0 
+L 1523 0 
+L 2458 0 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#LMMathSymbols10-Regular-0" transform="scale(0.996264)"/>
+    <use xlink:href="#LMRoman17-Regular-31" transform="translate(77.487468 0) scale(0.996264)"/>
+   </g>
+  </g>
+ </g>
+</svg>
+</g>
+</svg>

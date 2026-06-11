@@ -1,0 +1,45 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{DOI~\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{DOI~\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem{breuils_three-dimensional_2019}
+Breuils, S., Fuchs, L., Hitzer, E., Nozick, V., Sugimoto, A.: Three-dimensional
+  quadrics in extended conformal geometric algebras of higher dimensions from
+  control points, implicit equations and axis alignment.
+\newblock Advances in Applied Clifford Algebras \textbf{29}(3) (2019).
+\newblock \doi{10.1007/s00006-019-0974-z}.
+\newblock \urlprefix\url{https://hal.science/hal-02169419}.
+\newblock Publisher: Springer Verlag
+
+\bibitem{chomicki_intersection_2023}
+Chomicki, C., Breuils, S., Biri, V., Nozick, V.: Intersection of conic sections
+  using geometric algebra.
+\newblock In: {CGI} {ENGAGE} 2023. Shanghai, China (2023).
+\newblock \urlprefix\url{https://hal.science/hal-04210085}
+
+\bibitem{dorst_geometric_2010}
+Dorst, L., Fontijne, D., Mann, S.: Geometric {Algebra} for {Computer}
+  {Science}: {An} {Object}-{Oriented} {Approach} to {Geometry}.
+\newblock Elsevier (2010)
+
+\bibitem{hrdina_geometric_2018}
+Hrdina, J., Navrat, A., Vašík, P.: Geometric {Algebra} for {Conics}.
+\newblock Advances in Applied Clifford Algebras \textbf{28} (2018).
+\newblock \doi{10.1007/s00006-018-0879-2}
+
+\bibitem{perwass_geometric_2009}
+Perwass, C.: Geometric {Algebra} with {Applications} in {Engineering}, vol.~4.
+\newblock Springer Berlin, Heidelberg (2009).
+\newblock \doi{10.1007/978-3-540-89068-3}
+
+\bibitem{richter-gebert_perspectives_2011}
+Richter-Gebert, J.: Perspectives on {Projective} {Geometry}: {A} {Guided}
+  {Tour} {Through} {Real} and {Complex} {Geometry}.
+\newblock Springer Science \& Business Media (2011).
+\newblock Google-Books-ID: F\_NP8Kub2XYC
+
+\end{thebibliography}

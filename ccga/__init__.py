@@ -3,6 +3,7 @@
 from .algebra import to_null_basis, format_null, print_null
 from .point import point, point_at_infinity, tangent_at_infinity
 from .objects import (
+    twopole, make_gauged_dipole,
     make_conic_tripole, make_conic_quadpole,
     make_conic_pentapole, pentapole_to_conic, conic_dual_grade1,
     make_hyperbola_3points, make_parabola_3points, make_ellipse_3points,
@@ -28,6 +29,7 @@ from .extract import (
 __all__ = [
     "to_null_basis", "format_null", "print_null",
     "point", "point_at_infinity", "tangent_at_infinity",
+    "twopole", "make_gauged_dipole",
     "make_conic_tripole", "make_conic_quadpole",
     "make_conic_pentapole", "pentapole_to_conic", "conic_dual_grade1",
     "make_hyperbola_3points", "make_parabola_3points", "make_ellipse_3points",

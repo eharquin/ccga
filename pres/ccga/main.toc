@@ -1,0 +1,8 @@
+\beamer@sectionintoc {1}{From CGA to CCGA}{3}{0}{1}
+\beamer@sectionintoc {2}{CCGA: the algebra}{5}{0}{2}
+\beamer@sectionintoc {3}{Conics}{11}{0}{3}
+\beamer@sectionintoc {4}{CGA lives inside CCGA}{19}{0}{4}
+\beamer@sectionintoc {5}{Meet, intersections, pencils}{21}{0}{5}
+\beamer@sectionintoc {6}{Properties, read off the algebra}{25}{0}{6}
+\beamer@sectionintoc {7}{Transformations}{27}{0}{7}
+\beamer@sectionintoc {8}{Synthesis and open problems}{29}{0}{8}

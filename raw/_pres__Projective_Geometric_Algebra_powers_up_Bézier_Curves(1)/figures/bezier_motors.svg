@@ -1,0 +1,773 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200">
+<polygon points="323.096,51.106 309.331,61.467 325.254,68.199" fill="#c30a3a" fill-opacity="0.30" stroke="#c30a3a" stroke-width="1.0" stroke-linejoin="round" />
+<line x1="319.23" y1="60.26" x2="323.10" y2="51.11" stroke="white" stroke-width="0.70" stroke-linecap="round" />
+<polygon points="314.341,71.986 302.971,84.930 319.931,88.283" fill="#95295d" fill-opacity="0.30" stroke="#95295d" stroke-width="1.0" stroke-linejoin="round" />
+<line x1="312.41" y1="81.73" x2="314.34" y2="71.99" stroke="white" stroke-width="0.70" stroke-linecap="round" />
+<polygon points="306.718,89.246 296.710,103.269 313.921,104.897" fill="#744074" fill-opacity="0.30" stroke="#744074" stroke-width="1.0" stroke-linejoin="round" />
+<line x1="305.78" y1="99.14" x2="306.72" y2="89.25" stroke="white" stroke-width="0.70" stroke-linecap="round" />
+<polygon points="298.206,103.772 288.679,118.127 305.935,119.169" fill="#5d5282" fill-opacity="0.30" stroke="#5d5282" stroke-width="1.0" stroke-linejoin="round" />
+<line x1="297.61" y1="113.69" x2="298.21" y2="103.77" stroke="white" stroke-width="0.70" stroke-linecap="round" />
+<polygon points="288.042,116.119 278.351,130.363 295.594,131.604" fill="#4b608b" fill-opacity="0.30" stroke="#4b608b" stroke-width="1.0" stroke-linejoin="round" />
+<line x1="287.33" y1="126.03" x2="288.04" y2="116.12" stroke="white" stroke-width="0.70" stroke-linecap="round" />
+<polygon points="275.994,126.455 265.685,140.259 282.858,142.257" fill="#3e6b90" fill-opacity="0.30" stroke="#3e6b90" stroke-width="1.0" stroke-linejoin="round" />
+<line x1="274.85" y1="136.32" x2="275.99" y2="126.45" stroke="white" stroke-width="0.70" stroke-linecap="round" />
+<polygon points="262.103,134.699 250.880,147.771 267.877,150.932" fill="#347492" fill-opacity="0.30" stroke="#347492" stroke-width="1.0" stroke-linejoin="round" />
+<line x1="260.29" y1="144.47" x2="262.10" y2="134.70" stroke="white" stroke-width="0.70" stroke-linecap="round" />
+<polygon points="246.612,140.654 234.308,152.715 250.971,157.322" fill="#2d7c91" fill-opacity="0.30" stroke="#2d7c91" stroke-width="1.0" stroke-linejoin="round" />
+<line x1="243.96" y1="150.23" x2="246.61" y2="140.65" stroke="white" stroke-width="0.70" stroke-linecap="round" />
+<polygon points="229.930,144.120 216.497,154.907 232.623,161.137" fill="#28838f" fill-opacity="0.30" stroke="#28838f" stroke-width="1.0" stroke-linejoin="round" />
+<line x1="226.35" y1="153.39" x2="229.93" y2="144.12" stroke="white" stroke-width="0.70" stroke-linecap="round" />
+<polygon points="212.598,144.991 198.086,154.276 213.452,162.198" fill="#26898b" fill-opacity="0.30" stroke="#26898b" stroke-width="1.0" stroke-linejoin="round" />
+<line x1="208.05" y1="153.82" x2="212.60" y2="144.99" stroke="white" stroke-width="0.70" stroke-linecap="round" />
+<polygon points="195.226,143.334 179.769,150.944 194.156,160.530" fill="#258e86" fill-opacity="0.30" stroke="#258e86" stroke-width="1.0" stroke-linejoin="round" />
+<line x1="189.72" y1="151.60" x2="195.23" y2="143.33" stroke="white" stroke-width="0.70" stroke-linecap="round" />
+<polygon points="178.411,139.435 162.199,145.268 175.424,156.402" fill="#27927f" fill-opacity="0.30" stroke="#27927f" stroke-width="1.0" stroke-linejoin="round" />
+<line x1="172.01" y1="147.03" x2="178.41" y2="139.43" stroke="white" stroke-width="0.70" stroke-linecap="round" />
+<polygon points="162.649,133.798 145.902,137.844 157.845,150.343" fill="#2a9677" fill-opacity="0.30" stroke="#2a9677" stroke-width="1.0" stroke-linejoin="round" />
+<line x1="155.47" y1="140.66" x2="162.65" y2="133.80" stroke="white" stroke-width="0.70" stroke-linecap="round" />
+<polygon points="148.265,127.128 131.197,129.471 141.824,143.107" fill="#31996d" fill-opacity="0.30" stroke="#31996d" stroke-width="1.0" stroke-linejoin="round" />
+<line x1="140.43" y1="133.24" x2="148.27" y2="127.13" stroke="white" stroke-width="0.70" stroke-linecap="round" />
+<polygon points="135.376,120.292 118.167,121.117 127.547,135.639" fill="#3b9c62" fill-opacity="0.30" stroke="#3b9c62" stroke-width="1.0" stroke-linejoin="round" />
+<line x1="127.03" y1="125.68" x2="135.38" y2="120.29" stroke="white" stroke-width="0.70" stroke-linecap="round" />
+<polygon points="123.889,114.320 106.665,113.910 114.980,129.067" fill="#489f56" fill-opacity="0.30" stroke="#489f56" stroke-width="1.0" stroke-linejoin="round" />
+<line x1="115.18" y1="119.10" x2="123.89" y2="114.32" stroke="white" stroke-width="0.70" stroke-linecap="round" />
+<polygon points="113.550,110.469 96.366,109.221 103.934,124.764" fill="#5ba047" fill-opacity="0.30" stroke="#5ba047" stroke-width="1.0" stroke-linejoin="round" />
+<line x1="104.62" y1="114.82" x2="113.55" y2="110.47" stroke="white" stroke-width="0.70" stroke-linecap="round" />
+<polygon points="104.070,110.440 86.909,108.905 94.216,124.573" fill="#76a134" fill-opacity="0.30" stroke="#76a134" stroke-width="1.0" stroke-linejoin="round" />
+<line x1="95.06" y1="114.64" x2="104.07" y2="110.44" stroke="white" stroke-width="0.70" stroke-linecap="round" />
+<polygon points="95.456,116.878 78.257,115.860 86.032,131.301" fill="#9ba11d" fill-opacity="0.30" stroke="#9ba11d" stroke-width="1.0" stroke-linejoin="round" />
+<line x1="86.58" y1="121.35" x2="95.46" y2="116.88" stroke="white" stroke-width="0.70" stroke-linecap="round" />
+<polygon points="89.133,134.374 71.922,135.153 81.263,149.700" fill="#d2a000" fill-opacity="0.30" stroke="#d2a000" stroke-width="1.0" stroke-linejoin="round" />
+<line x1="80.77" y1="139.74" x2="89.13" y2="134.37" stroke="white" stroke-width="0.70" stroke-linecap="round" />
+<line x1="196.00" y1="100.00" x2="204.00" y2="100.00" stroke="#000000" stroke-width="1.25" />
+<line x1="200.00" y1="96.00" x2="200.00" y2="104.00" stroke="#000000" stroke-width="1.25" />
+<polygon points="323.096,51.106 309.331,61.467 325.254,68.199" fill="#c30a3a" fill-opacity="0.90" stroke="#c30a3a" stroke-width="2.5" stroke-linejoin="round" />
+<line x1="319.23" y1="60.26" x2="323.10" y2="51.11" stroke="white" stroke-width="1.75" stroke-linecap="round" />
+<polygon points="324.400,131.023 323.959,148.246 339.130,139.958" fill="#1482c8" fill-opacity="0.90" stroke="#1482c8" stroke-width="2.5" stroke-linejoin="round" />
+<line x1="329.16" y1="139.74" x2="324.40" y2="131.02" stroke="white" stroke-width="1.75" stroke-linecap="round" />
+<polygon points="120.490,59.555 105.013,51.987 106.236,69.231" fill="#00a86e" fill-opacity="0.90" stroke="#00a86e" stroke-width="2.5" stroke-linejoin="round" />
+<line x1="110.58" y1="60.26" x2="120.49" y2="59.55" stroke="white" stroke-width="1.75" stroke-linecap="round" />
+<polygon points="89.133,134.374 71.922,135.153 81.263,149.700" fill="#d2a000" fill-opacity="0.90" stroke="#d2a000" stroke-width="2.5" stroke-linejoin="round" />
+<line x1="80.77" y1="139.74" x2="89.13" y2="134.37" stroke="white" stroke-width="1.75" stroke-linecap="round" />
+<circle cx="319.23" cy="60.26" r="5.0" fill="#c30a3a" />
+<circle cx="319.23" cy="60.26" r="2.00" fill="white" />
+<g transform="translate(328.23,23.13) scale(0.8)" fill="#c30a3a"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="37.884139pt" height="33.8759pt" viewBox="0 0 37.884139 33.8759" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-03-28T15:43:53.461013</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 33.8759 
+L 37.884139 33.8759 
+L 37.884139 0 
+L 0 0 
+L 0 33.8759 
+z
+" style="fill: none"/>
+  </g>
+  <g id="text_1">
+   <!-- ${\color[rgb]{0.765,0.039,0.227}\hat{M}_{0}}$ -->
+   <g transform="translate(7.2 23.187958) scale(0.18 -0.18)">
+    <defs>
+     <path id="LMRoman17-Regular-5e" d="M 2438 3376 
+L 1466 4408 
+L 493 3376 
+L 576 3287 
+L 1466 3975 
+L 2355 3287 
+L 2438 3376 
+z
+" transform="scale(0.015625)"/>
+     <path id="LMMathItalic12-Regular-4d" d="M 6515 4288 
+C 6515 4352 6470 4352 6349 4352 
+L 5581 4352 
+C 5421 4352 5414 4346 5344 4243 
+L 3008 562 
+L 2528 4211 
+C 2509 4352 2502 4352 2336 4352 
+L 1542 4352 
+C 1421 4352 1363 4352 1363 4231 
+C 1363 4167 1421 4167 1517 4167 
+C 1907 4167 1907 4116 1907 4046 
+C 1907 4046 1907 3995 1882 3899 
+L 1062 634 
+C 986 327 838 186 410 186 
+C 390 186 314 186 314 73 
+C 314 0 371 0 397 0 
+L 979 0 
+L 1286 0 
+C 1376 0 1485 0 1574 0 
+C 1619 0 1690 0 1690 122 
+C 1690 180 1626 186 1600 186 
+C 1389 186 1184 224 1184 454 
+C 1184 518 1184 524 1210 613 
+L 2093 4129 
+L 2099 4129 
+L 2630 172 
+C 2650 19 2656 0 2714 0 
+C 2784 0 2816 51 2848 109 
+L 5421 4161 
+L 5427 4161 
+L 4499 473 
+C 4442 250 4429 186 3981 186 
+C 3859 186 3795 186 3795 70 
+C 3795 0 3853 0 3891 0 
+C 4000 0 4128 0 4237 0 
+L 4992 0 
+C 5101 0 5235 0 5344 0 
+C 5395 0 5466 0 5466 122 
+C 5466 186 5408 186 5312 186 
+C 4922 186 4922 234 4922 294 
+C 4922 294 4922 345 4934 396 
+L 5811 3886 
+C 5869 4103 5882 4167 6336 4167 
+C 6458 4167 6515 4167 6515 4288 
+z
+" transform="scale(0.015625)"/>
+     <path id="LMRoman17-Regular-30" d="M 2688 2025 
+C 2688 2416 2682 3080 2413 3591 
+C 2176 4039 1798 4198 1466 4198 
+C 1158 4198 768 4058 525 3597 
+C 269 3118 243 2524 243 2025 
+C 243 1661 250 1106 448 619 
+C 723 -39 1216 -128 1466 -128 
+C 1760 -128 2208 -7 2470 600 
+C 2662 1042 2688 1559 2688 2025 
+z
+M 2278 2096 
+C 2278 1680 2278 1169 2202 792 
+C 2067 95 1690 -26 1466 -26 
+C 1056 -26 813 325 723 812 
+C 653 1188 653 1738 653 2096 
+C 653 2588 653 2997 736 3387 
+C 858 3929 1216 4096 1466 4096 
+C 1728 4096 2067 3923 2189 3400 
+C 2272 3036 2278 2607 2278 2096 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#LMRoman17-Regular-5e" transform="translate(37.673726 25.189156) scale(0.996264)"/>
+    <use xlink:href="#LMMathItalic12-Regular-4d" transform="scale(0.996264)"/>
+    <use xlink:href="#LMRoman17-Regular-30" transform="translate(94.373425 -14.943915) scale(0.737241)"/>
+   </g>
+  </g>
+ </g>
+</svg>
+</g>
+<rect x="364.63" y="30.64" width="16.12" height="21.56" rx="5.0" ry="5.0" fill="none" stroke="#c30a3a" stroke-width="1.2" />
+<g transform="translate(361.63,27.64) scale(0.8)" fill="#c30a3a"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="20.7408pt" height="25.840208pt" viewBox="0 0 20.7408 25.840208" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-03-28T15:43:53.611064</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 25.840208 
+L 20.7408 25.840208 
+L 20.7408 0 
+L 0 0 
+L 0 25.840208 
+z
+" style="fill: none"/>
+  </g>
+  <g id="text_1">
+   <!-- $\color[rgb]{0.765,0.039,0.227}1$ -->
+   <g transform="translate(7.2 16.121896) scale(0.13 -0.13)">
+    <defs>
+     <path id="LMRoman17-Regular-31" d="M 2458 0 
+L 2458 160 
+L 2266 160 
+C 1715 160 1702 230 1702 458 
+L 1702 4058 
+C 1702 4192 1696 4192 1606 4192 
+C 1357 3916 979 3827 621 3827 
+C 602 3827 570 3827 563 3808 
+C 557 3795 557 3782 557 3648 
+C 755 3648 1088 3686 1344 3839 
+L 1344 461 
+C 1344 236 1331 160 781 160 
+L 589 160 
+L 589 0 
+L 1523 0 
+L 2458 0 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#LMRoman17-Regular-31" transform="scale(0.996264)"/>
+   </g>
+  </g>
+ </g>
+</svg>
+</g>
+<circle cx="329.16" cy="139.74" r="5.0" fill="#1482c8" />
+<circle cx="329.16" cy="139.74" r="2.00" fill="white" />
+<g transform="translate(338.16,148.74) scale(0.8)" fill="#1482c8"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="37.884139pt" height="33.8759pt" viewBox="0 0 37.884139 33.8759" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-03-28T15:43:53.758726</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 33.8759 
+L 37.884139 33.8759 
+L 37.884139 0 
+L 0 0 
+L 0 33.8759 
+z
+" style="fill: none"/>
+  </g>
+  <g id="text_1">
+   <!-- ${\color[rgb]{0.078,0.510,0.784}\hat{M}_{1}}$ -->
+   <g transform="translate(7.2 23.187958) scale(0.18 -0.18)">
+    <defs>
+     <path id="LMRoman17-Regular-5e" d="M 2438 3376 
+L 1466 4408 
+L 493 3376 
+L 576 3287 
+L 1466 3975 
+L 2355 3287 
+L 2438 3376 
+z
+" transform="scale(0.015625)"/>
+     <path id="LMMathItalic12-Regular-4d" d="M 6515 4288 
+C 6515 4352 6470 4352 6349 4352 
+L 5581 4352 
+C 5421 4352 5414 4346 5344 4243 
+L 3008 562 
+L 2528 4211 
+C 2509 4352 2502 4352 2336 4352 
+L 1542 4352 
+C 1421 4352 1363 4352 1363 4231 
+C 1363 4167 1421 4167 1517 4167 
+C 1907 4167 1907 4116 1907 4046 
+C 1907 4046 1907 3995 1882 3899 
+L 1062 634 
+C 986 327 838 186 410 186 
+C 390 186 314 186 314 73 
+C 314 0 371 0 397 0 
+L 979 0 
+L 1286 0 
+C 1376 0 1485 0 1574 0 
+C 1619 0 1690 0 1690 122 
+C 1690 180 1626 186 1600 186 
+C 1389 186 1184 224 1184 454 
+C 1184 518 1184 524 1210 613 
+L 2093 4129 
+L 2099 4129 
+L 2630 172 
+C 2650 19 2656 0 2714 0 
+C 2784 0 2816 51 2848 109 
+L 5421 4161 
+L 5427 4161 
+L 4499 473 
+C 4442 250 4429 186 3981 186 
+C 3859 186 3795 186 3795 70 
+C 3795 0 3853 0 3891 0 
+C 4000 0 4128 0 4237 0 
+L 4992 0 
+C 5101 0 5235 0 5344 0 
+C 5395 0 5466 0 5466 122 
+C 5466 186 5408 186 5312 186 
+C 4922 186 4922 234 4922 294 
+C 4922 294 4922 345 4934 396 
+L 5811 3886 
+C 5869 4103 5882 4167 6336 4167 
+C 6458 4167 6515 4167 6515 4288 
+z
+" transform="scale(0.015625)"/>
+     <path id="LMRoman17-Regular-31" d="M 2458 0 
+L 2458 160 
+L 2266 160 
+C 1715 160 1702 230 1702 458 
+L 1702 4058 
+C 1702 4192 1696 4192 1606 4192 
+C 1357 3916 979 3827 621 3827 
+C 602 3827 570 3827 563 3808 
+C 557 3795 557 3782 557 3648 
+C 755 3648 1088 3686 1344 3839 
+L 1344 461 
+C 1344 236 1331 160 781 160 
+L 589 160 
+L 589 0 
+L 1523 0 
+L 2458 0 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#LMRoman17-Regular-5e" transform="translate(37.673726 25.189156) scale(0.996264)"/>
+    <use xlink:href="#LMMathItalic12-Regular-4d" transform="scale(0.996264)"/>
+    <use xlink:href="#LMRoman17-Regular-31" transform="translate(94.373425 -14.943915) scale(0.737241)"/>
+   </g>
+  </g>
+ </g>
+</svg>
+</g>
+<rect x="374.56" y="156.25" width="16.12" height="21.56" rx="5.0" ry="5.0" fill="none" stroke="#1482c8" stroke-width="1.2" />
+<g transform="translate(371.56,153.25) scale(0.8)" fill="#1482c8"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="20.7408pt" height="25.840208pt" viewBox="0 0 20.7408 25.840208" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-03-28T15:43:53.905246</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 25.840208 
+L 20.7408 25.840208 
+L 20.7408 0 
+L 0 0 
+L 0 25.840208 
+z
+" style="fill: none"/>
+  </g>
+  <g id="text_1">
+   <!-- $\color[rgb]{0.078,0.510,0.784}2$ -->
+   <g transform="translate(7.2 16.121896) scale(0.13 -0.13)">
+    <defs>
+     <path id="LMRoman17-Regular-32" d="M 2669 989 
+L 2554 989 
+C 2490 536 2438 459 2413 420 
+C 2381 369 1920 369 1830 369 
+L 602 369 
+L 1824 1597 
+C 2214 1967 2669 2402 2669 3035 
+C 2669 3790 2067 4224 1395 4224 
+C 691 4224 262 3604 262 3030 
+C 262 2780 448 2748 525 2748 
+C 589 2748 781 2787 781 3010 
+C 781 3207 614 3264 525 3264 
+C 486 3264 448 3258 422 3245 
+C 544 3790 915 4058 1306 4058 
+C 1862 4058 2227 3617 2227 3035 
+C 2227 2479 1901 2000 1536 1584 
+L 262 146 
+L 262 0 
+L 2515 0 
+L 2669 989 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#LMRoman17-Regular-32" transform="scale(0.996264)"/>
+   </g>
+  </g>
+ </g>
+</svg>
+</g>
+<circle cx="110.58" cy="60.26" r="5.0" fill="#00a86e" />
+<circle cx="110.58" cy="60.26" r="2.00" fill="white" />
+<g transform="translate(49.06,23.13) scale(0.8)" fill="#00a86e"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="37.884139pt" height="33.8759pt" viewBox="0 0 37.884139 33.8759" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-03-28T15:43:54.053108</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 33.8759 
+L 37.884139 33.8759 
+L 37.884139 0 
+L 0 0 
+L 0 33.8759 
+z
+" style="fill: none"/>
+  </g>
+  <g id="text_1">
+   <!-- ${\color[rgb]{0.000,0.659,0.431}\hat{M}_{2}}$ -->
+   <g transform="translate(7.2 23.187958) scale(0.18 -0.18)">
+    <defs>
+     <path id="LMRoman17-Regular-5e" d="M 2438 3376 
+L 1466 4408 
+L 493 3376 
+L 576 3287 
+L 1466 3975 
+L 2355 3287 
+L 2438 3376 
+z
+" transform="scale(0.015625)"/>
+     <path id="LMMathItalic12-Regular-4d" d="M 6515 4288 
+C 6515 4352 6470 4352 6349 4352 
+L 5581 4352 
+C 5421 4352 5414 4346 5344 4243 
+L 3008 562 
+L 2528 4211 
+C 2509 4352 2502 4352 2336 4352 
+L 1542 4352 
+C 1421 4352 1363 4352 1363 4231 
+C 1363 4167 1421 4167 1517 4167 
+C 1907 4167 1907 4116 1907 4046 
+C 1907 4046 1907 3995 1882 3899 
+L 1062 634 
+C 986 327 838 186 410 186 
+C 390 186 314 186 314 73 
+C 314 0 371 0 397 0 
+L 979 0 
+L 1286 0 
+C 1376 0 1485 0 1574 0 
+C 1619 0 1690 0 1690 122 
+C 1690 180 1626 186 1600 186 
+C 1389 186 1184 224 1184 454 
+C 1184 518 1184 524 1210 613 
+L 2093 4129 
+L 2099 4129 
+L 2630 172 
+C 2650 19 2656 0 2714 0 
+C 2784 0 2816 51 2848 109 
+L 5421 4161 
+L 5427 4161 
+L 4499 473 
+C 4442 250 4429 186 3981 186 
+C 3859 186 3795 186 3795 70 
+C 3795 0 3853 0 3891 0 
+C 4000 0 4128 0 4237 0 
+L 4992 0 
+C 5101 0 5235 0 5344 0 
+C 5395 0 5466 0 5466 122 
+C 5466 186 5408 186 5312 186 
+C 4922 186 4922 234 4922 294 
+C 4922 294 4922 345 4934 396 
+L 5811 3886 
+C 5869 4103 5882 4167 6336 4167 
+C 6458 4167 6515 4167 6515 4288 
+z
+" transform="scale(0.015625)"/>
+     <path id="LMRoman17-Regular-32" d="M 2669 989 
+L 2554 989 
+C 2490 536 2438 459 2413 420 
+C 2381 369 1920 369 1830 369 
+L 602 369 
+L 1824 1597 
+C 2214 1967 2669 2402 2669 3035 
+C 2669 3790 2067 4224 1395 4224 
+C 691 4224 262 3604 262 3030 
+C 262 2780 448 2748 525 2748 
+C 589 2748 781 2787 781 3010 
+C 781 3207 614 3264 525 3264 
+C 486 3264 448 3258 422 3245 
+C 544 3790 915 4058 1306 4058 
+C 1862 4058 2227 3617 2227 3035 
+C 2227 2479 1901 2000 1536 1584 
+L 262 146 
+L 262 0 
+L 2515 0 
+L 2669 989 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#LMRoman17-Regular-5e" transform="translate(37.673726 25.189156) scale(0.996264)"/>
+    <use xlink:href="#LMMathItalic12-Regular-4d" transform="scale(0.996264)"/>
+    <use xlink:href="#LMRoman17-Regular-32" transform="translate(94.373425 -14.943915) scale(0.737241)"/>
+   </g>
+  </g>
+ </g>
+</svg>
+</g>
+<rect x="85.46" y="30.64" width="16.12" height="21.56" rx="5.0" ry="5.0" fill="none" stroke="#00a86e" stroke-width="1.2" />
+<g transform="translate(82.46,27.64) scale(0.8)" fill="#00a86e"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="20.7408pt" height="25.840208pt" viewBox="0 0 20.7408 25.840208" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-03-28T15:43:54.200360</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 25.840208 
+L 20.7408 25.840208 
+L 20.7408 0 
+L 0 0 
+L 0 25.840208 
+z
+" style="fill: none"/>
+  </g>
+  <g id="text_1">
+   <!-- $\color[rgb]{0.000,0.659,0.431}2$ -->
+   <g transform="translate(7.2 16.121896) scale(0.13 -0.13)">
+    <defs>
+     <path id="LMRoman17-Regular-32" d="M 2669 989 
+L 2554 989 
+C 2490 536 2438 459 2413 420 
+C 2381 369 1920 369 1830 369 
+L 602 369 
+L 1824 1597 
+C 2214 1967 2669 2402 2669 3035 
+C 2669 3790 2067 4224 1395 4224 
+C 691 4224 262 3604 262 3030 
+C 262 2780 448 2748 525 2748 
+C 589 2748 781 2787 781 3010 
+C 781 3207 614 3264 525 3264 
+C 486 3264 448 3258 422 3245 
+C 544 3790 915 4058 1306 4058 
+C 1862 4058 2227 3617 2227 3035 
+C 2227 2479 1901 2000 1536 1584 
+L 262 146 
+L 262 0 
+L 2515 0 
+L 2669 989 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#LMRoman17-Regular-32" transform="scale(0.996264)"/>
+   </g>
+  </g>
+ </g>
+</svg>
+</g>
+<circle cx="80.77" cy="139.74" r="5.0" fill="#d2a000" />
+<circle cx="80.77" cy="139.74" r="2.00" fill="white" />
+<g transform="translate(19.26,148.74) scale(0.8)" fill="#d2a000"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="37.884139pt" height="33.8759pt" viewBox="0 0 37.884139 33.8759" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-03-28T15:43:54.348126</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 33.8759 
+L 37.884139 33.8759 
+L 37.884139 0 
+L 0 0 
+L 0 33.8759 
+z
+" style="fill: none"/>
+  </g>
+  <g id="text_1">
+   <!-- ${\color[rgb]{0.824,0.627,0.000}\hat{M}_{3}}$ -->
+   <g transform="translate(7.2 23.187958) scale(0.18 -0.18)">
+    <defs>
+     <path id="LMRoman17-Regular-5e" d="M 2438 3376 
+L 1466 4408 
+L 493 3376 
+L 576 3287 
+L 1466 3975 
+L 2355 3287 
+L 2438 3376 
+z
+" transform="scale(0.015625)"/>
+     <path id="LMMathItalic12-Regular-4d" d="M 6515 4288 
+C 6515 4352 6470 4352 6349 4352 
+L 5581 4352 
+C 5421 4352 5414 4346 5344 4243 
+L 3008 562 
+L 2528 4211 
+C 2509 4352 2502 4352 2336 4352 
+L 1542 4352 
+C 1421 4352 1363 4352 1363 4231 
+C 1363 4167 1421 4167 1517 4167 
+C 1907 4167 1907 4116 1907 4046 
+C 1907 4046 1907 3995 1882 3899 
+L 1062 634 
+C 986 327 838 186 410 186 
+C 390 186 314 186 314 73 
+C 314 0 371 0 397 0 
+L 979 0 
+L 1286 0 
+C 1376 0 1485 0 1574 0 
+C 1619 0 1690 0 1690 122 
+C 1690 180 1626 186 1600 186 
+C 1389 186 1184 224 1184 454 
+C 1184 518 1184 524 1210 613 
+L 2093 4129 
+L 2099 4129 
+L 2630 172 
+C 2650 19 2656 0 2714 0 
+C 2784 0 2816 51 2848 109 
+L 5421 4161 
+L 5427 4161 
+L 4499 473 
+C 4442 250 4429 186 3981 186 
+C 3859 186 3795 186 3795 70 
+C 3795 0 3853 0 3891 0 
+C 4000 0 4128 0 4237 0 
+L 4992 0 
+C 5101 0 5235 0 5344 0 
+C 5395 0 5466 0 5466 122 
+C 5466 186 5408 186 5312 186 
+C 4922 186 4922 234 4922 294 
+C 4922 294 4922 345 4934 396 
+L 5811 3886 
+C 5869 4103 5882 4167 6336 4167 
+C 6458 4167 6515 4167 6515 4288 
+z
+" transform="scale(0.015625)"/>
+     <path id="LMRoman17-Regular-33" d="M 2720 1085 
+C 2720 1707 2208 2157 1600 2227 
+C 2086 2328 2554 2756 2554 3329 
+C 2554 3820 2048 4179 1472 4179 
+C 890 4179 378 3829 378 3329 
+C 378 3110 544 3072 627 3072 
+C 762 3072 877 3155 877 3321 
+C 877 3486 762 3569 627 3569 
+C 602 3569 570 3569 544 3557 
+C 730 3959 1235 4032 1459 4032 
+C 1683 4032 2106 3925 2106 3320 
+C 2106 3143 2080 2828 1862 2550 
+C 1670 2304 1453 2304 1242 2284 
+C 1210 2284 1062 2269 1037 2269 
+C 992 2263 966 2257 966 2208 
+C 966 2163 973 2157 1101 2157 
+L 1414 2157 
+C 1984 2157 2234 1662 2234 1090 
+C 2234 320 1824 25 1453 25 
+C 1114 25 563 194 390 693 
+C 422 680 454 680 486 680 
+C 640 680 755 782 755 948 
+C 755 1133 614 1216 486 1216 
+C 378 1216 211 1165 211 926 
+C 211 335 787 -128 1466 -128 
+C 2176 -128 2720 430 2720 1085 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#LMRoman17-Regular-5e" transform="translate(37.673726 25.189156) scale(0.996264)"/>
+    <use xlink:href="#LMMathItalic12-Regular-4d" transform="scale(0.996264)"/>
+    <use xlink:href="#LMRoman17-Regular-33" transform="translate(94.373425 -14.943915) scale(0.737241)"/>
+   </g>
+  </g>
+ </g>
+</svg>
+</g>
+<rect x="55.65" y="156.25" width="16.12" height="21.56" rx="5.0" ry="5.0" fill="none" stroke="#d2a000" stroke-width="1.2" />
+<g transform="translate(52.65,153.25) scale(0.8)" fill="#d2a000"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="20.7408pt" height="25.840208pt" viewBox="0 0 20.7408 25.840208" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-03-28T15:43:54.497845</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 25.840208 
+L 20.7408 25.840208 
+L 20.7408 0 
+L 0 0 
+L 0 25.840208 
+z
+" style="fill: none"/>
+  </g>
+  <g id="text_1">
+   <!-- $\color[rgb]{0.824,0.627,0.000}1$ -->
+   <g transform="translate(7.2 16.121896) scale(0.13 -0.13)">
+    <defs>
+     <path id="LMRoman17-Regular-31" d="M 2458 0 
+L 2458 160 
+L 2266 160 
+C 1715 160 1702 230 1702 458 
+L 1702 4058 
+C 1702 4192 1696 4192 1606 4192 
+C 1357 3916 979 3827 621 3827 
+C 602 3827 570 3827 563 3808 
+C 557 3795 557 3782 557 3648 
+C 755 3648 1088 3686 1344 3839 
+L 1344 461 
+C 1344 236 1331 160 781 160 
+L 589 160 
+L 589 0 
+L 1523 0 
+L 2458 0 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#LMRoman17-Regular-31" transform="scale(0.996264)"/>
+   </g>
+  </g>
+ </g>
+</svg>
+</g>
+</svg>

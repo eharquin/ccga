@@ -1,0 +1,758 @@
+%% ============================================================
+%%  Conic Conformal Geometric Algebra:
+%%  Foundation for Two-Dimensional Conic Geometry
+%%  AGACSE 2026 — Advances in Applied Clifford Algebras (AACA)
+%%  Compile: pdflatex -> bibtex -> pdflatex -> pdflatex
+%%
+%%  STATUS: DRAFT IN PROGRESS.
+%%   - Sections 2 (algebra) and 4.3 (axis-aligned conics) are drafted; the
+%%     remaining sections are stubs marked with [TODO].
+%%   - This is a pure theory paper: no software library is referenced.
+%% ============================================================
+\documentclass{birkjour}
+
+%% ---- typography --------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+%% ---- mathematics -------------------------------------------
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{bm}
+
+%% ---- tables ------------------------------------------------
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{float}
+
+%% ---- figures -----------------------------------------------
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{colortbl}
+\usepackage{subcaption}
+\usetikzlibrary{decorations.pathreplacing, calc, intersections}
+\usetikzlibrary{arrows.meta}
+
+%% ---- references & links ------------------------------------
+\usepackage[colorlinks=true,
+            linkcolor=blue!60!black,
+            citecolor=blue!60!black,
+            urlcolor=blue!60!black]{hyperref}
+\usepackage[capitalise, noabbrev]{cleveref}
+
+%% ---- theorem environments ----------------------------------
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+%% ---- custom colors -----------------------------------------
+\definecolor{C0}{RGB}{195, 10,  58} % RED
+\definecolor{C1}{RGB}{ 20,130, 200} % BLUE
+\definecolor{C2}{RGB}{  0,168, 110} % GREEN
+\definecolor{C3}{RGB}{210,160,   0} % YELLOW
+
+%% ---- custom commands ---------------------------------------
+\newcommand{\cyes}{\textcolor{C2}{\checkmark}}
+\newcommand{\cno}{\textcolor{C0}{$\times$}}
+
+% CCGA special blades (null working basis)
+\newcommand{\eo}{e_o}
+\newcommand{\einf}{e_\infty}
+\newcommand{\eobar}{\bar e_o}
+\newcommand{\einfbar}{\bar e_\infty}
+\newcommand{\Iod}{I_o^{\triangleright}}      % = eobar ^ eo3   (origin gauge bivector)
+\newcommand{\Iinfd}{I_\infty^{\triangleright}}% = (einf1-einf2) ^ einf3 (infinity gauge)
+\newcommand{\Io}{I_o}
+\newcommand{\Iinf}{I_\infty}
+\newcommand{\grade}[1]{\langle #1 \rangle}
+\newcommand{\meet}{\vee}
+\newcommand{\joinp}{\wedge}
+
+%% ============================================================
+\begin{document}
+
+\title{Conic Conformal Geometric Algebra:\\ Foundation for Two-Dimensional Conic Geometry}
+
+% TODO confirm final author list / order with co-authors.
+\author[E. Harquin \and S. Breuils \and V. Biri \and V. Nozick]%
+{Enzo Harquin \and St\'ephane Breuils \and Venceslas Biri \and Vincent Nozick}
+
+\address{%
+  Enzo Harquin, Venceslas Biri, Vincent Nozick\\
+  Universit\'e Gustave Eiffel, CNRS, LIGM,\\
+  Champs-sur-Marne, F-77420, France\\
+  \texttt{\{enzo.harquin2,venceslas.biri,vincent.nozick\}@univ-eiffel.fr}
+  \and\\
+  St\'ephane Breuils\\
+  Universit\'e Savoie Mont-Blanc, CNRS, LAMA,\\
+  Chamb\'ery, F-73000, France\\
+  \texttt{stephane.breuils@univ-smb.fr}
+}
+
+\keywords{Conics, Geometric Algebra, Clifford Algebra, Conic Conformal
+Geometric Algebra (CCGA), Geometric Algebra for Conics (GAC),
+Projective Geometry, OPNS/IPNS duality, Conic intersection}
+
+% \subjclass[2020]{15A66, 51N15, 53A20}
+
+\begin{abstract}
+We present Conic Conformal Geometric Algebra (CCGA), the geometric algebra
+$\mathbb{R}_{5,3}$ for the geometry of planar conics, as a systematic
+foundation for two-dimensional conic geometry. CCGA renames and consolidates
+the algebra previously introduced as QC2GA and proven isomorphic to the
+Geometric Algebra for Conics (GAC). \emph{[TODO: finalise abstract once
+sections are drafted.]} We give the complete catalogue of geometric objects in
+both outer-product null space (OPNS) and inner-product null space (IPNS) form,
+with their grades and reality conditions; the join, meet, and dual operations;
+closed-form, geometric-algebra-native extraction of every classical conic
+feature directly from the dual conic vector; the versor transformation group
+together with a precise account of which planar maps it realises; and a unified
+treatment of conic intersection based on a shared-factor reduction of the
+regressive product. Every construction is given in closed geometric-algebra form
+with its reality conditions.
+\end{abstract}
+
+\maketitle
+
+%% ============================================================
+\section{Introduction}
+\label{sec:intro}
+
+Geometric Algebra (GA) provides \dots \emph{[TODO: write 2--3 paragraphs of
+motivation, adapting the introduction of the base paper to a foundations
+framing.]}
+
+\subsection{Contributions}
+\label{sec:contributions}
+The main contributions of this paper are:
+\begin{itemize}
+  \item A self-contained construction of \textbf{Conic Conformal Geometric
+    Algebra} (CCGA, $\mathbb{R}_{5,3}$), unifying the former QC2GA and GAC
+    under one name and one notation (\cref{sec:algebra,sec:point}).
+  \item The \textbf{complete object taxonomy} of CCGA in both OPNS and IPNS
+    form, with grades, geometric meaning, and reality conditions, organised by
+    a single construction ladder (\cref{sec:conics,sec:taxonomy}).
+  \item \textbf{Geometric-algebra-native feature extraction}: closed-form
+    formulas reading the type, center, axes, foci, eccentricity, asymptotic
+    directions, and tangent/polar lines of a conic directly from its dual
+    grade-$1$ vector by inner products (\cref{sec:extraction}).
+  \item A precise characterisation of the \textbf{versor transformation group}
+    of CCGA — which planar maps are sandwich versors (similarities) and which
+    are only linear outermorphisms (shears, non-uniform scalings, projective
+    maps) (\cref{sec:transforms}).
+  \item A unified \textbf{intersection framework} based on a shared-factor /
+    B\'ezout reduction of the regressive product, recovering and organising the
+    pencil method of the base paper (\cref{sec:intersections}).
+\end{itemize}
+
+\subsection{Notation and Conventions}
+\label{sec:notation}
+We follow the GA conventions of~\cite{dorst_geometric_2010,perwass_geometric_2009}.
+\emph{[TODO: notation table.]} Throughout, $A \equiv B$ means $A$ equals $B$ up
+to a nonzero scalar, $\grade{A}_k$ is the grade-$k$ part, and the dual is fixed
+as $A^{*} = A\,I^{-1}$ (right multiplication by the inverse pseudoscalar).
+% Folded from the 2019 QC2GA draft (Harquin, Breuils, Nozick).
+Lower-case bold letters denote basis blades and multivectors ($\mathbf{a}$);
+italic lower-case letters denote their scalar components ($a_1, x, y^2, \dots$);
+the superscript star $\mathbf{x}^{*}$ is the dual; and the subscript $\epsilon$
+in $\mathbf{x}_\epsilon$ extracts the Euclidean ($e_1,e_2$) part of a vector.
+The contraction and outer products take priority over the full geometric
+product, e.g. $\mathbf{a}\wedge\mathbf{b}\,\mathbf{I} =
+(\mathbf{a}\wedge\mathbf{b})\,\mathbf{I}$.
+
+%% ============================================================
+\section{The CCGA Algebra \texorpdfstring{$\mathbb{R}_{5,3}$}{R(5,3)}}
+\label{sec:algebra}
+CCGA is the geometric algebra $\mathbb{R}_{5,3}$ (five positive, three negative,
+no null basis axes), of dimension $2^8 = 256$. It is the conic algebra first
+introduced by Perwass~\cite{perwass_geometric_2009}, developed as the
+two-dimensional restriction QC2GA of Quadric Conformal Geometric
+Algebra~\cite{breuils_three-dimensional_2019} and shown isomorphic to the
+Geometric Algebra for Conics (GAC)~\cite{hrdina_geometric_2018}; we call it Conic
+Conformal Geometric Algebra and relate the two bases in
+\cref{sec:gac}. Because the metric is \emph{non-degenerate}, the pseudoscalar is
+invertible, so the dual, meet, and join are all clean --- in contrast with the
+degenerate metric of PGA, where these require special care.
+
+\subsection{Diagonal and null bases}
+The orthogonal basis splits into the Euclidean pair $\{e_1,e_2\}$ ($+1$), three
+positive vectors $\{e_{+_1},e_{+_2},e_{+_3}\}$ ($+1$), and three negative vectors
+$\{e_{-_1},e_{-_2},e_{-_3}\}$ ($-1$). The null working basis is, for $1\le i\le 3$,
+\begin{equation}\label{eq:null-basis}
+  e_{o_i} = e_{+_i}+e_{-_i}, \qquad
+  e_{\infty_i} = \tfrac12\,(e_{-_i}-e_{+_i}),
+\end{equation}
+with inverse $e_{+_i} = \tfrac12 e_{o_i} - e_{\infty_i}$,
+$e_{-_i} = \tfrac12 e_{o_i} + e_{\infty_i}$. Each pair $(e_{o_i}, e_{\infty_i})$ is
+null, $e_{o_i}^2 = e_{\infty_i}^2 = 0$, with hyperbolic pairing
+$e_{o_i}\!\cdot e_{\infty_i} = -1$, and the three pairs are mutually orthogonal.
+The resulting Gram matrix is
+\begin{equation}
+  \begin{tabular}{l|cccccccc}
+    & $e_1$ & $e_2$ & $e_{o_1}$ & $e_{\infty_1}$ & $e_{o_2}$ & $e_{\infty_2}$ & $e_{o_3}$ & $e_{\infty_3}$ \\
+    \hline
+    $e_1$          & 1 & . & . & . & . & . & . & . \\
+    $e_2$          & . & 1 & . & . & . & . & . & . \\
+    $e_{o_1}$      & . & . & 0 & -1& . & . & . & . \\
+    $e_{\infty_1}$ & . & . & -1& 0 & . & . & . & . \\
+    $e_{o_2}$      & . & . & . & . & 0 & -1& . & . \\
+    $e_{\infty_2}$ & . & . & . & . & -1& 0 & . & . \\
+    $e_{o_3}$      & . & . & . & . & . & . & 0 & -1\\
+    $e_{\infty_3}$ & . & . & . & . & . & . & -1& 0
+  \end{tabular}
+  \label{eq:gram}
+\end{equation}
+This Gram matrix follows directly from the null-basis
+definitions~\eqref{eq:null-basis}.
+
+\begin{remark}
+% Folded from the 2019 QC2GA draft, which used the symmetric variant.
+A symmetric normalisation $e_{o_i}=\tfrac{1}{\sqrt2}(e_{-_i}-e_{+_i})$,
+$e_{\infty_i}=\tfrac{1}{\sqrt2}(e_{+_i}+e_{-_i})$ yields the same metric of
+\cref{eq:gram} and is convenient for deriving rotation/translation/scaling
+versors. We adopt the asymmetric convention~\eqref{eq:null-basis} throughout, as
+it makes the point embedding~\eqref{eq:point} carry the conic coefficients
+directly; the two differ only by a fixed rescaling of each null pair.
+\end{remark}
+
+\subsection{Special blades and the pseudoscalar}
+The following blades structure every later construction:
+\begin{subequations}\label{eq:special-blades}
+\begin{align}
+  \eo &= e_{o_1}+e_{o_2}, & \einf &= \tfrac12(e_{\infty_1}+e_{\infty_2}),\\
+  \eobar &= e_{o_1}-e_{o_2}, & \einfbar &= \tfrac12(e_{\infty_1}-e_{\infty_2}),\\
+  \Iod &= \eobar \joinp e_{o_3}, & \Iinfd &= (e_{\infty_1}-e_{\infty_2})\joinp e_{\infty_3},\\
+  \Io &= e_{o_1}\joinp e_{o_2}\joinp e_{o_3}, & \Iinf &= e_{\infty_1}\joinp e_{\infty_2}\joinp e_{\infty_3},\\
+  I_\epsilon &= e_1\joinp e_2, & I &= I_\epsilon \joinp \Iinf \joinp \Io .
+\end{align}
+\end{subequations}
+\Cref{tab:blades} summarises these blades, their grades, and their geometric role.
+
+\begin{table}[H]
+\centering
+\caption{The special blades of CCGA, with grades and geometric role
+(\cref{sec:blade-meaning}).}
+\label{tab:blades}
+\begin{tabular}{@{}llcl@{}}
+\toprule
+Symbol & Definition & Grade & Role \\
+\midrule
+$\eo$        & $e_{o_1}+e_{o_2}$                              & 1 & combined origin \\
+$\einf$      & $\tfrac12(e_{\infty_1}+e_{\infty_2})$          & 1 & isotropic infinity \\
+$\eobar$     & $e_{o_1}-e_{o_2}$                              & 1 & differential origin \\
+$\einfbar$   & $\tfrac12(e_{\infty_1}-e_{\infty_2})$          & 1 & differential infinity \\
+$\Iod$       & $\eobar \joinp e_{o_3}$                        & 2 & origin gauge \\
+$\Iinfd$     & $(e_{\infty_1}-e_{\infty_2})\joinp e_{\infty_3}$ & 2 & infinity gauge (circular points) \\
+$\Io$        & $e_{o_1}\joinp e_{o_2}\joinp e_{o_3}$          & 3 & origin $3$-blade \\
+$\Iinf$      & $e_{\infty_1}\joinp e_{\infty_2}\joinp e_{\infty_3}$ & 3 & line/conic at infinity \\
+$I_\epsilon$ & $e_1\joinp e_2$                                & 2 & Euclidean pseudoscalar \\
+$I$          & $I_\epsilon\joinp\Iinf\joinp\Io$               & 8 & pseudoscalar \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{proposition}\label{prop:blade-relations}
+The grade-$1$ special blades satisfy
+\begin{equation}\label{eq:blade-ip}
+  \eo\!\cdot\einf = -1, \qquad
+  \eobar\!\cdot\einfbar = -1, \qquad
+  e_{o_3}\!\cdot e_{\infty_3} = -1,
+\end{equation}
+and the two pairs are mutually orthogonal,
+$\{\eo,\einf\}\perp\{\eobar,\einfbar\}$. The pseudoscalar squares to
+$I^2=-1$, hence $I^{-1}=-I$ and $I\,I^{-1}=1$.
+\end{proposition}
+\noindent These relations follow by direct computation from \cref{eq:gram}.
+
+%% ------------------------------------------------------------
+\subsection{Geometric meaning of the special blades}
+\label{sec:blade-meaning}
+The eight null directions group into the three conjugate pairs of \cref{eq:gram},
+each carrying a distinct piece of conic structure. On the \emph{origin} side,
+$\eo = e_{o_1}+e_{o_2}$ is the combined origin, $\eobar = e_{o_1}-e_{o_2}$ the
+\emph{differential} origin, and $e_{o_3}$ the \emph{cross-term} origin; the
+\emph{infinity} side mirrors them with the isotropic $\einf$, the differential
+$\einfbar$, and the cross-term $e_{\infty_3}$. The three pairs govern,
+respectively, the \emph{size}/isotropy of a round object (the radius, carried by
+$\einf$), the $x^2-y^2$ \emph{anisotropy} that distinguishes the two axes (carried
+by $\eobar,\einfbar$), and the $xy$ \emph{tilt} (carried by $e_{o_3},e_{\infty_3}$).
+
+This split is the algebraic form of the principle that \emph{shape lives on the
+origin side and size on the infinity side}: in the dual conic
+vector~\eqref{eq:ipns-vector}, the quadratic coefficients $A,B,C$ sit on
+$e_{o_1},e_{o_2},e_{o_3}$ while the constant $F$ sits on $e_{\infty_1}+e_{\infty_2}$.
+The infinity-gauge blade $\Iinfd=(e_{\infty_1}-e_{\infty_2})\joinp e_{\infty_3}$ is
+the pair of \emph{circular points} $I,J$ at infinity through which every circle
+passes; it controls the round sub-family and the intersection reductions of
+\cref{sec:intersections}.
+
+%% ------------------------------------------------------------
+\subsection{Subspace structure}
+\label{sec:subspace}
+The eight-dimensional space splits as $\mathbb{R}^8 = V_6 \oplus W_2$, where
+\begin{equation}\label{eq:V6-W2}
+  V_6 = \mathrm{span}\{\eo,e_1,e_2,e_{\infty_1},e_{\infty_2},e_{\infty_3}\},
+  \qquad
+  W_2 = \mathrm{span}\{\eobar, e_{o_3}\}.
+\end{equation}
+$V_6$ is the \emph{point/conic space} --- it carries the six Veronese coordinates
+$(1,x,y,x^2,y^2,xy)$ of a conic --- while $W_2$ is the two-dimensional
+\emph{gauge plane}, whose top blade is exactly $\Iod = \eobar\joinp e_{o_3}$. This
+is why $\Iod$ is \emph{the} gauge blade used to fix the outer-product conic to
+grade $7$ (\cref{sec:conics}): it supplies precisely the two directions that the
+points cannot reach. The proof that the point
+embedding~\eqref{eq:point} lands in $V_6$ (and never in $W_2$) is given in
+\cref{sec:point}.
+
+%% ------------------------------------------------------------
+\subsection{Reciprocity identities}
+\label{sec:reciprocity}
+The two gauge blades $\Iod$ and $\Iinfd$ are reciprocal, and the line at infinity
+factors through $\Iinfd$:
+\begin{equation}\label{eq:reciprocity}
+  \Iinfd \joinp \einf = -\,\Iinf,
+  \qquad
+  e_{\infty_3}\joinp\einfbar = -\tfrac12\,\Iinfd,
+  \qquad
+  \Iinfd \,\lrcorner\, \Iod = -2 .
+\end{equation}
+The last identity makes the contraction $\,\lrcorner\,\Iinfd$ the inverse of the
+wedge $\joinp\,\Iod$, which is the algebraic mechanism behind the conic-intersection
+pipeline of \cref{sec:intersections}; the first lets a line, as a degenerate conic,
+carry the whole line at infinity $\Iinf$.
+
+%% ------------------------------------------------------------
+\subsection{Relation to GAC}
+\label{sec:gac}
+CCGA and the Geometric Algebra for Conics (GAC)~\cite{hrdina_geometric_2018} are
+the same algebra in different bases. Writing the GAC basis
+$\left(e_1,e_2,\bar n_+, n_+,\bar n_-, n_-,\bar n_\times, n_\times\right)$ in terms
+of the CCGA null basis,
+\begin{equation}\label{eq:gac-dictionary}
+  \bar n_+ = \eo,\quad n_+ = \einf,\quad
+  \bar n_- = \eobar,\quad n_- = \einfbar,\quad
+  \bar n_\times = e_{o_3},\quad n_\times = e_{\infty_3},
+\end{equation}
+exhibits the isomorphism as a pure change of basis; the full equivalence is
+established in~\cite{chomicki_intersection_2023}. The GAC names match the geometric
+roles of \cref{sec:blade-meaning}: the $+$ pair is isotropic (size), the $-$ pair
+is the $x^2-y^2$ anisotropy, and the $\times$ pair is the $xy$ cross term.
+
+%% ============================================================
+\section{The Point Embedding}
+\label{sec:point}
+The conic point map $\mathbb{R}^2 \to \mathbb{R}^8$ is the Veronese-type embedding
+\begin{equation}\label{eq:point}
+  \mathrm{p} = \eo + \mathrm{p}_\epsilon
+     + \tfrac12\,(x^2\,e_{\infty_1} + y^2\,e_{\infty_2}) + xy\,e_{\infty_3},
+  \qquad \mathrm{p}_\epsilon = x\,e_1 + y\,e_2 .
+\end{equation}
+Note that the null vector $e_{o_3}$ does not appear in a point: this preserves
+the C2GA property that the inner product of two points is (minus half) their
+squared Euclidean distance. For $\mathrm{p}_1,\mathrm{p}_2$ at $(x_1,y_1)$,
+$(x_2,y_2)$,
+% Folded from the 2019 QC2GA draft (point distance derivation).
+\begin{align}\label{eq:point-distance}
+  \mathrm{p}_1\!\cdot \mathrm{p}_2
+  &= -\tfrac{x_1^2}{2}-\tfrac{x_2^2}{2}-\tfrac{y_1^2}{2}-\tfrac{y_2^2}{2}
+     + x_1x_2 + y_1y_2 \notag\\
+  &= -\tfrac12\big((x_1-x_2)^2+(y_1-y_2)^2\big)
+   = -\tfrac12\,\mathrm{Dist}^2(\mathrm{p}_1,\mathrm{p}_2),
+\end{align}
+so in particular $\mathrm{p}^2 = 0$ (every point is null).
+
+%% ============================================================
+\section{Conics: OPNS and IPNS}
+\label{sec:conics}
+\subsection{The grade-1 IPNS conic}
+\begin{equation}\label{eq:ipns-conic}
+  \mathrm{p}\cdot s = 0 \iff A x^2 + B y^2 + C xy + D x + E y + F = 0 .
+\end{equation}
+
+\subsection{The grade-7 OPNS conic and the $\Iod$ gauge}
+\begin{equation}\label{eq:opns-conic}
+  \mathbf{c} = \Iod \joinp \mathrm{p}_1 \joinp \cdots \joinp \mathrm{p}_5,
+  \qquad \mathbf{c}^{*} = \mathbf{c}\,I^{-1}\ \text{is the grade-1 conic vector}.
+\end{equation}
+% Folded from the 2019 QC2GA draft (explicit blade-form dual derivation).
+Expanding the five-point wedge and collecting the seven blade components --- two
+of which share a coefficient --- gives the closed blade form of $\mathbf{c}$
+whose dual is the grade-$1$ conic vector $\mathbf{c}^{*}$ of
+\cref{eq:ipns-conic}:
+\begin{align}\label{eq:opns-blade-form}
+  \mathbf{c}
+  &= 2A\,(I_\epsilon \joinp e_{\infty_2}\joinp e_{\infty_3}\joinp \Io)
+   + 2B\,(I_\epsilon \joinp e_{\infty_1}\joinp e_{\infty_3}\joinp \Io)
+   + C\,(I_\epsilon \joinp e_{\infty_1}\joinp e_{\infty_2}\joinp \Io) \notag\\
+  &\quad
+   - D\,(e_2 \joinp \Iinf \joinp \Io)
+   - E\,(e_1 \joinp \Iinf \joinp \Io)
+   - \tfrac12 F\,(I_\epsilon \joinp \Iinf \joinp \eo)
+   \;=\; \mathbf{c}^{*}\,I,\\
+  \mathbf{c}^{*}
+  &= -\big(2A\,e_{o_1} + 2B\,e_{o_2} + C\,e_{o_3}\big)
+     + D\,e_1 + E\,e_2 - F\,\einf .
+  \label{eq:ipns-vector}
+\end{align}
+The reading $\mathbf{p}\cdot\mathbf{c}^{*}=0 \iff \mathbf{p}\wedge\mathbf{c}=0$
+recovers the locus~\eqref{eq:ipns-conic}, so the six conic coefficients sit
+directly in the grade-$1$ vector~\eqref{eq:ipns-vector}.
+
+\subsection{Axis-aligned conics by infinity gauge}
+\label{sec:axis-aligned}
+% Folded from the 2019 QC2GA draft (axis-aligned conic from 4 points).
+An axis-aligned conic $A x^2 + B y^2 + D x + E y + F = 0$ has no cross term, i.e.
+$C=0$, leaving five coefficients and four degrees of freedom; it can therefore be
+built from \emph{four} points. The cross term is removed by wedging with
+$e_{\infty_3}$, which annihilates the $xy$ carrier of every point:
+\begin{equation}\label{eq:point-wedge-einf3}
+  \mathrm{p}\joinp e_{\infty_3}
+  = \big(\eo + \mathrm{p}_\epsilon
+       + \tfrac12(x^2 e_{\infty_1}+y^2 e_{\infty_2})\big)\joinp e_{\infty_3}.
+\end{equation}
+Hence an axis-aligned conic is a general conic with four points sent to the
+$e_{\infty_3}$ direction:
+\begin{equation}\label{eq:axis-aligned-conic}
+  \mathbf{c} = \Iod \joinp \mathrm{p}_1 \joinp \mathrm{p}_2 \joinp \mathrm{p}_3
+                    \joinp \mathrm{p}_4 \joinp e_{\infty_3}.
+\end{equation}
+Equivalently, $C=0$ is the statement that the $e_{o_3}$ coefficient of
+$\mathbf{c}^{*}$ in~\eqref{eq:ipns-vector} vanishes.
+
+\paragraph{The infinity gauge.}
+The four points in~\eqref{eq:axis-aligned-conic} carry one redundant degree of
+freedom: the \emph{type} of a conic is decided entirely by its two points at
+infinity --- its intersection with the line at infinity $\Iinf$. Spending that
+degree of freedom, by replacing the fourth point with a fixed grade-$2$
+\emph{infinity gauge} blade $B_\infty$, produces an axis-aligned conic of
+prescribed type from only three points:
+\begin{equation}\label{eq:axis-conic-family}
+  \mathbf{c} = \mathrm{p}_1\joinp \mathrm{p}_2\joinp \mathrm{p}_3
+               \joinp B_\infty \joinp \Iod,
+  \qquad
+  B_\infty = (\alpha\,e_{\infty_1} + \beta\,e_{\infty_2})\joinp e_{\infty_3}.
+\end{equation}
+$B_\infty$ \emph{is} the pair of ideal points of $\mathbf{c}$, the two solutions of
+its quadratic part on $\Iinf$; choosing $B_\infty = \mathrm{p}_4\joinp e_{\infty_3}$
+recovers the general axis-aligned conic~\eqref{eq:axis-aligned-conic}. The smooth
+types are listed in \cref{tab:axis-conics}.
+
+\begin{table}[H]
+\centering
+\caption{Axis-aligned conics by infinity gauge $B_\infty$ (smooth types).}
+\label{tab:axis-conics}
+\begin{tabular}{@{}lllc@{}}
+\toprule
+Type & $B_\infty$ & ideal points & $\Delta_2$ \\
+\midrule
+circle           & $(e_{\infty_1}-e_{\infty_2})\joinp e_{\infty_3}=\Iinfd$       & imaginary $(1,\pm i)$  & $>0,\ A{=}B$ \\
+ellipse $a{:}b$  & $(a^2 e_{\infty_1}-b^2 e_{\infty_2})\joinp e_{\infty_3}$       & imaginary $(a,\pm ib)$ & $>0$ \\
+hyperbola $a{:}b$& $(a^2 e_{\infty_1}+b^2 e_{\infty_2})\joinp e_{\infty_3}$       & real $(a,\pm b)$       & $<0$ \\
+parabola $\parallel x$ & $e_{\infty_1}\joinp e_{\infty_3}$                       & real double $(1,0)$    & $0$ \\
+parabola $\parallel y$ & $e_{\infty_2}\joinp e_{\infty_3}$                       & real double $(0,1)$    & $0$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{proposition}[type from the infinity gauge]\label{prop:axis-type}
+The conic~\eqref{eq:axis-conic-family} has $C=0$ and quadratic coefficients
+$A\propto\alpha$, $B\propto-\beta$, hence discriminant
+$\Delta_2 = AB \propto -\alpha\beta$. Therefore
+\begin{equation}
+  \alpha\beta<0 \Rightarrow \Delta_2>0\ (\text{ellipse}),\quad
+  \alpha\beta=0 \Rightarrow \Delta_2=0\ (\text{parabola}),\quad
+  \alpha\beta>0 \Rightarrow \Delta_2<0\ (\text{hyperbola}),
+\end{equation}
+which is the projective classification by incidence with $\Iinf$: an imaginary,
+double, or real ideal pair (the discriminants $\Delta_2,\Delta_3$ are defined in
+\cref{sec:extraction}).
+\end{proposition}
+
+The ideal pairs are wedges of the at-infinity points of \cref{sec:point}: the real
+pair $v_\infty(a,b)\joinp v_\infty(a,-b)\equiv(a^2 e_{\infty_1}+b^2 e_{\infty_2})\joinp e_{\infty_3}$
+(hyperbola), its imaginary counterpart $(a^2 e_{\infty_1}-b^2 e_{\infty_2})\joinp e_{\infty_3}$
+(ellipse), and the double contact $v_\infty(1,0)\joinp v_\infty'(1,0)\equiv e_{\infty_1}\joinp e_{\infty_3}$
+(parabola). The circle is the isotropic case $\alpha=-\beta$, where $B_\infty=\Iinfd$
+is the circular-point pair of \cref{sec:blade-meaning}; the construction then
+specialises to the circle, and \eqref{eq:axis-conic-family} to the standard
+axis-aligned ellipse, up to scale.
+
+\paragraph{Degenerate conics.}
+Within each $\Delta_2$ class a degenerate member ($\Delta_3=0$) appears when the
+three points are placed in special position; $B_\infty$ still fixes $\Delta_2$,
+while $\Delta_3$ drops to zero:
+\begin{itemize}
+  \item \emph{Two crossing lines} (degenerate hyperbola): $B_\infty=(e_{\infty_1}+e_{\infty_2})\joinp e_{\infty_3}$
+    with the three points through the common centre, e.g.\ yielding $x^2-y^2=0$.
+  \item \emph{Two parallel lines} (degenerate parabola): $B_\infty=e_{\infty_2}\joinp e_{\infty_3}$
+    with three points on two vertical lines, e.g.\ $x^2-1=0$.
+  \item \emph{A point} (degenerate ellipse, two imaginary lines): the $r\to0$ limit
+    of an imaginary circle, $x^2+y^2=0$; having no three distinct real points, it
+    arises only as a limit.
+\end{itemize}
+Since the type test keys on $\Delta_2$ alone, a degenerate hyperbola still reports
+as a hyperbola; genuineness is the separate condition $\Delta_3\neq0$. This places
+the whole family on the classical six-cell classification of
+\cref{tab:axis-master}: $B_\infty$ chooses the column ($\Delta_2$) and the point
+configuration chooses the row ($\Delta_3$).
+
+\begin{table}[H]
+\centering
+\caption{The six conic types as infinity gauge ($\Delta_2$) $\times$ point
+configuration ($\Delta_3$), reproducing the classical
+classification~\cite{richter-gebert_perspectives_2011}.}
+\label{tab:axis-master}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+ & $\Delta_2>0$ & $\Delta_2=0$ & $\Delta_2<0$ \\
+ & ($\alpha\beta<0$) & ($\alpha\beta=0$) & ($\alpha\beta>0$) \\
+\midrule
+$\Delta_3\neq0$ & ellipse / circle & parabola          & hyperbola \\
+$\Delta_3=0$    & point            & two parallel lines & two crossing lines \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Tilted (non-axis-aligned) conics follow by applying a rotation versor
+(\cref{sec:transforms}) to~\eqref{eq:axis-conic-family}, or directly from off-axis
+ideal directions in $B_\infty$ (general $v_\infty$ factors). Three-dimensional
+quadric-surface variants are out of scope for this two-dimensional foundation and
+belong to the QCGA lift discussed in the conclusion.
+
+\subsection{Axis-aligned conics by dual construction}
+\label{sec:axis-aligned-dual}
+Dually, an axis-aligned conic is the grade-$1$ vector $s=\mathbf{c}^{*}$
+of~\eqref{eq:ipns-vector} with $C=0$. Splitting the origin part with $e_o=e_{o_1}+e_{o_2}$
+and $\eobar=e_{o_1}-e_{o_2}$, so that $-2A\,e_{o_1}-2B\,e_{o_2}=-(A{+}B)\,e_o-(A{-}B)\,\eobar$,
+\begin{equation}\label{eq:dual-axis-conic}
+  s = -(A{+}B)\,e_o \;-\;(A{-}B)\,\eobar \;+\; D\,e_1 + E\,e_2 \;-\; F\,\einf .
+\end{equation}
+A point lies on the conic iff $\mathrm{q}\cdot s = 0$~\eqref{eq:ipns-conic}. For the
+centred conics ($D=E=0$, $F=-1$) this gives the closed forms of \cref{tab:dual-axis-conics};
+the circle is the familiar centre-point form $\mathrm{p}_c-\tfrac{r^2}{2}\einf$.
+
+\begin{table}[H]
+\centering
+\caption{Axis-aligned conics by dual construction (grade-$1$ IPNS vector). The
+ellipse/hyperbola/parabola are centred at the origin; a centre $(c_x,c_y)$ adds
+$-2A c_x\,e_1 - 2B c_y\,e_2$ and sets $F = A c_x^2 + B c_y^2 - 1$.}
+\label{tab:dual-axis-conics}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Type & dual vector $s$ \\
+\midrule
+circle $(c,r)$         & $\mathrm{p}_c - \tfrac{r^2}{2}\,\einf$ \\[2pt]
+ellipse $(a,b)$        & $-\big(\tfrac1{a^2}+\tfrac1{b^2}\big)e_o - \big(\tfrac1{a^2}-\tfrac1{b^2}\big)\eobar + \einf$ \\[2pt]
+hyperbola $(a,b)$      & $-\big(\tfrac1{a^2}-\tfrac1{b^2}\big)e_o - \big(\tfrac1{a^2}+\tfrac1{b^2}\big)\eobar + \einf$ \\[2pt]
+parabola $y^2{=}4px$   & $-e_o + \eobar - 4p\,e_1$ \\
+parabola $x^2{=}4py$   & $-e_o - \eobar - 4p\,e_2$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{The anisotropic round point.}
+The circle's $\mathrm{p}_c-\tfrac12 r^2\einf$ generalises by giving the point two
+independent weights, one per conformal origin. For weights $w_1,w_2$ define the \emph{anisotropic point} at $(c_x,c_y)$ as one
+independently weighted bundle per axis,
+\begin{equation}\label{eq:aniso-point}
+  \mathrm{p}^{(w_1,w_2)} =
+     w_1\big(e_{o_1}+c_x e_1+\tfrac{c_x^2}{2}e_{\infty_1}\big)
+   + w_2\big(e_{o_2}+c_y e_2+\tfrac{c_y^2}{2}e_{\infty_2}\big)
+   + w_1 w_2\, c_x c_y\,e_{\infty_3},
+\end{equation}
+which is \emph{null for every} $w_1,w_2$ --- the per-axis pairings
+$e_{o_i}\!\cdot e_{\infty_i}=-1$ cancel axis by axis --- and obeys, for a test
+point $\mathrm{q}=\mathrm{q}(x,y)$, the weighted distance identity
+$\mathrm{q}\cdot\mathrm{p}^{(w_1,w_2)} = -\tfrac12\big[w_1(x-c_x)^2 + w_2(y-c_y)^2\big]$.
+Attaching a radius yields a \emph{single dual vector for every axis-aligned conic},
+the \emph{anisotropic round point}
+\begin{equation}\label{eq:aniso-round-point}
+  \sigma(c_x,c_y,r,w_1,w_2) =
+     w_1\big(e_{o_1}+c_x e_1+\tfrac{c_x^2}{2}e_{\infty_1}\big)
+   + w_2\big(e_{o_2}+c_y e_2+\tfrac{c_y^2}{2}e_{\infty_2}\big)
+   + w_1 w_2\, c_x c_y\,e_{\infty_3}
+   - \tfrac12 r^2\,\einf,
+\end{equation}
+whose locus $\mathrm{q}\cdot\sigma=0$ is the conic
+$w_1(x-c_x)^2 + w_2(y-c_y)^2 = r^2$, with quadratic coefficients $A=w_1$, $B=w_2$
+and square $\sigma^2 = \tfrac12 r^2(w_1+w_2)$. The \textbf{weight ratio
+$w_1:w_2 = 1/a^2 : 1/b^2$ fixes the $(a,b)$ shape} and $r$ fixes the size, so
+\eqref{eq:aniso-round-point} realises \emph{every} axis-aligned conic: $w_1=w_2$
+gives a circle, $w_1,w_2>0$ an ellipse (semi-axes $a,b$ for $w_i=1/a_i^2$, $r=1$),
+and $w_2<0$ a hyperbola. The sign of the radius term is the reality
+($-\tfrac12 r^2\einf$ the real conic, $+\tfrac12 r^2\einf$ its imaginary partner),
+exactly as for the circle, whose ordinary round point $\mathrm{p}_c-\tfrac12 r^2\einf$
+is the isotropic case $w_1=w_2=1$. Expression~\eqref{eq:aniso-round-point} agrees
+with the canonical vector of \cref{tab:dual-axis-conics} up to the gauge-inert
+$\einfbar,e_{\infty_3}$ terms, which do not move the locus.
+
+\begin{remark}[why CCGA, and why this is still a conic]\label{rem:two-origins}
+CGA's round point $\mathrm{p}_c-\tfrac12 r^2\einf$ has a single weight and can
+carry only an isotropic radius (circles); CCGA's \emph{two} conformal origins
+$e_{o_1},e_{o_2}$ let the round point carry an \emph{anisotropic} radius, i.e. an
+ellipse or hyperbola. The weights are exactly the conic's quadratic coefficients
+$(A,B)=(w_1,w_2)$, and allowing the off-diagonal weight on $e_{o_3}$ adds the cross
+term $C$, recovering the general (tilted) dual conic. A ``fully weighted point''
+is therefore a quadratic form --- a conic --- rather than a new primitive: the
+isotropic point of \cref{sec:point} remains the base element of the algebra, and
+$\sigma$ is read as a \emph{derived} round object.
+\end{remark}
+
+\begin{proposition}[type from the origin balance]\label{prop:dual-axis-type}
+In~\eqref{eq:dual-axis-conic} the conic type is set by the balance of the
+combined and differential origins, $\eobar/e_o$: writing $A=1/a^2$ and
+$B=\pm1/b^2$,
+\begin{equation}
+  |A{-}B|<|A{+}B|\ (\text{ellipse}),\quad
+  |A{-}B|=|A{+}B|\ (\text{parabola}),\quad
+  |A{-}B|>|A{+}B|\ (\text{hyperbola}),
+\end{equation}
+the circle being the isotropic limit $\eobar=0$ ($A=B$), and the parabola the
+case where one of $A,B$ vanishes.
+\end{proposition}
+
+This is the dual of \cref{prop:axis-type}: the wedge construction fixes the type by
+the \emph{infinity} gauge $B_\infty$ (the conic's ideal points), whereas the dual
+construction fixes it by the \emph{origin} blades $e_o,\eobar$ (its shape) --- the
+gauge duality ``shape on the origin side, size on the infinity side'' of
+\cref{sec:blade-meaning}. The circle's clean centre-point form
+$\mathrm{p}_c-\tfrac{r^2}{2}\einf$ is exactly the isotropic case where the
+$\eobar$ term drops out, while the ``$\pm$'' that distinguishes ellipse from
+hyperbola is the sign carried by the $\eobar$ anisotropy term. Off-centre conics
+follow by a translator versor (\cref{sec:transforms}), and the degenerate members
+($\Delta_3=0$) are the same special-position limits as on the wedge side.
+
+%% ============================================================
+\section{The Object Taxonomy}
+\label{sec:taxonomy}
+\subsection{The construction ladder}
+
+Every CCGA object is a wedge of points with at most the two gauge blades $\Iod$
+(origin) and $\Iinfd$ (infinity, the circular-point pair). Three ladders organise
+the whole zoo, distinguished by which gauge they carry.
+
+\begin{enumerate}
+\item \textbf{Bare multipole ladder} (no gauge): the plain wedge of $k$ points,
+  $\mathrm{p}_1\joinp\cdots\joinp\mathrm{p}_k$, grade $k$ for $k=1,\dots,5$
+  (point, twopole, tripole, quadpole, pentapole). Five points already fix a conic
+  as a point-locus; the pentapole is the last rung.
+\item \textbf{$\Iod$-gauged conic ladder}: wedging $\Iod$ promotes a blade by two
+  grades and gauge-fixes it so the dual is clean (\cref{sec:conics}). For $n\le 4$
+  points $\mathrm{p}_1\joinp\cdots\joinp\mathrm{p}_n\joinp\Iod$ (grade $n+2$) is a
+  \emph{pencil} --- the gauge-fixed family of conics through the $n$ points; the
+  $n=2$ rung is the \emph{gauged dipole} (the conic-gauge point pair, the natural
+  conic\,$\meet$\,line result) and the $n=4$ rung is the conic\,$\meet$\,conic
+  intersection blade. \emph{A full CCGA conic is precisely a grade-$7$ blade ending
+  in $\joinp\,\Iod$.} The general conic is
+  $\mathrm{p}_1\joinp\cdots\joinp\mathrm{p}_5\joinp\Iod$; the smooth named conics are
+  \emph{three points $+$ an ideal-point pair $+\,\Iod$}, the pair being two real
+  ideal points (hyperbola, $\Delta_2>0$), one double ideal point (parabola, tangent
+  to $\Iinf$, $\Delta_2=0$), or two imaginary ideal points (ellipse, $\Delta_2<0$).
+  When that pair is the circular points $\Iinfd$ the ellipse becomes a circle ---
+  which is therefore a CGA object (next ladder), not listed here.
+\item \textbf{CGA embedded in CCGA} (the $\Iinfd$ sub-array): wedging the
+  circular-point pair $\Iinfd$ embeds the standard CGA round/flat family inside CCGA
+  at grade $=\text{(CGA grade)}+2$. Round point $\mathrm{p}\joinp\Iinfd$, point pair
+  $\mathrm{p}_1\joinp\mathrm{p}_2\joinp\Iinfd$, circle
+  $\mathrm{p}_1\joinp\mathrm{p}_2\joinp\mathrm{p}_3\joinp\Iinfd$, with the flat
+  versions (flat point, line) carrying an extra $\einf$. These are CGA objects, not
+  full CCGA conics.
+\end{enumerate}
+
+\subsection{Master object table}
+\begin{table}[H]
+\centering
+\caption{The CCGA object zoo, sorted by OPNS grade, in three construction blocks:
+the bare multipole ladder, the $\Iod$-gauged conic ladder, and the $\Iinfd$
+CGA-embedded sub-array; followed by flats / ideal elements. The ideal-point pair of
+a smooth conic is written $v_\infty^{(1)},v_\infty^{(2)}$ (real/imaginary) or
+$v_\infty,v_\infty'$ (double); ``CGA gr.'' is the grade inside the CGA sub-algebra
+(CCGA grade $-\,2$).}
+\label{tab:zoo}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lllll@{}}
+\toprule
+Object & OPNS form & gr(OPNS) & gr(IPNS) & Reality \\
+\midrule
+\multicolumn{5}{@{}l}{\emph{Bare multipole ladder (points only)}}\\
+Point            & $\mathrm{p}$ & 1 & 7 & null \\
+Twopole          & $\mathrm{p}_1\joinp \mathrm{p}_2$ & 2 & 6 & $\mathrm{sign}\,(\cdot)^2$ \\
+Tripole          & $\mathrm{p}_1\joinp \mathrm{p}_2\joinp \mathrm{p}_3$ & 3 & 5 & --- \\
+Quadpole         & $\mathrm{p}_1\joinp\cdots\joinp \mathrm{p}_4$ & 4 & 4 & --- \\
+Pentapole        & $\mathrm{p}_1\joinp\cdots\joinp \mathrm{p}_5$ & 5 & 3 & --- \\
+\midrule
+\multicolumn{5}{@{}l}{\emph{$\Iod$-gauged conic ladder (a CCGA conic ends in $\joinp\,\Iod$)}}\\
+Pencil ($n\le4$) & $\mathrm{p}_1\joinp\cdots\joinp \mathrm{p}_n\joinp \Iod$ & $n{+}2$ & $6{-}n$ & --- \\
+Conic (general)  & $\mathrm{p}_1\joinp\cdots\joinp \mathrm{p}_5\joinp \Iod$ & 7 & 1 & $\Delta_2,\Delta_3$ \\
+Hyperbola        & $\mathrm{p}_1\joinp \mathrm{p}_2\joinp \mathrm{p}_3\joinp v_\infty^{(1)}\joinp v_\infty^{(2)}\joinp \Iod$ & 7 & 1 & $\Delta_2>0$ \\
+Parabola         & $\mathrm{p}_1\joinp \mathrm{p}_2\joinp \mathrm{p}_3\joinp v_\infty\joinp v_\infty'\joinp \Iod$ & 7 & 1 & $\Delta_2=0$ \\
+Ellipse          & $\mathrm{p}_1\joinp \mathrm{p}_2\joinp \mathrm{p}_3\joinp v_\infty^{(1)}\joinp v_\infty^{(2)}\joinp \Iod$ & 7 & 1 & $\Delta_2<0$ \\
+\midrule
+\multicolumn{5}{@{}l}{\emph{CGA embedded in CCGA (the $\Iinfd$ sub-array)}}\\
+Round point      & $\mathrm{p}\joinp \Iinfd$ & 3 & --- & CGA gr.\ 1 \\
+Point pair       & $\mathrm{p}_1\joinp \mathrm{p}_2\joinp \Iinfd$ & 4 & --- & CGA gr.\ 2 \\
+Flat point (CGA) & $\mathrm{p}\joinp \einf\joinp \Iinfd$ & 4 & --- & CGA gr.\ 2 \\
+Circle (CGA)     & $\mathrm{p}_1\joinp \mathrm{p}_2\joinp \mathrm{p}_3\joinp \Iinfd$ & 5 & --- & CGA gr.\ 3 \\
+Line (CGA)       & $\mathrm{p}_1\joinp \mathrm{p}_2\joinp \einf\joinp \Iinfd$ & 5 & --- & CGA gr.\ 3 \\
+\midrule
+\multicolumn{5}{@{}l}{\emph{Flats / ideal elements}}\\
+Ideal point      & (drop $\eo$ part) & 1 & --- & n/a \\
+Line at infinity & $\Iinf$ & 3 & --- & n/a \\
+Flat point       & $\mathrm{p}\joinp \Iinf$ & 4 & --- & n/a \\
+Conic at infinity& $\Iod \joinp \Iinf$ & 5 & --- & n/a \\
+Pseudoscalar     & $I$ & 8 & 0 & --- \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+The ideal points $v_\infty=v_\infty(v_x,v_y)\in\Iinf$ are the asymptotic directions
+the conic meets on the line at infinity; the ellipse uses the imaginary pair
+encoded by the real bivector $(a^2 e_{\infty_1}-b^2 e_{\infty_2})\joinp e_{\infty_3}$
+(a weighted $\Iinfd$, which for $a=b$ degenerates to the circular points and hence to
+the CGA circle).
+
+\subsection{Reality conditions}
+
+%% ============================================================
+\section{Operations: Join, Meet, and Dual}
+\label{sec:operations}
+
+%% ============================================================
+\section{Geometric-Algebra-Native Feature Extraction}
+\label{sec:extraction}
+
+%% ============================================================
+\section{Transformations as Versors}
+\label{sec:transforms}
+
+%% ============================================================
+\section{Conic Intersections}
+\label{sec:intersections}
+\subsection{Meet grade arithmetic}
+
+\subsection{The universal pipeline}
+
+\subsection{Shared-factor / B\'ezout reduction}
+
+%% ============================================================
+\section{Conclusion and Future Work}
+\label{sec:conclusion}
+
+%% ============================================================
+\bibliographystyle{spmpsci}
+\bibliography{references}
+
+\end{document}
