@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \providecommand{\url}[1]{{#1}}
 \providecommand{\urlprefix}{URL }
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -15,21 +15,115 @@ Breuils, S., Fuchs, L., Hitzer, E., Nozick, V., Sugimoto, A.: Three-dimensional
 \newblock \urlprefix\url{https://hal.science/hal-02169419}.
 \newblock Publisher: Springer Verlag
 
+\bibitem{breuils2018quadric}
+Breuils, S., Nozick, V., Sugimoto, A., Hitzer, E.: Quadric conformal geometric
+  algebra of r\^{} 9, 6 r 9, 6.
+\newblock Advances in Applied Clifford Algebras \textbf{28}, 1--16 (2018)
+
+\bibitem{buchholz_optimal_2007}
+Buchholz, S., Tachibana, K., Hitzer, E.M.S.: Optimal {Learning} {Rates} for
+  {Clifford} {Neurons}.
+\newblock In: J.M. de~Sá, L.A. Alexandre, W.~Duch, D.~Mandic (eds.) Artificial
+  {Neural} {Networks} – {ICANN} 2007, Lecture {Notes} in {Computer}
+  {Science}, pp. 864--873. Springer, Berlin, Heidelberg (2007).
+\newblock \doi{10.1007/978-3-540-74690-4_88}
+
+\bibitem{byrtus_specific_2021}
+Byrtus, R., Derevianko, A., Vašík, P., Hildenbrand, D., Steinmetz, C.: On
+  {Specific} {Conic} {Intersections} in {GAC} and {Symbolic} {Calculations} in
+  {GAALOPWeb}.
+\newblock Advances in Applied Clifford Algebras \textbf{32}(1), 2 (2021).
+\newblock \doi{10.1007/s00006-021-01182-z}.
+\newblock \urlprefix\url{https://doi.org/10.1007/s00006-021-01182-z}
+
 \bibitem{chomicki_intersection_2023}
 Chomicki, C., Breuils, S., Biri, V., Nozick, V.: Intersection of conic sections
   using geometric algebra.
 \newblock In: {CGI} {ENGAGE} 2023. Shanghai, China (2023).
 \newblock \urlprefix\url{https://hal.science/hal-04210085}
 
+\bibitem{de_keninck_non-parametric_2019}
+De~Keninck, S.: Non-parametric {Realtime} {Rendering} of {Subspace} {Objects}
+  in {Arbitrary} {Geometric} {Algebras}.
+\newblock In: M.~Gavrilova, J.~Chang, N.M. Thalmann, E.~Hitzer, H.~Ishikawa
+  (eds.) Advances in {Computer} {Graphics}, Lecture {Notes} in {Computer}
+  {Science}, pp. 549--555. Springer International Publishing, Cham (2019).
+\newblock \doi{10.1007/978-3-030-22514-8_54}
+
+\bibitem{dorst_inner_2002}
+Dorst, L.: The {Inner} {Products} of {Geometric} {Algebra}.
+\newblock In: L.~Dorst, C.~Doran, J.~Lasenby (eds.) Applications of {Geometric}
+  {Algebra} in {Computer} {Science} and {Engineering}, pp. 35--46. Birkhäuser,
+  Boston, MA (2002).
+\newblock \doi{10.1007/978-1-4612-0089-5_2}.
+\newblock \urlprefix\url{https://doi.org/10.1007/978-1-4612-0089-5_2}
+
 \bibitem{dorst_geometric_2010}
 Dorst, L., Fontijne, D., Mann, S.: Geometric {Algebra} for {Computer}
   {Science}: {An} {Object}-{Oriented} {Approach} to {Geometry}.
 \newblock Elsevier (2010)
 
+\bibitem{easter_double_2017}
+Easter, R.B., Hitzer, E.: Double {Conformal} {Geometric} {Algebra}.
+\newblock Advances in Applied Clifford Algebras \textbf{27}(3), 2175--2199
+  (2017).
+\newblock \doi{10.1007/s00006-017-0784-0}.
+\newblock \urlprefix\url{https://doi.org/10.1007/s00006-017-0784-0}
+
+\bibitem{faucette_geometric_1996}
+Faucette, W.M.: A {Geometric} {Interpretation} of the {Solution} of the
+  {General} {Quartic} {Polynomial}.
+\newblock The American Mathematical Monthly \textbf{103}(1), 51--57 (1996).
+\newblock \doi{10.2307/2975214}.
+\newblock \urlprefix\url{https://www.jstor.org/stable/2975214}.
+\newblock Publisher: Mathematical Association of America
+
+\bibitem{fulton_algebraic_1989}
+Fulton, W.: Algebraic {Curves}: {An} {Introduction} to {Algebraic} {Geometry}.
+\newblock Addison-Wesley Publishing Company, Advanced Book Program (1989)
+
+\bibitem{goldman_r4_2015}
+Goldman, R., Mann, S.: R(4, 4) {As} a {Computational} {Framework} for
+  3-{Dimensional} {Computer} {Graphics}.
+\newblock Advances in Applied Clifford Algebras \textbf{25}(1), 113--149
+  (2015).
+\newblock \doi{10.1007/s00006-014-0480-2}.
+\newblock \urlprefix\url{https://doi.org/10.1007/s00006-014-0480-2}
+
+\bibitem{gregory_elastic_2017}
+Gregory, A.L., Lasenby, J., Agarwal, A.: The elastic theory of shells using
+  geometric algebra.
+\newblock Royal Society Open Science \textbf{4}(3), 170065 (2017).
+\newblock \doi{10.1098/rsos.170065}.
+\newblock
+  \urlprefix\url{https://royalsocietypublishing.org/doi/10.1098/rsos.170065}.
+\newblock Publisher: Royal Society
+
+\bibitem{halsted_synthetic_1906}
+Halsted, G.B.: Synthetic projective geometry.
+\newblock New York Wiley (1906).
+\newblock \urlprefix\url{http://archive.org/details/syntheticproject00halsuoft}
+
+\bibitem{hestenes_zitterbewegung_1990}
+Hestenes, D.: The zitterbewegung interpretation of quantum mechanics.
+\newblock Foundations of Physics \textbf{20}, 1213--1232 (1990).
+\newblock \doi{10.1007/BF01889466}
+
+\bibitem{hestenes_new_2012}
+Hestenes, D.: New {Foundations} for {Classical} {Mechanics}.
+\newblock Springer Science \& Business Media (2012)
+
 \bibitem{hrdina_geometric_2018}
 Hrdina, J., Navrat, A., Vašík, P.: Geometric {Algebra} for {Conics}.
 \newblock Advances in Applied Clifford Algebras \textbf{28} (2018).
 \newblock \doi{10.1007/s00006-018-0879-2}
+
+\bibitem{2024-01-09louckaAlgorithmsConicFitting}
+Lou{\v c}ka, P., Va{\v s}{\'i}k, P.: Algorithms for {{Conic Fitting Through
+  Given Proper}} and {{Improper Waypoints}} in {{Geometric Algebra}} for
+  {{Conics}}.
+\newblock Advances in Applied Clifford Algebras \textbf{34}(1), 6 (2024).
+\newblock \doi{10.1007/s00006-023-01308-5}
 
 \bibitem{perwass_geometric_2009}
 Perwass, C.: Geometric {Algebra} with {Applications} in {Engineering}, vol.~4.
@@ -41,5 +135,12 @@ Richter-Gebert, J.: Perspectives on {Projective} {Geometry}: {A} {Guided}
   {Tour} {Through} {Real} and {Complex} {Geometry}.
 \newblock Springer Science \& Business Media (2011).
 \newblock Google-Books-ID: F\_NP8Kub2XYC
+
+\bibitem{ruhe_geometric_2023}
+Ruhe, D., Gupta, J.K., de~Keninck, S., Welling, M., Brandstetter, J.: Geometric
+  {Clifford} {Algebra} {Networks} (2023).
+\newblock \doi{10.48550/arXiv.2302.06594}.
+\newblock \urlprefix\url{http://arxiv.org/abs/2302.06594}.
+\newblock ArXiv:2302.06594 [cs]
 
 \end{thebibliography}

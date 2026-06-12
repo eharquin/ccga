@@ -19,7 +19,7 @@ For grade-7 OPNS conics the subtype is determined from the IPNS (A,B,C,D,E,F):
   A = B = C = 0          → Line (degenerate conic)
 """
 
-from .algebra import einf, eo, Iod, to_null_basis
+from .algebra import einf, eo, e1, e2, Iod, Iinf, to_null_basis
 from .operations import grades, pure_grade, is_zero, dual, max_coeff
 
 _TOL = 1e-9
@@ -229,38 +229,115 @@ def conic_center(mv, tol=_TOL):
     return cx, cy
 
 
-def conic_is_degenerate(mv, tol=1e-7):
-    """True if the conic is degenerate (det M₃ ≈ 0) — a line pair (Δ>0 crossing,
-    Δ=0 parallel/double) or a single point.  Distinguishes a genuine
-    ellipse/hyperbola/parabola (det≠0) from its degenerate limits."""
-    import numpy as np
+def _conic_lines(A, B, C, D, E, F):
+    """
+    Three IPNS-line duals l1,l2,l3 (grade-7 OPNS "lines") built from the conic
+    coefficients (paper §7, "Computing discriminants in QC2GA"):
+
+      l1 = dual( A·e1 + (C/2)·e2 - (D/2)·einf )
+      l2 = dual( (C/2)·e1 + B·e2 - (E/2)·einf )
+      l3 = dual( (D/2)·e1 + (E/2)·e2 - F·einf )
+    """
+    l1 = dual(A*e1 + (C/2)*e2 - (D/2)*einf)
+    l2 = dual((C/2)*e1 + B*e2 - (E/2)*einf)
+    l3 = dual((D/2)*e1 + (E/2)*e2 - F*einf)
+    return l1, l2, l3
+
+
+def _extract_ratio(mv, target, tol):
+    """Coefficient of mv along target, read off a single shared null-basis
+    component (target is a single basis blade up to sign/sum of two)."""
+    md, td = to_null_basis(mv, tol), to_null_basis(target, tol)
+    if not td:
+        return 0.0
+    key = next(iter(td))
+    return md.get(key, 0.0) / td[key]
+
+
+# Targets spanning the grade-6 "centre flat point" subspace p_c ^ Iod ^ Iinf,
+# p_c = w*eo + x*e1 + y*e2  (paper §7).
+_PC_TARGET_W = eo ^ Iod ^ Iinf
+_PC_TARGET_X = e1 ^ Iod ^ Iinf
+_PC_TARGET_Y = e2 ^ Iod ^ Iinf
+# Target spanning the grade-5 "Delta_3" line: Iod ^ Iinf.
+_D3_TARGET = Iod ^ Iinf
+
+
+def conic_center_meet(mv, tol=_TOL):
+    """
+    Centre flat point p_c = w_c·eo + x_c·e1 + y_c·e2, obtained as the meet of
+    two of the conic's three §7 dual lines (paper §7, "meet of three lines"):
+
+      l1 & l2  ==  -1/2 · p_c ^ Iod ^ Iinf
+
+      w_c = Delta_2 = AB - C²/4
+      x_c = CE/4 - BD/2
+      y_c = CD/4 - AE/2
+
+    Finite center = (x_c/w_c, y_c/w_c).  w_c == 0 (parabola) -> p_c is an
+    ideal point (the axis direction).  Verified to reproduce conic_center.
+    """
     A, B, C, D, E, F = ipns_to_coeffs(_conic_vector(mv, tol))
-    M3 = np.array([[A, C/2, D/2], [C/2, B, E/2], [D/2, E/2, F]])
+    l1, l2, _ = _conic_lines(A, B, C, D, E, F)
+    m12 = l1 & l2
+    w = _extract_ratio(m12, _PC_TARGET_W, tol)
+    x = _extract_ratio(m12, _PC_TARGET_X, tol)
+    y = _extract_ratio(m12, _PC_TARGET_Y, tol)
+    return w, x, y
+
+
+def conic_discriminant2(mv, tol=_TOL):
+    """Delta_2 = AB - C²/4  (paper §7), via l1 & l2.  Equals -conic_discriminant/4.
+
+    l1 & l2 == -1/2 * p_c ^ Iod ^ Iinf, so its w-component is -Delta_2/2;
+    flip sign and scale to recover Delta_2 itself."""
+    w, _, _ = conic_center_meet(mv, tol)
+    return -2.0 * w
+
+
+def conic_discriminant3(mv, tol=_TOL):
+    """
+    Delta_3 = det(M3) = ABF + (CDE - C²F - BD² - AE²)/4 (paper §7), via the
+    meet of all three dual lines:
+
+      l1 & l2 & l3  ==  -Delta_3/2 · Iod ^ Iinf
+
+    Delta_3 == 0  <=>  the conic is degenerate (line pair / point).
+    """
+    A, B, C, D, E, F = ipns_to_coeffs(_conic_vector(mv, tol))
+    l1, l2, l3 = _conic_lines(A, B, C, D, E, F)
+    m123 = l1 & l2 & l3
+    return -2.0 * _extract_ratio(m123, _D3_TARGET, tol)
+
+
+def conic_is_degenerate(mv, tol=1e-7):
+    """True if the conic is degenerate (Delta_3 ≈ 0, paper §7) — a line pair
+    (Δ>0 crossing, Δ=0 parallel/double) or a single point.  Distinguishes a
+    genuine ellipse/hyperbola/parabola (Delta_3≠0) from its degenerate limits."""
+    A, B, C, D, E, F = ipns_to_coeffs(_conic_vector(mv, tol))
     scale = max(abs(v) for v in (A, B, C, D, E, F)) or 1.0
-    return abs(np.linalg.det(M3)) < tol * scale**3
+    return abs(conic_discriminant3(mv, tol)) < tol * scale**3
 
 
 def conic_center_point(mv, tol=_TOL):
     """The center of a conic as a CCGA grade-1 point — the **pole of the line at
     infinity**, the projectively-unified notion of center.
 
-      M3 = [[A, C/2, D/2], [C/2, B, E/2], [D/2, E/2, F]];   center = M3⁻¹·[0,0,1]ᵀ.
+    Built from the centre flat point p_c = w_c·eo + x_c·e1 + y_c·e2
+    (conic_center_meet, paper §7, meet of three dual lines).
 
-    For an ellipse/hyperbola the pole is finite (w ≠ 0) → a finite CCGA point.
-    For a **parabola** the pole has w = 0 → it is an **ideal point** (at
+    For an ellipse/hyperbola w_c = Delta_2 ≠ 0 → a finite CCGA point.
+    For a **parabola** w_c = Delta_2 = 0 → p_c is an **ideal point** (at
     infinity): the parabola is tangent to the line at infinity, so the pole is
     that point of tangency, lying in the axis direction.  Returned as
     point_at_infinity(axis); it equals the parabola's single (double) asymptotic
     direction and lies on the parabola itself.
 
-    Raises for a degenerate conic (M3 singular)."""
-    import numpy as np
+    Raises for a degenerate conic (Delta_3 ≈ 0)."""
     from .point import point as _pt, point_at_infinity as _pinf
-    A, B, C, D, E, F = ipns_to_coeffs(_conic_vector(mv, tol))
-    M3 = np.array([[A, C/2, D/2], [C/2, B, E/2], [D/2, E/2, F]])
-    if abs(np.linalg.det(M3)) < tol:
+    if conic_is_degenerate(mv, tol):
         raise ValueError("degenerate conic: center (pole of L∞) undefined")
-    x, y, w = np.linalg.solve(M3, [0.0, 0.0, 1.0])
+    w, x, y = conic_center_meet(mv, tol)
     if abs(w) > tol:
         return _pt(x / w, y / w)                 # finite center
     n = (x*x + y*y) ** 0.5                        # parabola: ideal point (axis dir)

@@ -4,9 +4,7 @@
 %%  AGACSE 2026 — Advances in Applied Clifford Algebras (AACA)
 %%  Compile: pdflatex -> bibtex -> pdflatex -> pdflatex
 %%
-%%  STATUS: DRAFT IN PROGRESS.
-%%   - Sections 2 (algebra) and 4.3 (axis-aligned conics) are drafted; the
-%%     remaining sections are stubs marked with [TODO].
+%%  STATUS: COMPLETE DRAFT — all sections written; author list TBC.
 %%   - This is a pure theory paper: no software library is referenced.
 %% ============================================================
 \documentclass{birkjour}
@@ -83,7 +81,7 @@
 %% ============================================================
 \begin{document}
 
-\title{Conic Conformal Geometric Algebra:\\ Foundation for Two-Dimensional Conic Geometry}
+\title[Conic Conformal Geometric Algebra]{Conic Conformal Geometric Algebra:\\ Foundation for Two-Dimensional Conic Geometry}
 
 % TODO confirm final author list / order with co-authors.
 \author[E. Harquin \and S. Breuils \and V. Biri \and V. Nozick]%
@@ -112,8 +110,7 @@ We present Conic Conformal Geometric Algebra (CCGA), the geometric algebra
 $\mathbb{R}_{5,3}$ for the geometry of planar conics, as a systematic
 foundation for two-dimensional conic geometry. CCGA renames and consolidates
 the algebra previously introduced as QC2GA and proven isomorphic to the
-Geometric Algebra for Conics (GAC). \emph{[TODO: finalise abstract once
-sections are drafted.]} We give the complete catalogue of geometric objects in
+Geometric Algebra for Conics (GAC). We give the complete catalogue of geometric objects in
 both outer-product null space (OPNS) and inner-product null space (IPNS) form,
 with their grades and reality conditions; the join, meet, and dual operations;
 closed-form, geometric-algebra-native extraction of every classical conic
@@ -130,9 +127,54 @@ with its reality conditions.
 \section{Introduction}
 \label{sec:intro}
 
-Geometric Algebra (GA) provides \dots \emph{[TODO: write 2--3 paragraphs of
-motivation, adapting the introduction of the base paper to a foundations
-framing.]}
+Geometric Algebra (GA), also known as Clifford algebra, provides a unified
+language for geometry in which objects and the transformations acting on them
+live in a single associative algebra~\cite{dorst_geometric_2010,
+perwass_geometric_2009}. Its conformal model represents points as null
+vectors, circles and lines as blades, and conformal maps as versors acting by
+the sandwich product --- a formulation that has proven fruitful in classical
+mechanics and physics~\cite{hestenes_new_2012,hestenes_zitterbewegung_1990,
+gregory_elastic_2017}, in computer graphics~\cite{de_keninck_non-parametric_2019},
+and more recently in geometric deep learning~\cite{buchholz_optimal_2007,
+ruhe_geometric_2023}. For the Euclidean plane, however, the conformal model
+stops at circles and lines: the general conic --- ellipse, parabola,
+hyperbola, and their degenerate limits --- is outside its reach, even though
+conics are the natural next family of planar curves in vision, graphics, and
+kinematics.
+
+Several algebras have been proposed to close this gap. Perwass embedded plane
+conics in $\mathbb{R}_{5,3}$ via a Veronese-type point map as a proof of
+concept~\cite{perwass_geometric_2009}; Easter and Hitzer's Double Conformal
+Geometric Algebra~\cite{easter_double_2017} and Goldman and Mann's
+$\mathbb{R}_{4,4}$ framework~\cite{goldman_r4_2015} capture wider quadric
+families at the price of losing some operations; Breuils et al.\ introduced
+Quadric Conformal Geometric Algebra (QCGA, $\mathbb{R}_{9,6}$) for
+three-dimensional quadrics~\cite{breuils2018quadric,
+breuils_three-dimensional_2019}, whose two-dimensional restriction QC2GA is
+again $\mathbb{R}_{5,3}$; and Hrdina, N\'avrat, and Va\v{s}\'ik proposed the
+Geometric Algebra for Conics (GAC)~\cite{hrdina_geometric_2018}, since used
+for conic fitting~\cite{2024-01-09louckaAlgorithmsConicFitting} and for conic
+intersection in special configurations~\cite{byrtus_specific_2021}. QC2GA and
+GAC were recently proven isomorphic --- the same algebra in two
+bases~\cite{chomicki_intersection_2023}. Each of these contributions, however,
+introduced its own basis, normalisation, and name, and each developed only the
+slice of the theory its application required: the object catalogue, the
+feature-extraction formulas, the transformation group, and the intersection
+theory have never been assembled in one place, in one notation.
+
+This paper provides that consolidation. We adopt the name \emph{Conic
+Conformal Geometric Algebra} (CCGA) for $\mathbb{R}_{5,3}$ equipped with the
+null working basis and point embedding of \cref{sec:algebra,sec:point}, and we
+develop the algebra as a self-contained foundation: the complete taxonomy of
+its objects in both OPNS and IPNS form, organised by a single construction
+ladder; closed-form extraction of every classical conic feature directly from
+the dual conic vector by inner products with a fixed set of special blades;
+a precise characterisation of which planar maps the versor group realises; and
+a unified treatment of conic intersection by grade arithmetic of the
+regressive product. Throughout, a single design principle is enforced:
+\emph{every structural operation is geometric algebra; the only numeric
+residue is root extraction} (square roots and polynomial roots, which carry
+the irreducible algebraic content of intersecting curves).
 
 \subsection{Contributions}
 \label{sec:contributions}
@@ -153,16 +195,37 @@ The main contributions of this paper are:
     are only linear outermorphisms (shears, non-uniform scalings, projective
     maps) (\cref{sec:transforms}).
   \item A unified \textbf{intersection framework} based on a shared-factor /
-    B\'ezout reduction of the regressive product, recovering and organising the
-    pencil method of the base paper (\cref{sec:intersections}).
+    B\'ezout reduction of the regressive product, complementing the pencil
+    method of~\cite{chomicki_intersection_2023} (\cref{sec:intersections}).
 \end{itemize}
 
 \subsection{Notation and Conventions}
 \label{sec:notation}
-We follow the GA conventions of~\cite{dorst_geometric_2010,perwass_geometric_2009}.
-\emph{[TODO: notation table.]} Throughout, $A \equiv B$ means $A$ equals $B$ up
+We follow the GA conventions of~\cite{dorst_geometric_2010,perwass_geometric_2009};
+\cref{tab:notation} fixes the symbols used throughout.
+Throughout, $A \equiv B$ means $A$ equals $B$ up
 to a nonzero scalar, $\grade{A}_k$ is the grade-$k$ part, and the dual is fixed
 as $A^{*} = A\,I^{-1}$ (right multiplication by the inverse pseudoscalar).
+
+\begin{table}[H]
+\centering
+\caption{Notation.}
+\label{tab:notation}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Symbol & Meaning & Convention \\
+\midrule
+$A\joinp B$        & outer product (join, span)        & grades add \\
+$A\cdot B$         & inner product                     & symmetric, vectors \\
+$A\,\lrcorner\,B$  & left contraction                  & \cite{dorst_inner_2002} \\
+$A\meet B$         & meet (regressive product)         & $(A^{*}\joinp B^{*})^{*}$ \\
+$A^{*}$            & dual                              & $A\,I^{-1}$ \\
+$\tilde A$         & reverse                           & \\
+$\grade{A}_k$      & grade-$k$ part                    & \\
+$A \equiv B$       & equality up to a nonzero scalar   & projective equality \\
+\bottomrule
+\end{tabular}
+\end{table}
 % Folded from the 2019 QC2GA draft (Harquin, Breuils, Nozick).
 Lower-case bold letters denote basis blades and multivectors ($\mathbf{a}$);
 italic lower-case letters denote their scalar components ($a_1, x, y^2, \dots$);
@@ -371,15 +434,62 @@ $(x_2,y_2)$,
   &= -\tfrac12\big((x_1-x_2)^2+(y_1-y_2)^2\big)
    = -\tfrac12\,\mathrm{Dist}^2(\mathrm{p}_1,\mathrm{p}_2),
 \end{align}
-so in particular $\mathrm{p}^2 = 0$ (every point is null).
+so in particular $\mathrm{p}^2 = 0$ (every point is null). Finite points are
+normalised by $\mathrm{p}\cdot\einf=-1$; rescaling a round object by
+$-(\,\cdot\,)\cdot\einf$ restores this canonical scale.
+
+\paragraph{Points at infinity.}
+Sending $\mathrm{p}(t\mathbf{v})$ to infinity along a direction
+$\mathbf{v}=(v_x,v_y)$ and keeping the leading (degree-$2$) term defines the
+\emph{ideal point}
+\begin{equation}\label{eq:ideal-point}
+  v_\infty(\mathbf{v}) \;=\; \lim_{t\to\infty}\frac{\mathrm{p}(t\mathbf{v})}{t^2}
+  \;=\; \tfrac{v_x^2}{2}\,e_{\infty_1} + \tfrac{v_y^2}{2}\,e_{\infty_2}
+        + v_xv_y\,e_{\infty_3},
+\end{equation}
+a null vector in $\Iinf$, defined up to scale and independent of the sign of
+$\mathbf{v}$ (directions at infinity are unoriented). The ideal points sweep
+the Veronese conic inside the plane at infinity; the two \emph{circular
+points} are the complex pair $I=v_\infty(1,i)$, $J=v_\infty(1,-i)$, whose real
+bivector span is the infinity gauge,
+\begin{equation}\label{eq:circular-points}
+  I\joinp J = -i\,\Iinfd ,
+\end{equation}
+so that ``containing the factor $\Iinfd$'' and ``passing through the circular
+points'' are the same condition --- the classical characterisation of
+circles~\cite{richter-gebert_perspectives_2011}. We write
+$v_\infty'(\mathbf{v})$ for the tangent direction to the Veronese conic at
+$v_\infty(\mathbf{v})$; the pair $v_\infty\joinp v_\infty'$ encodes a
+\emph{double} (tangential) contact with the line at infinity and is the
+infinity gauge of the parabola in \cref{sec:axis-aligned}.
 
 %% ============================================================
 \section{Conics: OPNS and IPNS}
 \label{sec:conics}
 \subsection{The grade-1 IPNS conic}
+The fundamental fact of CCGA is that a single grade-$1$ vector cuts out a
+general conic by its inner-product null space. For an arbitrary vector
+$s = s_{o_1}e_{o_1}+s_{o_2}e_{o_2}+s_{o_3}e_{o_3}+s_{e_1}e_1+s_{e_2}e_2
++ s_{\infty_1}e_{\infty_1}+s_{\infty_2}e_{\infty_2}+s_{\infty_3}e_{\infty_3}$
+and a point $\mathrm{p}=\mathrm{p}(x,y)$ of \cref{eq:point}, expanding
+$\mathrm{p}\cdot s$ with the Gram matrix~\eqref{eq:gram} gives
 \begin{equation}\label{eq:ipns-conic}
-  \mathrm{p}\cdot s = 0 \iff A x^2 + B y^2 + C xy + D x + E y + F = 0 .
+  \mathrm{p}\cdot s = 0 \iff A x^2 + B y^2 + C xy + D x + E y + F = 0 ,
 \end{equation}
+with the coefficient dictionary
+\begin{equation}\label{eq:coeff-map}
+  A=-\tfrac{s_{o_1}}{2},\;\; B=-\tfrac{s_{o_2}}{2},\;\; C=-s_{o_3},\;\;
+  D=s_{e_1},\;\; E=s_{e_2},\;\; F=-(s_{\infty_1}{+}s_{\infty_2}).
+\end{equation}
+Two directions are \emph{gauge-inert}: $\mathrm{p}\cdot s$ never depends on
+$s_{\infty_3}$, and depends on $s_{\infty_1},s_{\infty_2}$ only through their
+sum --- i.e.\ adding any multiple of $e_{\infty_3}$ or of $\einfbar$ to $s$
+does not move the locus. The canonical (gauge-fixed) dual conic therefore
+lives in the six-dimensional space
+$\mathrm{span}\{e_1,e_2,e_{o_1},e_{o_2},e_{o_3},\einf\}$, matching the six
+projective coefficients $(A:B:C:D:E:F)$, and exhibits the principle of
+\cref{sec:blade-meaning}: shape $(A,B,C)$ on the origin side, size $F$ on the
+infinity side.
 
 \subsection{The grade-7 OPNS conic and the $\Iod$ gauge}
 \begin{equation}\label{eq:opns-conic}
@@ -470,11 +580,11 @@ parabola $\parallel y$ & $e_{\infty_2}\joinp e_{\infty_3}$                      
 The conic~\eqref{eq:axis-conic-family} has $C=0$ and quadratic coefficients
 $A\propto\alpha$, $B\propto-\beta$, hence discriminant
 $\Delta_2 = AB \propto -\alpha\beta$. Therefore
-\begin{equation}
-  \alpha\beta<0 \Rightarrow \Delta_2>0\ (\text{ellipse}),\quad
-  \alpha\beta=0 \Rightarrow \Delta_2=0\ (\text{parabola}),\quad
+\begin{gather}
+  \alpha\beta<0 \Rightarrow \Delta_2>0\ (\text{ellipse}),\qquad
+  \alpha\beta=0 \Rightarrow \Delta_2=0\ (\text{parabola}),\notag\\
   \alpha\beta>0 \Rightarrow \Delta_2<0\ (\text{hyperbola}),
-\end{equation}
+\end{gather}
 which is the projective classification by incidence with $\Iinf$: an imaginary,
 double, or real ideal pair (the discriminants $\Delta_2,\Delta_3$ are defined in
 \cref{sec:extraction}).
@@ -578,13 +688,13 @@ point $\mathrm{q}=\mathrm{q}(x,y)$, the weighted distance identity
 $\mathrm{q}\cdot\mathrm{p}^{(w_1,w_2)} = -\tfrac12\big[w_1(x-c_x)^2 + w_2(y-c_y)^2\big]$.
 Attaching a radius yields a \emph{single dual vector for every axis-aligned conic},
 the \emph{anisotropic round point}
-\begin{equation}\label{eq:aniso-round-point}
+\begin{multline}\label{eq:aniso-round-point}
   \sigma(c_x,c_y,r,w_1,w_2) =
      w_1\big(e_{o_1}+c_x e_1+\tfrac{c_x^2}{2}e_{\infty_1}\big)
-   + w_2\big(e_{o_2}+c_y e_2+\tfrac{c_y^2}{2}e_{\infty_2}\big)
+   + w_2\big(e_{o_2}+c_y e_2+\tfrac{c_y^2}{2}e_{\infty_2}\big)\\
    + w_1 w_2\, c_x c_y\,e_{\infty_3}
    - \tfrac12 r^2\,\einf,
-\end{equation}
+\end{multline}
 whose locus $\mathrm{q}\cdot\sigma=0$ is the conic
 $w_1(x-c_x)^2 + w_2(y-c_y)^2 = r^2$, with quadratic coefficients $A=w_1$, $B=w_2$
 and square $\sigma^2 = \tfrac12 r^2(w_1+w_2)$. The \textbf{weight ratio
@@ -614,16 +724,16 @@ $\sigma$ is read as a \emph{derived} round object.
 In~\eqref{eq:dual-axis-conic} the conic type is set by the balance of the
 combined and differential origins, $\eobar/e_o$: writing $A=1/a^2$ and
 $B=\pm1/b^2$,
-\begin{equation}
-  |A{-}B|<|A{+}B|\ (\text{ellipse}),\quad
-  |A{-}B|=|A{+}B|\ (\text{parabola}),\quad
+\begin{gather}
+  |A{-}B|<|A{+}B|\ (\text{ellipse}),\qquad
+  |A{-}B|=|A{+}B|\ (\text{parabola}),\notag\\
   |A{-}B|>|A{+}B|\ (\text{hyperbola}),
-\end{equation}
+\end{gather}
 the circle being the isotropic limit $\eobar=0$ ($A=B$), and the parabola the
 case where one of $A,B$ vanishes.
 \end{proposition}
 
-This is the dual of \cref{prop:axis-type}: the wedge construction fixes the type by
+This is the dual of Proposition~\ref{prop:axis-type}: the wedge construction fixes the type by
 the \emph{infinity} gauge $B_\infty$ (the conic's ideal points), whereas the dual
 construction fixes it by the \emph{origin} blades $e_o,\eobar$ (its shape) --- the
 gauge duality ``shape on the origin side, size on the infinity side'' of
@@ -725,31 +835,546 @@ encoded by the real bivector $(a^2 e_{\infty_1}-b^2 e_{\infty_2})\joinp e_{\inft
 the CGA circle).
 
 \subsection{Reality conditions}
+\label{sec:reality}
+Wedges of real points always produce real objects, but the constructions of
+\cref{tab:zoo} extend by linearity to multivectors with no real locus
+(imaginary circles, conjugate point pairs), and the algebra detects this by a
+sign --- always read from a \emph{square}, never from a raw coefficient, so
+that the test is invariant under rescaling.
+
+\begin{itemize}
+\item \textbf{Points} are null, $\mathrm{p}^2=0$~\eqref{eq:point-distance}.
+  A \emph{round point} (point with radius) $\mathrm{p}_c\mp\tfrac{r^2}{2}\einf$
+  squares to $\pm r^2$: positive for a real circle, negative for its imaginary
+  partner. The scale-invariant radius of any round grade-$1$ object is
+  \begin{equation}\label{eq:invariant-radius}
+    r^2 = \frac{s^2}{(s\cdot\einf)^2},
+  \end{equation}
+  so $\mathrm{sign}\,s^2$ separates \emph{real} ($>0$), \emph{degenerate /
+  tangent} ($=0$), and \emph{imaginary} ($<0$). Ideal points have
+  $s\cdot\einf=0$: they carry no radius, and reality at infinity is read from
+  the sign of the quadratic form (\cref{sec:extraction}).
+\item \textbf{Twopoles} $\mathrm{P}=\mathrm{p}_1\joinp\mathrm{p}_2$ carry their
+  reality in $\mathrm{P}^2$: positive for two real points, zero for a
+  coincident (tangent) pair, negative for a complex-conjugate pair. The same
+  test governs the CGA point pair $\mathrm{p}_1\joinp\mathrm{p}_2\joinp\Iinfd$
+  and the dipoles extracted in \cref{sec:intersections}.
+\item \textbf{Conics} use the pair of discriminants
+  $(\Delta_2,\Delta_3)$ of \cref{sec:extraction}: $\Delta_3\neq0$ selects the
+  smooth types (ellipse/parabola/hyperbola by the sign of $\Delta_2$, as in
+  \cref{tab:axis-master}), $\Delta_3=0$ the degenerate ones; within the
+  ellipse class, real versus imaginary is the sign of $s^2$ as for rounds.
+\end{itemize}
 
 %% ============================================================
 \section{Operations: Join, Meet, and Dual}
 \label{sec:operations}
+Because the metric of $\mathbb{R}_{5,3}$ is non-degenerate, the pseudoscalar is
+invertible (Proposition~\ref{prop:blade-relations}) and the three incidence operations
+are defined for every pair of blades, with one orientation convention fixed
+once and used everywhere:
+\begin{equation}\label{eq:operations}
+  A^{*} = A\,I^{-1}, \qquad
+  (A^{*})\,I = A, \qquad
+  A \meet B = \big(A^{*}\joinp B^{*}\big)^{*}.
+\end{equation}
+The \emph{join} $\joinp$ spans: it is the construction ladder of
+\cref{sec:taxonomy}, and grades add when the factors share no common subspace.
+The \emph{dual} exchanges the two null-space representations of the same
+object,
+\begin{equation}\label{eq:incidence}
+  \mathrm{q}\joinp \mathbf{c} = 0
+  \;\iff\;
+  \mathrm{q}\cdot \mathbf{c}^{*} = 0 ,
+\end{equation}
+the outer-product (OPNS) and inner-product (IPNS) incidence tests of
+\cref{eq:opns-conic,eq:ipns-conic}. The \emph{meet} $\meet$ intersects.
+
+\paragraph{Grade arithmetic.}
+For blades in general position the meet obeys
+\begin{equation}\label{eq:meet-grade}
+  \operatorname{gr}(A \meet B) = \operatorname{gr}(A) + \operatorname{gr}(B) - 8 ,
+\end{equation}
+so a meet is geometrically non-trivial only when the grades sum to at least
+$8$. At exactly $8$ the meet collapses to a scalar, which is precisely the
+incidence test: for a conic $\mathbf{c}$ (grade $7$) and a point $\mathrm{q}$
+(grade $1$), $\mathrm{q}\meet\mathbf{c}=0$ iff $\mathrm{q}$ lies on
+$\mathbf{c}$, in agreement with~\eqref{eq:incidence}. Below the threshold the
+regressive product vanishes identically: two low-grade point-objects do not
+\emph{meet} --- they \emph{join}. This asymmetry (join builds, meet
+intersects, meet needs grade-sum $\ge 8$) organises the whole interaction
+calculus of \cref{sec:intersections}, where the meaningful meets of the
+grade-$7$ conic are tabulated.
+
+\paragraph{Gauge stripping.}
+The conic constructions of \cref{sec:taxonomy} end in $\joinp\,\Iod$; their
+meets therefore carry an $\Iod$ factor that must be removed before the point
+content can be read. The reciprocity identity $\Iinfd\,\lrcorner\,\Iod = -2$
+of \cref{eq:reciprocity} makes the contraction $X\mapsto\Iinfd\lrcorner X$
+invert the wedge $X\mapsto X\joinp\Iod$ on such blades: wedging with the
+origin gauge is undone by contracting with the infinity gauge. This single
+mechanism powers the quadpole recovery of \cref{sec:intersections} and the
+centre extraction of \cref{sec:extraction}.
 
 %% ============================================================
 \section{Geometric-Algebra-Native Feature Extraction}
 \label{sec:extraction}
+Every classical feature of a conic --- type, centre, axes, semi-axes,
+eccentricity, foci, asymptotic directions, tangent and polar lines --- can be
+read directly off the dual vector $s=\mathbf{c}^{*}$ by inner products with
+the special blades of \cref{tab:blades} and meets, with no coordinate matrix,
+no eigensolver, and no linear system. The only steps that leave the algebra
+are $\sqrt{\ }$ and $\operatorname{atan2}$, the irreducible scalar content of
+axis lengths and angles.
+
+\subsection{Coefficients and the trace--deviatoric split}
+Pairing the canonical dual vector~\eqref{eq:ipns-vector} with the Gram
+matrix~\eqref{eq:gram} inverts the coefficient dictionary~\eqref{eq:coeff-map}:
+\begin{equation}\label{eq:coeff-extract}
+  A=\tfrac12\, s\!\cdot e_{\infty_1},\quad
+  B=\tfrac12\, s\!\cdot e_{\infty_2},\quad
+  C= s\!\cdot e_{\infty_3},\quad
+  D= s\!\cdot e_1,\quad
+  E= s\!\cdot e_2,\quad
+  F= s\!\cdot \eo .
+\end{equation}
+The quadratic part splits along the conjugate pairs of
+\cref{sec:blade-meaning} into an \emph{isotropic} scalar and a
+\emph{deviatoric} spin-$2$ pair:
+\begin{equation}\label{eq:trace-deviatoric}
+  \underbrace{A+B = s\!\cdot\einf}_{\text{trace (size)}},
+  \qquad
+  \underbrace{(A-B,\;C) = (s\!\cdot\einfbar,\; s\!\cdot e_{\infty_3})}_{\text{anisotropy; polar angle } = 2\theta_{\text{axis}}} .
+\end{equation}
+The deviatoric pair is a symmetric-square (Veronese) object: its polar angle
+is \emph{twice} the axis angle of the conic, which is also why the rotation
+versor of \cref{sec:transforms} acts on it with angle $2\alpha$.
+
+\subsection{Type: the discriminants as inner products and meets}
+\label{sec:discriminants}
+The shape discriminant $\Delta_2$ is a closed quadratic form in the three
+infinity pairings of~\eqref{eq:trace-deviatoric}:
+\begin{equation}\label{eq:delta2}
+  \Delta_2 \;=\; AB-\tfrac{C^2}{4}
+  \;=\; \tfrac14\Big[(s\!\cdot\einf)^2-(s\!\cdot\einfbar)^2-(s\!\cdot e_{\infty_3})^2\Big].
+\end{equation}
+The determinant discriminant $\Delta_3=\det M_3$ (with $M_3$ the symmetric
+coefficient matrix of the conic) is obtained as a \emph{meet of three dual
+lines}~\cite{chomicki_intersection_2023}. The three rows of $M_3$ are the
+polar lines (cf.~\cref{sec:polars}) of the two ideal basis directions and of
+the origin; as grade-$7$ blades,
+\begin{gather}
+  \ell_1=\big(A e_1+\tfrac C2 e_2-\tfrac D2 \einf\big) I,\qquad
+  \ell_2=\big(\tfrac C2 e_1+B e_2-\tfrac E2 \einf\big) I,\notag\\
+  \ell_3=\big(\tfrac D2 e_1+\tfrac E2 e_2-F \einf\big) I,
+  \label{eq:three-lines}
+\end{gather}
+and their meets evaluate, in closed form,
+\begin{align}
+  \ell_1\meet\ell_2
+  &= \tfrac12\big(\Delta_2\,\eo + x_c\,e_1 + y_c\,e_2\big)\joinp\Iod\joinp\Iinf,
+  \label{eq:center-meet}\\
+  \ell_1\meet\ell_2\meet\ell_3
+  &= \tfrac12\,\Delta_3\;\Iod\joinp\Iinf,
+  \label{eq:delta3-meet}
+\end{align}
+with $x_c = \tfrac{CE}4-\tfrac{BD}2$ and $y_c=\tfrac{CD}4-\tfrac{AE}2$. The
+pair $(\Delta_2,\Delta_3)$ then classifies the conic by
+\cref{tab:axis-master}: the sign of $\Delta_2$ chooses
+ellipse/parabola/hyperbola, and $\Delta_3=0$ flags the degenerate members.
+
+\subsection{Centre}
+\label{sec:center}
+Equation~\eqref{eq:center-meet} exhibits the centre as a geometric object: the
+grade-$6$ blade $\ell_1\meet\ell_2$ is, up to the gauge factor
+$\Iod\joinp\Iinf$, the \emph{flat point}
+$\mathrm{p}_c = \Delta_2\,\eo + x_c\,e_1+y_c\,e_2$ in homogeneous form ---
+the pole of the line at infinity. For a central conic ($\Delta_2\neq0$) the
+affine centre is $(x_c/\Delta_2,\,y_c/\Delta_2)$; for a parabola
+($\Delta_2=0$) the $\eo$ component vanishes and the pole of $\Iinf$
+degenerates to an \emph{ideal} point in the axis direction --- the parabola's
+point of tangency with the line at infinity, which lies on the parabola
+itself. Equivalently, in pure inner products: with
+$s_i = s\!\cdot e_{\infty_i}$ and $\sigma_k = s\!\cdot e_k$,
+\begin{equation}\label{eq:center-ip}
+  c_x=\frac{s_3\sigma_2-s_2\sigma_1}{s_1 s_2-s_3^2},\qquad
+  c_y=\frac{s_3\sigma_1-s_1\sigma_2}{s_1 s_2-s_3^2},\qquad
+  s_1 s_2 - s_3^2 = 4\Delta_2 .
+\end{equation}
+
+\subsection{Axes, semi-axes, eccentricity, foci}
+\label{sec:axes}
+The eigen-decomposition of the quadratic form is already solved by the
+split~\eqref{eq:trace-deviatoric} --- no eigensolver is needed. The shape
+eigenvalues and the axis angle are
+\begin{equation}\label{eq:eigen-free}
+  \lambda_\pm=\tfrac12\,(s\!\cdot\einf)
+  \pm\tfrac12\sqrt{(s\!\cdot\einfbar)^2+(s\!\cdot e_{\infty_3})^2},
+  \qquad
+  \theta_{\text{axis}}=\tfrac12\operatorname{atan2}\!\big(s\!\cdot e_{\infty_3},\;
+  s\!\cdot\einfbar\big),
+\end{equation}
+and the value of the conic at its own centre is the GA incidence number
+$F' = \mathrm{p}_c\!\cdot s$ (with $\mathrm{p}_c$ the embedded centre point),
+giving the semi-axes
+\begin{equation}\label{eq:semi-axes}
+  a_i^2 = -\,\frac{\mathrm{p}_c\!\cdot s}{\lambda_i} .
+\end{equation}
+Eccentricity and foci follow classically: $c=\sqrt{\,|a^2\mp b^2|\,}$
+(ellipse $-$, hyperbola $+$), $e=c/a$, and the foci are
+$\mathrm{p}_c \pm c\,\hat u_{\theta_{\text{axis}}}$ (embedded by
+\cref{eq:point}); for the parabola the focus sits at focal distance from the
+vertex along the axis direction returned by \cref{sec:center}. Note where the
+scalar boundary lies: \cref{eq:eigen-free,eq:semi-axes} use exactly one
+$\sqrt{\ }$ and one $\operatorname{atan2}$ --- the irreducible content of
+lengths and angles --- while everything else is inner products.
+
+\subsection{Asymptotic directions: incidence with infinity}
+\label{sec:asymptotes}
+An ideal point~\eqref{eq:ideal-point} lies on the conic iff
+\begin{equation}\label{eq:asymptote}
+  v_\infty(\mathbf{v})\cdot s = 0
+  \;\iff\;
+  A v_x^2 + C v_x v_y + B v_y^2 = 0 ,
+\end{equation}
+a binary quadratic whose root structure is the projective type
+classification of Proposition~\ref{prop:axis-type}: two real roots give the hyperbola's
+asymptotic directions, one double root the parabola's axis direction, two
+imaginary roots the ellipse (and the circular points $I,J$ exactly when
+$A=B$, $C=0$). As a blade computation this is the meet
+$\mathbf{c}\meet\Iinf$ --- grade $7+3-8=2$ by \cref{eq:meet-grade} --- the
+conic's \emph{ideal dipole}, whose reality is read from its square as in
+\cref{sec:reality}.
+
+\subsection{Tangents and polars}
+\label{sec:polars}
+The polar line of a point $\mathrm{q}=(x,y)$ is assembled from the point-map
+differentials $\partial_x\mathrm{p} = e_1 + x\,e_{\infty_1}+y\,e_{\infty_3}$
+and $\partial_y\mathrm{p} = e_2 + y\,e_{\infty_2}+x\,e_{\infty_3}$:
+\begin{equation}\label{eq:polar}
+  \ell_{\mathrm{q}} :\;
+  \underbrace{\tfrac12\big(\partial_x\mathrm{p}\cdot s\big)}_{n_x}\,X
+  +\underbrace{\tfrac12\big(\partial_y\mathrm{p}\cdot s\big)}_{n_y}\,Y
+  +\underbrace{\big(\eo+\tfrac{x}2 e_1+\tfrac{y}2 e_2\big)\cdot s}_{n_0}
+  \;=\;0,
+\end{equation}
+encoded as the dual line $n_x e_1+n_y e_2-n_0\,\einf$. This is the pole--polar
+pairing $M_3(x,y,1)^{\!\top}$ in GA form: when $\mathrm{q}$ lies on the conic
+($\mathrm{q}\cdot s=0$) the polar is the \emph{tangent} at $\mathrm{q}$; the
+polar of the centre is the line at infinity (consistently with
+\cref{sec:center}); and the normal at a contact point is the perpendicular
+line through it, $-n_y X + n_x Y + (n_y x - n_x y)=0$. The three dual
+lines~\eqref{eq:three-lines} are precisely the polars of the two ideal basis
+directions and of the origin, closing the loop with
+\cref{sec:discriminants}.
 
 %% ============================================================
 \section{Transformations as Versors}
 \label{sec:transforms}
+A versor $V$ acts on every object --- point, multipole, conic, pencil blade
+--- by the same sandwich product $X \mapsto V X \tilde V$, and the action is
+an outermorphism: it distributes over $\joinp$, commutes with the dual, and
+therefore preserves incidence~\eqref{eq:incidence}. This section gives the
+versors of the planar similarities explicitly, then delimits precisely which
+planar maps admit a versor at all.
+
+\subsection{The similarity versors}
+Because the point embedding~\eqref{eq:point} is quadratic, each Euclidean
+generator acts on \emph{three} carrier pairs at once --- the linear
+coordinates on $e_1,e_2$, the squares on $e_{\infty_1},e_{\infty_2}$, and the
+cross term on $e_{\infty_3}$ --- and each versor below is the commuting
+product of the corresponding simple factors.
+
+\begin{description}
+\item[Translation $(t_x,t_y)$] $T = T_x(t_x)\,T_y(t_y)$ with
+\begin{align}
+  T_x(\tau)&=\Big(1-\tfrac{\tau}2\, e_1\!\joinp e_{\infty_1}\Big)
+             \Big(1-\tfrac{\tau}2\, e_2\!\joinp e_{\infty_3}\Big),
+  \label{eq:translator}\\
+  T_y(\tau)&=\Big(1-\tfrac{\tau}2\, e_2\!\joinp e_{\infty_2}\Big)
+             \Big(1-\tfrac{\tau}2\, e_1\!\joinp e_{\infty_3}\Big).\notag
+\end{align}
+The first factor of each is the familiar CGA translator on the matching
+conformal pair; the second updates the cross term $xy$, which a translation
+in $x$ changes by $\tau y$.
+\item[Rotation by $\alpha$] $R(\alpha) = e^{\alpha E}\, e^{\alpha K}$ with
+the commuting pair
+\begin{equation}\label{eq:rotor}
+  E=-\tfrac12\, e_1\joinp e_2, \qquad
+  K=\eobar\joinp e_{\infty_3} - e_{o_3}\joinp\einfbar,
+  \qquad K^3 = -4K,
+\end{equation}
+\begin{equation}\label{eq:rotor-exp}
+  e^{\alpha E} = \cos\tfrac{\alpha}{2} - \sin\tfrac{\alpha}{2}\, e_1\joinp e_2,
+  \qquad
+  e^{\alpha K} = 1 + \tfrac{\sin 2\alpha}{2}\,K + \tfrac{1-\cos2\alpha}{4}\,K^2 .
+\end{equation}
+$E$ rotates the linear carriers at the half angle, as in CGA; $K$ is
+\emph{not} simple-exponential at the half angle --- it satisfies $K^3=-4K$
+and rotates the deviatoric pair $(\einfbar, e_{\infty_3})$-$(\eobar,e_{o_3})$
+at the \emph{double} angle $2\alpha$, the symmetric-square action already met
+in \cref{eq:trace-deviatoric}: a conic's anisotropy returns to itself after a
+half turn.
+\item[Uniform scaling by $s$] With $u=\tfrac12\ln s$,
+\begin{equation}\label{eq:dilator}
+  D(s)=\prod_{i=1}^{3}\big(\cosh u + \sinh u \; e_{o_i}\!\joinp e_{\infty_i}\big),
+\end{equation}
+one boost per conformal pair, all three commuting.
+\item[Reflection] Across the $x$-axis the versor is the grade-$3$ blade
+$V_x = e_2\joinp e_{o_3}\joinp e_{\infty_3}$, which negates exactly the
+$y$-odd carriers ($e_2$ and the cross-term pair); an arbitrary line of
+direction angle $\theta$ through a point $c$ reflects by the conjugate
+$T(c)\,R(\theta)\,V_x\,\tilde R(\theta)\,T(-c)$. Likewise rotations and
+scalings about an arbitrary centre are the translated conjugates
+$T(c)\,V\,T(-c)$.
+\end{description}
+
+\subsection{Which planar maps are versors}
+\label{sec:versor-group}
+The versors above generate, on the full conic family, exactly the
+\emph{similarity group} of the plane: translations, rotations, reflections,
+and uniform scalings, together with their compositions. The boundary is
+sharp on both sides.
+
+\emph{No versor beyond similarities.} A planar map $\varphi$ can act by a
+versor only if its lift to the Veronese coordinates
+$(1,x,y,\tfrac{x^2}2,\tfrac{y^2}2,xy)$ extends to an \emph{orthogonal} map of
+$\mathbb{R}_{5,3}$, since sandwiching preserves the metric. A shear or a
+non-uniform scaling does extend to a linear outermorphism of the lift --- it
+maps conics to conics projectively --- but the induced linear map fails to
+preserve the inner product (it deforms the distance
+pairing~\eqref{eq:point-distance}), so no versor exists: such maps act on
+CCGA only as outermorphisms, applied matrix-wise, with none of the versor
+calculus available. The same holds a fortiori for general projective maps.
+
+\emph{Versors beyond similarities exist, but not on conics.} The round
+(CGA) sub-family of \cref{sec:taxonomy} admits the usual conformal
+extensions: the invertible grade-$1$ vector
+$\sigma = \mathrm{p}_c - \tfrac{r^2}{2}\einf$ ($\sigma^2=r^2$) is a versor
+implementing inversion in the circle $(\mathrm{p}_c, r)$, and
+$\sigma\,T(\mathbf{b})\,\sigma$ is a transversion. These are M\"obius maps:
+they preserve the circle/line family but send a general conic to a
+\emph{quartic} curve, which has no CCGA representative. Their sandwich is
+still an algebra automorphism --- it maps a grade-$7$ conic blade to a
+grade-$7$ blade --- but the resulting conic is \emph{not} the geometric image
+of the original curve; the versor represents the M\"obius map on the round
+sub-family only. The transformation repertoire of CCGA on \emph{all} conics
+is therefore exactly the similarities, with the conformal extension available
+on the CGA sub-array --- consistent with GAC, whose additional
+conic-preserving versors~\cite{hrdina_geometric_2018} are likewise
+similarity-type on the general family.
 
 %% ============================================================
 \section{Conic Intersections}
 \label{sec:intersections}
+Two conics meet in four points, counted with multiplicity over the complex
+projective plane (B\'ezout~\cite{fulton_algebraic_1989}). This section turns
+that statement into blade arithmetic: the regressive product delivers every
+intersection as a single blade (\cref{sec:meet-arithmetic}), the gauge
+mechanism of \cref{sec:operations} strips that blade to a point object
+(\cref{sec:pipeline}), and a shared-factor principle predicts, for every pair
+in the zoo, how many of the four points are finite and how to land them
+(\cref{sec:bezout-reduction}).
+
 \subsection{Meet grade arithmetic}
+\label{sec:meet-arithmetic}
+Applying \cref{eq:meet-grade} to the grade-$7$ conic against the taxonomy of
+\cref{tab:zoo} gives the complete interaction row of \cref{tab:conic-meets}:
+every meet of a conic is geometrically meaningful, ranging from the scalar
+incidence test up to the grade-$6$ conic--conic intersection blade.
+
+\begin{table}[H]
+\centering
+\caption{The meets of a conic $\mathbf{c}$ (grade $7$). Meets of two objects
+whose grades sum to less than $8$ vanish identically: low-grade point-objects
+are \emph{joined}, not met.}
+\label{tab:conic-meets}
+\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+$\mathbf{c}\meet B$ & $\operatorname{gr}(B)$ & $\operatorname{gr}(\mathbf{c}\meet B)$ & meaning \\
+\midrule
+conic $\meet$ conic            & 7 & 6 & the 4 B\'ezout points (as $Q\joinp\Iod$) \\
+conic $\meet$ conic at $\infty$& 5 & 4 & incidence with the Veronese cone at $\infty$ \\
+conic $\meet$ quadpole         & 4 & 3 & --- \\
+conic $\meet$ line at $\infty$ $\Iinf$ & 3 & 2 & the conic's ideal dipole (\cref{sec:asymptotes}) \\
+conic $\meet$ twopole          & 2 & 1 & point \\
+conic $\meet$ point            & 1 & 0 & incidence scalar, $\mathrm{q}\meet\mathbf{c}=0 \iff \mathrm{q}\in\mathbf{c}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection{The universal pipeline}
+\label{sec:pipeline}
+For two conics $\mathbf{c}_1,\mathbf{c}_2$ in general position the meet is the
+grade-$6$ blade
+\begin{equation}\label{eq:I6}
+  I_6 \;=\; \mathbf{c}_1\meet\mathbf{c}_2
+  \;\equiv\; \mathrm{p}_1\joinp\mathrm{p}_2\joinp\mathrm{p}_3\joinp\mathrm{p}_4
+             \joinp\Iod
+  \;=\; Q\joinp\Iod ,
+\end{equation}
+the \emph{quadpole} $Q$ of the four intersection points, gauge-fixed by the
+same $\Iod$ that turns five points into a grade-$7$ conic --- the
+intersection object is itself a rung of the $\Iod$-ladder of
+\cref{sec:taxonomy} (the $n=4$ pencil blade). Incidence holds directly on the
+blade: $\mathrm{q}\joinp I_6 = 0$ iff $\mathrm{q}$ is one of the four points.
+The gauge is stripped by the reciprocity mechanism of \cref{sec:operations},
+\begin{equation}\label{eq:quadpole-recovery}
+  Q \;\equiv\; \Iinfd \lrcorner\, I_6 ,
+\end{equation}
+a pure grade-$4$ point object. What remains is to factor the quadpole into
+its four points --- and this, by the design principle of \cref{sec:intro}, is
+exactly where the algebra hands over to scalar root extraction: splitting
+$Q$ amounts to solving a quartic (a degenerate-conic pencil member, a
+resolvent cubic, then two $\pm\sqrt{\ }$ dipole splits --- Ferrari's solution
+in GA dress, cf.~\cite{faucette_geometric_1996}). The four points come
+labelled by the B\'ezout reality split
+\begin{equation}\label{eq:reality-split}
+  r \;(\text{finite real}) \;+\; m \;(\text{finite conjugate}) \;+\;
+  k \;(\text{ideal}) \;=\; 4 ,
+\end{equation}
+with each dipole's reality read from its square as in \cref{sec:reality}.
+This route is valid for \emph{every} pair of conics; the next subsection
+shows when it simplifies, and why.
 
 \subsection{Shared-factor / B\'ezout reduction}
+\label{sec:bezout-reduction}
+Each object of the taxonomy carries an \emph{infinity signature} --- its
+intersection with the line at infinity --- fixed once and for all by a blade
+in its construction (\cref{tab:infinity-signature}). When two objects share
+ideal points by construction, that part of the B\'ezout budget is spent at
+infinity:
+\begin{equation}\label{eq:shared-factor}
+  \#\,\text{finite intersections} \;=\; 4 \;-\;
+  \#\,\text{forced common ideal points}.
+\end{equation}
+
+\begin{table}[H]
+\centering
+\caption{Infinity signatures: what each conic type meets $\Iinf$ in, and the
+construction blade that forces it.}
+\label{tab:infinity-signature}
+\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+object & meets $\Iinf$ in & forced by & reality \\
+\midrule
+circle    & the circular points $I,J$ & $\Iinfd$~\eqref{eq:circular-points} & imaginary \\
+ellipse   & its own ideal pair        & weighted $\Iinfd$ & imaginary \\
+hyperbola & its 2 asymptotic points   & real ideal pair & real \\
+parabola  & 1 double ideal point      & $v_\infty\joinp v_\infty'$ & real (tangent) \\
+line (degen.) & \emph{all} of $\Iinf$ & $\Iinf\equiv\Iinfd\joinp\einf$ & every ideal point \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The table reads off the classical incidence facts as blade bookkeeping: two
+circles always share $I,J$, so at most $2$ finite intersections remain (the
+radical-axis pair); a circle and a line share $I,J$ as well ($\Iinf \supset
+\Iinfd$), again $2$ finite points; an ellipse and a hyperbola share nothing
+at infinity, so all $4$ B\'ezout points are finite; two co-asymptotic
+hyperbolas share one real ideal point, leaving $3$ finite ones; and two
+lines share the whole of $\Iinf$ --- an entire common component, so the
+finite meet is the single point of \cref{tab:conic-meets} read by incidence.
+
+\paragraph{The round shortcut.}
+When \emph{both} objects contain the circular points --- i.e.\ both belong to
+the circle/line (CGA) sub-family --- two of the four B\'ezout points are
+exactly $I,J$, the quadpole factors as
+$Q \equiv D_2\joinp\Iinfd$ with $D_2$ a clean CGA point pair, and a second
+contraction strips the round gauge:
+\begin{equation}\label{eq:round-shortcut}
+  D_2 \;\equiv\; \Iod\lrcorner\big(\Iinfd\lrcorner\, I_6\big),
+  \qquad
+  \mathrm{p}_\pm = \big(D_2 \pm \sqrt{D_2^2}\,\big)\,
+                   \big(\einf\lrcorner D_2\big)^{-1},
+\end{equation}
+the classical conformal dipole extraction, with reality given by the sign of
+$D_2^2$. We emphasise the validity boundary: the contraction in
+\cref{eq:round-shortcut} always \emph{returns} a grade-$2$ object, but it is
+the true finite dipole only when both operands pass through $I,J$. For any
+other pair (an ellipse and a line, say) the two non-finite B\'ezout points
+are the conic's \emph{own} ideal pair, not the circular points; the
+$\Iinfd$-contraction then strips the wrong direction and the resulting
+grade-$2$ object is not the intersection. Outside the round sub-family, the
+universal pipeline of \cref{sec:pipeline} is the only correct route.
+\Cref{tab:interaction} summarises.
+
+\begin{table}[H]
+\centering
+\caption{Conic-family interactions. All meets have grade $6$; the columns
+give the ideal points forced by \cref{tab:infinity-signature}, the resulting
+finite count~\eqref{eq:shared-factor}, and the extraction route.}
+\label{tab:interaction}
+\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+pair & forced ideal & finite & route \\
+\midrule
+circle $\meet$ circle    & $I,J$ & 2 & shortcut~\eqref{eq:round-shortcut} \\
+circle $\meet$ line      & $I,J$ & 2 & shortcut~\eqref{eq:round-shortcut} \\
+circle $\meet$ ellipse   & none  & 4 & pipeline (\cref{sec:pipeline}) \\
+ellipse $\meet$ ellipse / hyperbola & none & 4 & pipeline \\
+ellipse $\meet$ line     & ellipse's pair (imag.) & 2 & pipeline \\
+hyperbola $\meet$ line   & hyperbola's pair (real) & 2 & pipeline \\
+parabola $\meet$ line    & double ideal point & 1 & pipeline \\
+line $\meet$ line        & all of $\Iinf$ & 1 & incidence \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Relation to the pencil method.}
+The blade $I_6$ is also the algebraic carrier of the classical \emph{pencil}
+of conics through the four points~\cite{halsted_synthetic_1906}: the conics
+$\lambda\,\mathbf{c}_1^{*}+\mu\,\mathbf{c}_2^{*}$ all contain the quadpole
+$Q$, and locating a degenerate member ($\Delta_3=0$, a cubic in
+$\lambda:\mu$ by \cref{eq:delta3-meet}) splits the intersection into
+line--conic problems. This is the route developed
+in~\cite{chomicki_intersection_2023}, which the shared-factor organisation
+above complements: the pencil method computes the points; the infinity
+signatures predict their finite/ideal budget in advance and identify when the
+conformal shortcut applies, recovering the special configurations
+of~\cite{byrtus_specific_2021} as instances of one rule.
 
 %% ============================================================
 \section{Conclusion and Future Work}
 \label{sec:conclusion}
+We have presented Conic Conformal Geometric Algebra as a single, consolidated
+foundation for two-dimensional conic geometry: one algebra
+($\mathbb{R}_{5,3}$), one null working basis with a small set of special
+blades whose geometric roles --- size, anisotropy, tilt, origin and infinity
+gauges --- organise everything that follows. On this base we assembled the
+complete object taxonomy in both OPNS and IPNS form, structured by three
+construction ladders (bare multipoles, the $\Iod$-gauged conic ladder, and
+the CGA sub-array embedded by $\Iinfd$); closed-form, eigensolver-free
+extraction of every classical conic feature from the dual vector by inner
+products with the special blades; the explicit versors of the planar
+similarities together with a sharp delimitation of the versor group ---
+similarities on the full conic family, conformal maps on the round sub-family
+only, and mere outermorphisms beyond; and a unified intersection calculus in
+which the regressive product, one gauge-stripping contraction, and an
+infinity-signature bookkeeping rule reduce every pairwise intersection to its
+B\'ezout budget. Throughout, the boundary between algebra and arithmetic is
+explicit and, we argue, optimal: every structural operation ---
+construction, incidence, classification, feature extraction, intersection
+reduction --- is geometric algebra, and the only numeric residue is root
+extraction, which carries the irreducible algebraic content of the problem.
+
+Three directions remain open. First, the lift to three dimensions: CCGA is
+the planar restriction of QCGA
+($\mathbb{R}_{9,6}$)~\cite{breuils_three-dimensional_2019}, and most of the
+structure presented here --- the gauge blades, the trace--deviatoric split,
+the shared-factor reduction --- has a natural quadric analogue whose
+systematic development is future work. Second, a fully GA-native
+factorisation of degenerate conics: splitting a line pair into its two lines
+currently requires the adjugate of the coefficient matrix, and a blade-level
+factorisation would close the last coordinate step in the intersection
+pipeline. Third, the transformation group: shears and general projective
+maps act on CCGA only as outermorphisms, and whether a larger algebra can
+host them as versors --- as $\mathbb{R}_{4,4}$ does for projective maps of
+points~\cite{goldman_r4_2015} --- while retaining the conic object calculus
+is, to our knowledge, open.
 
 %% ============================================================
 \bibliographystyle{spmpsci}
