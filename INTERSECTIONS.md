@@ -246,6 +246,38 @@ J — so they take the §2 quadpole route, not the §3 shortcut (cf. the ellipse
 its single finite point is read off by incidence (anchor
 `tests/test_meet_join.py::test_line_meet_line_gives_point`).
 
+### 5.1 Ideal points — the conic ∨ conic-at-∞ chain
+
+The **conic at infinity** is $C_\infty = I_o^{\triangleright}\wedge I_\infty$ (`Iod ^ Iinf`,
+grade 5) — the Veronese curve of ideal directions. Meeting a conic with it extracts the
+conic's incidence with infinity:
+
+$$C \vee C_\infty \;\xrightarrow{\;7+5-8\;}\; \text{grade 4}
+  \;\xrightarrow{\;\lrcorner\, I_\infty^{\triangleright}\;}\; T\ (\text{grade 2}),\qquad
+  T \;\propto\; \text{vinf}(d_1)\wedge\text{vinf}(d_2).$$
+
+The grade-4 object is the conic's incidence with the Veronese cone at infinity; contracting by
+`Iinfd` strips the gauge and lands the **asymptotic dipole** $T$ — the twopole of the conic's
+two ideal points. The one-step meet with the *line* at infinity gives the **same** twopole
+(up to scale): $T \propto C \vee I_\infty$ (`Iinf`, grade 3 → 2). Both are
+`extract.asymptotic_dipole`.
+
+**Extracting the ideal points.** The two points are at infinity, so the usual dipole `±√`
+split is degenerate ($e_\infty\!\cdot T = 0$, $T^2 = 0$). Instead take the **dual of $T$
+within the infinity 3-space** $\{e_{\infty_1},e_{\infty_2},e_{\infty_3}\}$ — its contractions
+with the origin bivectors (the $e_{o_i}$ are the reciprocals of the $e_{\infty_i}$) recover the
+asymptotic quadratic up to a common scale:
+
+$$A \propto T\,\lrcorner\,(e_{o_3}\wedge e_{o_2}),\quad
+  B \propto T\,\lrcorner\,(e_{o_1}\wedge e_{o_3}),\quad
+  C \propto -2\,T\,\lrcorner\,(e_{o_1}\wedge e_{o_2}).$$
+
+The real null directions of $A\,v_x^2 + C\,v_x v_y + B\,v_y^2 = 0$ are the asymptotic
+directions; `extract.ideal_points` lifts each by `point_at_infinity`. It returns **2** points
+(hyperbola, real asymptotes), **1** (parabola, the double axis direction), or **0** (ellipse —
+its ideal pair is imaginary), agreeing with `classify.asymptotic_directions` but routed through
+the GA blade. Anchor: `tests/test_ideal_points.py`.
+
 ---
 
 ## 6. Full object-zoo meet/join interaction table
@@ -276,7 +308,8 @@ Reading the conic row (the geometrically rich one):
 - conic ∨ conic → **grade 6** (§2/§3, the 4 Bézout points).
 - conic ∨ `Iinf` → **grade 2**: the conic's two **ideal points** (its asymptotic dipole);
   the same pair `asymptotic_directions` returns.
-- conic ∨ conic-at-∞ → grade 4: the conic's incidence with the Veronese cone at infinity.
+- conic ∨ conic-at-∞ → grade 4: the conic's incidence with the Veronese cone at infinity;
+  `| Iinfd` reduces it to the grade-2 asymptotic dipole, then `ideal_points` (§5.1).
 
 The all-`–` cells are meets whose grades sum < 8: in CCGA two low-grade point-objects do not
 “intersect” via `&` (you **join** them instead). This asymmetry — **join builds, meet

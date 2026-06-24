@@ -16,10 +16,11 @@ notebook/quadpole_extraction.ipynb.
 """
 import numpy as np
 
-from .algebra import e1, e2, eo, einf, einf3, einfbar, Iod, Iinfd, I_inv
-from .point import point
-from .operations import grades, meet
-from .classify import ipns_to_coeffs, _conic_vector
+from .algebra import (e1, e2, eo, einf, einf3, einfbar,
+                      eo1, eo2, eo3, Iod, Iinfd, Iinf, I_inv)
+from .point import point, point_at_infinity
+from .operations import grades, meet, undual
+from .classify import ipns_to_coeffs, _conic_vector, asymptotic_directions
 
 _TOL = 1e-9
 
@@ -255,8 +256,48 @@ def intersection_quadpole(I4):
     grade-6 intersection object:  Q = (einf3 ∧ einfbar) | (C1 ∨ C2).
 
     Inverts I4 = Q ∧ Iod (Iod = eobar ∧ eo3); einf3 ∧ einfbar is the reciprocal
-    2-blade of Iod in the W2 = span{eobar, eo3} gauge plane."""
+    2-blade of Iod in the W2 = span{eobar, eo3} gauge plane.  NB: the gauge is
+    stripped by Iod's *reciprocal* (einf3 ∧ einfbar) — contracting by the infinity
+    gauge Iinfd instead lands a grade-2 blade that is NOT incident to the points."""
     return (einf3 ^ einfbar) | I4
+
+
+# ── line ∩ conic: grade-4 OPNS intersection object ────────────────────────────
+#
+# A *line-as-conic*  E∧F∧Iinf∧Iod  is the degenerate conic "finite line ∪ the
+# whole line at infinity", so  conic ∨ (line-as-conic)  is the grade-6, 4-point
+# Bézout object Q∧Iod (2 finite + the conic's 2 ideal points) — use
+# conic_intersection / intersection_points for that.  Meeting instead with the
+# lower-grade *CGA line*  L = p1∧p2∧einf∧Iinfd  (grade 5, ccga.cga.line) gives the
+# grade-4 OPNS object  M = conic ∨ L  that is incident to the two finite
+# intersection points (q ∧ M = 0).
+#
+# TRAP: M has NO Iod gauge factor (the grade-5 line already carries Iinfd), so
+# "M | Iod" is NOT an extraction — it drops the points.  (That is exactly why the
+# ga-constructor graph  L1=E^F^Iinf ; I4=L1&C1 ; I2=I4|Iod  returns wrong points;
+# I4 alone is already correct.)  Stripping a *real* Iod factor — as in
+# conic ∨ conic — uses Iod's reciprocal einf3∧einfbar, never Iod itself.
+#
+# M equals the bare CGA point-pair p_a∧p_b∧Iinfd (cga.point_pair) ONLY when the
+# conic is a circle, i.e. lives in the CGA subalgebra.  For a general conic the
+# intersection pair is not in that subalgebra, so M is incident but not a clean
+# CGA dipole: get coordinates from intersection_points, not by a ±√ split of M.
+
+def line_conic_meet(conic, cga_line):
+    """Grade-4 OPNS object where a line meets a conic, incident to both finite
+    points:  M = conic ∨ cga_line,  with  is_zero(q ∧ M)  iff q is on both.
+
+    `cga_line` must be the grade-5 CGA line  p1∧p2∧einf∧Iinfd  (build it with
+    ccga.cga.line) — NOT the grade-7 line-as-conic, whose meet is the grade-6
+    4-point Bézout object (see conic_intersection).  `conic` may be grade-1/5/7.
+
+    M is the bare cga.point_pair of the two points ONLY for a circle (CGA
+    subalgebra); for a general conic M is incident but not a clean CGA dipole, so
+    do NOT ``| Iod`` it or ±√-split it — read the coordinates with
+    intersection_points(conic, line) (dual → coeffs → line-parametrised
+    quadratic), which is exact for any conic."""
+    C7 = undual(_conic_vector(conic))            # grade-7 OPNS conic
+    return meet(C7, cga_line)
 
 
 def _coeffs_of(C):
@@ -344,6 +385,56 @@ def intersection_reality(C1, C2, tol=1e-6):
     pts = _intersection_roots(C1, C2)
     real = sum(1 for p in pts if abs(p[0].imag) < tol and abs(p[1].imag) < tol)
     return {'real': real, 'imaginary': len(pts) - real, 'ideal': 4 - len(pts)}
+
+
+# ── ideal points / asymptotic dipole (conic ∩ the line at infinity) ───────────
+
+def asymptotic_dipole(conic):
+    """Grade-2 twopole of a conic's two ideal points — its asymptotic dipole.
+
+    Built GA-natively as the meet of the conic with the conic at infinity
+    C_∞ = Iod ∧ Iinf (grade 5), reduced by the infinity gauge Iinfd:
+
+        C ∨ C_∞          grade 7+5−8 = 4   (incidence with the Veronese
+                                            cone at infinity),
+        T = (C ∨ C_∞) | Iinfd   → grade 2  (the asymptotic dipole).
+
+    Contracting by Iinfd strips the gauge and lands
+    T ∝ point_at_infinity(d1) ∧ point_at_infinity(d2).  The one-step meet with
+    the line at infinity yields the SAME blade (up to scale):  T ∝ C ∨ Iinf.
+
+    Accepts a grade-1/5/7 conic.  Recover the two directions with ideal_points
+    — NOT by the dipole ±√ split: both points are at infinity, so einf·T = 0
+    and T² = 0 and the split is degenerate.
+    """
+    C7 = undual(_conic_vector(conic))            # grade-7 OPNS conic
+    Cinf = Iod ^ Iinf
+    return meet(C7, Cinf) | Iinfd
+
+
+def ideal_points(conic, tol=_TOL):
+    """The conic's real ideal points (points at infinity), grade-1 each.
+
+    Extracted from the asymptotic_dipole twopole T by its dual WITHIN the
+    infinity 3-space {einf1,einf2,einf3} — the contractions with the origin
+    bivectors (eo_i are the reciprocals of einf_i) recover the asymptotic
+    quadratic up to a common scale:
+
+        A ∝ (T | eo3∧eo2),  B ∝ (T | eo1∧eo3),  C ∝ −2·(T | eo1∧eo2).
+
+    The real null directions of A·vx² + C·vx·vy + B·vy² = 0 are the asymptotic
+    directions; each is lifted by point.point_at_infinity.  Returns 2 points
+    (hyperbola), 1 (parabola — the double axis direction), or 0 (ellipse, whose
+    ideal pair is imaginary).  Routes classify.asymptotic_directions through the
+    GA blade, and agrees with it.
+    """
+    from .objects import make_conic_ipns
+    T = asymptotic_dipole(conic)
+    A  =  float((T | (eo3 ^ eo2)).e)
+    B  =  float((T | (eo1 ^ eo3)).e)
+    Cc = -2.0 * float((T | (eo1 ^ eo2)).e)
+    dirs = asymptotic_directions(make_conic_ipns(A, B, Cc, 0.0, 0.0, 0.0), tol)
+    return [point_at_infinity(vx, vy) for (vx, vy) in dirs]
 
 
 # ── normals & orthogonal projection of a point onto a conic ───────────────────

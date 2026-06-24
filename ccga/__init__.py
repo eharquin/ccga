@@ -23,7 +23,7 @@ from .transform import (
 from .extract import (
     circumcircle, tripole_circumconic, extract_tripole, pencil, extract_quadpole,
     conic_intersection, intersection_quadpole, intersection_points,
-    intersection_reality, normal_feet, project_point_to_conic,
+    intersection_reality, line_conic_meet, normal_feet, project_point_to_conic,
 )
 
 __all__ = [
@@ -45,5 +45,5 @@ __all__ = [
     "rotor_about", "dilator_about", "inversion", "transversion",
     "circumcircle", "tripole_circumconic", "extract_tripole", "pencil", "extract_quadpole",
     "conic_intersection", "intersection_quadpole", "intersection_points",
-    "intersection_reality",
+    "intersection_reality", "line_conic_meet",
 ]

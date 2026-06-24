@@ -225,8 +225,9 @@ space is null, $B^2=0$); it is the secant/non-secant nature. Read type back with
 | **Line (flat)** | `point ∧ flat_point` = $p_1\wedge p_2\wedge I_\infty$ | 5 | line through 2 points (= `cga.line`) |
 | **Plane (2-flat)** | `point ∧ line` | 6 | whole plane (2-D) |
 | **Line at infinity** | `make_line_at_infinity()` = $I_\infty$ | 3 | $L_\infty$ |
-| **Conic at infinity** | `make_conic_at_infinity()` = $I_o^{\triangleright}\wedge I_\infty$ | 5 | the Veronese conic at ∞ |
+| **Conic at infinity** | `make_conic_at_infinity()` = $I_o^{\triangleright}\wedge I_\infty$ | 5 | the Veronese conic at ∞; `conic ∨ C_∞ → grade 4 → \| Iinfd →` asymptotic dipole (`extract.asymptotic_dipole`, INTERSECTIONS §5.1) |
 | **Ideal point** | `make_ideal_point(x,y,r,imaginary)` | 1 | direction (CGA-flavored; see §2) |
+| **Conic's ideal points** | `extract.ideal_points(conic)` (via `asymptotic_dipole`) | 1 each | the conic ∩ $L_\infty$: 2 (hyperbola) / 1 (parabola) / 0 real (ellipse), as `point_at_infinity`; GA route to `asymptotic_directions` |
 
 The flat point is the **join-unit** for flats: wedging a finite point raises the flat
 dimension. Composition rules: `flat ∧ flat = 0` (repeated $I_\infty$),
